@@ -1,0 +1,71 @@
+:root {
+    --primaryColorLight2: #6716D2;
+    --primaryColorLight1: #5B09C7;
+    --primaryColor: #4907A1;
+    --primaryColorDark1: #3E0589;
+    --primaryColorDark2: #330472;
+    --secondaryColorLight2: rgba(255, 255, 255, 0.20);
+    --secondaryColorLight1: #767279;
+    --secondaryColor: #3F3C3C;
+    --secondaryColorDark1: #252525;
+    --secondaryColorDark2: #252525;
+    --black:#100B16;
+    --white:#F8F3FF;
+    --highLight:#FFC300;
+    --success:#04AA6D;
+    --error:#FF2020;
+    --warning:#FFE141;
+
+    --familyFontNunito:'Nunito Sans', sans-serif;
+
+}
+
+body,h1,h2,h3,h4,h5,h6,p{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--black);
+}
+
+h1 {
+    height: 48px;
+}
+
+h2 {
+    height: 32px;
+}
+
+h3 {
+    height: 24px;
+}
+
+h4{
+    height: 18px;
+}
+
+p{
+    height: 14px;
+}
+
+input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 0;
+}
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primaryColorDark2);
+    border-radius: 20px;
+    border: 3px solid var(--black);
+}
