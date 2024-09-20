@@ -1,0 +1,52 @@
+.carousel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--secondaryColorDark75);
+}
+
+.carousel h3 {
+    color: var(--highLight);
+    top: 20px;
+    left: 50px;
+    margin: 0;
+    position: absolute;
+    z-index: 3;
+}
+
+.carousel-card-container{
+    width: 1400px;
+    overflow: hidden;
+}
+
+#arrow-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 530px;
+    width: 50px;
+}
+
+#arrow-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 530px;
+    width: 50px;
+    text-align: end;
+}
+
+.carousel {
+    height: 650px;
+    display: flex;
+    overflow-x: visible;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.carousel::-webkit-scrollbar{
+    display: none;
+}
