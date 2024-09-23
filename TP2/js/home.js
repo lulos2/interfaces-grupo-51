@@ -20,7 +20,8 @@ document.getElementById("arrow-right").addEventListener('click',(e)=>{
     carousel.dataset.scroll = Math.min(Number(carousel.dataset.scroll) + 400,maxX)
 })
 
-const baseImageGamePath = "../../TP2/media/images/games/";
+//const baseImageGamePath =  "../TP2/media/images/games/"; //Deploy path
+const baseImageGamePath = "../../TP2/media/images/games/";//Local path
 document.querySelectorAll(".card img").forEach((e)=>{
     let fileName = e.src.split("/").pop()
     e.src = `${baseImageGamePath}${fileName}`;

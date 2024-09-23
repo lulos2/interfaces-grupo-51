@@ -1,81 +1,112 @@
-window.addEventListener('DOMContentLoaded',function(){changeRoute("login-register")})
+const ROUTES = {
+    HOME: 'home',
+    LOGIN_REGISTER: 'login-register'
+};
 
-document.getElementById("logo").addEventListener("click",()=>{
-    fetchFile("home");
-    routUrl("home");
-});
-
-document.getElementById("loginButton").addEventListener("click",()=>{
-    fetchFile("login-register");
-    routUrl("login-register");
-});
-
-function changeRoute(ruta){
-    fetchFile(ruta);
-    routUrl(ruta);
+function getBaseUrl() {
+    return window.location.href.includes("/TP2/") ? "/TP2/" : "/";
 }
 
+class Router {
+    constructor() {
+        this.routes = new Map();
+        this.init();
+    }
 
-async function fetchFile(route) {
-    let url = window.location.href.includes("/TP2/") ? "html/" + route + ".html" : "/TP2/html/" + route + ".html";
-    let promise = await fetch(url);
-    let container = document.getElementById("index");
-    container.innerHTML = await promise.text();
-    container.append(injectionJs(route));
-}
+    init() {
+        window.addEventListener('popstate', this.handlePopState.bind(this));
+        window.addEventListener('DOMContentLoaded', () => this.navigateTo(ROUTES.LOGIN_REGISTER));
 
-function injectionJs(route){
-    let script = document.createElement("script");
-    script.src = "js/"+route+".js";
-    script.async = true;
-    return script;
-}
+        document.getElementById("logo").addEventListener("click", () => this.navigateTo(ROUTES.HOME));
+        document.getElementById("loginButton").addEventListener("click", () => this.navigateTo(ROUTES.LOGIN_REGISTER));
 
-function routUrl(ruta){
-    let currentURL = window.location.href;
-    updateBreadcrumbs(ruta);
-    history.pushState({page:ruta+".html"},"index",ruta);
-}
+        document.querySelector('.hamburger-button').addEventListener('click', this.deployMenu);
+        window.onclick = this.handleWindowClick.bind(this);
+    }
 
-window.addEventListener('popstate', function(){
-    changeRoute(history.state.page);
-    updateBreadcrumbs(history.state.page);
+    addRoute(path, handler) {
+        this.routes.set(path, handler);
+    }
 
-});
+    async navigateTo(route) {
+        const handler = this.routes.get(route);
+        if (handler) {
+            await handler();
+            this.updateUrl(route);
+            this.updateBreadcrumbs(route);
+        } else {
+            console.error(`No handler found for route: ${route}`);
+        }
+    }
 
-function updateBreadcrumbs(actualRoute) {
-    let breadCrumb = document.getElementById("breadcrumbs");
-    let breadcrumbItems = Array.from(breadCrumb.querySelectorAll("li"));
-    let index = breadcrumbItems.findIndex((item) => item.textContent === actualRoute);
+    async fetchAndInject(route) {
+        const baseUrl = getBaseUrl();
+        const url = `${baseUrl}html/${route}.html`;
+        const container = document.getElementById("index");
 
-    if (index === -1) {
-        let li = document.createElement("li");
-        let a = document.createElement("a");
-        a.innerText = actualRoute;
-        li.appendChild(a);
-        breadCrumb.appendChild(li);
-    } else {
-        for (let i = breadcrumbItems.length - 1; i > index; i--) {
-            breadCrumb.removeChild(breadcrumbItems[i]);
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            const html = await response.text();
+            container.innerHTML = html;
+            this.injectJs(route);
+        } catch (error) {
+            console.error('Error fetching page:', error);
+            container.innerHTML = '<p>Error loading page content.</p>';
+        }
+    }
+
+    injectJs(route) {
+        const script = document.createElement("script");
+        script.src = `${getBaseUrl()}js/${route}.js`;
+        script.async = true;
+        document.body.appendChild(script);
+    }
+
+    updateUrl(route) {
+        history.pushState({ page: route }, "", route);
+    }
+
+    updateBreadcrumbs(actualRoute) {
+        const breadCrumb = document.getElementById("breadcrumbs");
+        const breadcrumbItems = Array.from(breadCrumb.querySelectorAll("li"));
+        const index = breadcrumbItems.findIndex((item) => item.textContent === actualRoute);
+
+        if (index === -1) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.textContent = actualRoute;
+            li.appendChild(a);
+            breadCrumb.appendChild(li);
+        } else {
+            breadcrumbItems.slice(index + 1).forEach(item => item.remove());
+        }
+    }
+
+    handlePopState(event) {
+        if (event.state) {
+            this.navigateTo(event.state.page).then(r => console.log('State restored:', event.state));
+        }
+    }
+
+    deployMenu() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    handleWindowClick(event) {
+        if (!event.target.matches('.hamburger-button')) {
+            const dropdowns = document.getElementsByClassName("dropdown-content");
+            Array.from(dropdowns).forEach(dropdown => {
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            });
         }
     }
 }
 
-document.querySelector('.hamburger-button').addEventListener('click', deployMenu);
+const router = new Router();
 
-function deployMenu() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+router.addRoute(ROUTES.HOME, () => router.fetchAndInject(ROUTES.HOME));
+router.addRoute(ROUTES.LOGIN_REGISTER, () => router.fetchAndInject(ROUTES.LOGIN_REGISTER));
 
-window.onclick = function(event) {
-    if (!event.target.matches('.hamburger-button')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
-        let i;
-        for (i = 0; i < dropdowns.length; i++) {
-            let openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
