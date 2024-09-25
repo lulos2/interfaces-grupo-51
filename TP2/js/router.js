@@ -34,6 +34,7 @@ class Router {
             await handler();
             this.updateUrl(route);
             this.updateBreadcrumbs(route);
+            initializeHome();
         } else {
             console.error(`No handler found for route: ${route}`);
         }
