@@ -1,5 +1,5 @@
 
-const baseImageGamePath = window.location.href.includes("localhost") ? "/TP2/media/images/games/" : "../TP2/media/images/games/";
+const baseImageGamePath =  "/TP2/media/images/games/" ;
 
 function loadImage(img) {
     let fileName = img.src.split("/").pop();
