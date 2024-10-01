@@ -1,0 +1,34 @@
+footer{
+    background: linear-gradient(to top, #6716D2, #000000); /* Cambia los colores según tu preferencia */
+    color: #FFFFFF;
+    display: block;
+    text-align: center;
+    justify-content:end;
+    align-items: center;
+    padding: 60px;
+    height: 300px;
+    font-size: small;
+}
+
+h1{
+    color: #FFC300;
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+
+li{
+    list-style-type: none;
+}
+
+.cont-foot{
+    width: 300px;
+    height: 50%;
+    display: block;
+}
+
+.separador-foot{
+    display: flex;
+    justify-content: space-between;
+
+}
+
