@@ -19,6 +19,7 @@
 
 .carousel-card-container{
     width: 1400px;
+    padding: 15px;
     overflow: hidden;
 }
 

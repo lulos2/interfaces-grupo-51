@@ -107,13 +107,14 @@ input {
     border: solid 1px ;
 }
 
+/*esta demás?????*/
 .addCart {
     background-color: transparent;
     size: 40px;
     justify-content:center;
     vertical-align: middle;
 }
-
+/*y este*/
 .addCart i {
     size: 40px;
     color: var(--white);
