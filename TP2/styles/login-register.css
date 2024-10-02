@@ -1,10 +1,6 @@
 .login-register {
     background-color: var(--black);
-    background-image:url("../media/icons/logo.svg");
-    background-repeat: no-repeat;
     background-position: center;
-    background-size:900px;
-    height: 900px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -12,8 +8,18 @@
     padding: 20px;
 }
 
-.login-register img {
+.backgroundImage {
+    display: flex;
+    background-size: 900px;
+    height: 900px;
+    width: 900px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../media/icons/MPKLogo.webp);
+    border-radius: 50px;
     z-index: 2;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .d-flex{
