@@ -5,25 +5,16 @@ const ROUTES = {
     GAME: 'gamePage.html'
 };
 
+// Configuración del carrusel
+const CARD_WIDTH = 240;
+const SCROLL_AMOUNT = 400;
+const VIEWPORT_WIDTH = 1400;
+
 // Función de navegación
 function navigateTo(route) {
     window.location.href = route;
 }
 
-// Función de inicialización
-function init() {
-    // Configurar event listeners
-    document.getElementById("logo")?.addEventListener("click", () => navigateTo(ROUTES.HOME));
-    document.getElementById("loginButton")?.addEventListener("click", () => navigateTo(ROUTES.LOGIN_REGISTER));
-    document.querySelector('.hamburger-button')?.addEventListener('click', deployMenu);
-    document.querySelectorAll(".card").forEach((e)=>{e.addEventListener("click",()=>{navigateTo(ROUTES.GAME)})})
-    document.querySelectorAll(".gallery-card").forEach((e)=>{e.addEventListener("click",()=>{navigateTo(ROUTES.GAME)})})
-    window.addEventListener('click', handleWindowClick);
-
-
-    // Actualizar migas de pan basado en la ruta actual
-    updateBreadcrumbs(getCurrentRoute());
-}
 
 // Obtener la ruta actual
 function getCurrentRoute() {
@@ -67,48 +58,73 @@ function handleWindowClick(event) {
     }
 }
 
-document.querySelector(".arrow-left").addEventListener('click', (e) => {
-    let carousel = e.target.parentElement.nextElementSibling.firstElementChild.nextElementSibling;
-    let minX = 0;
-    let maxX = (carousel.querySelectorAll(".card").length * 400) - 1400;
 
-    if (!carousel.dataset.scroll) {
-        carousel.dataset.scroll = 0;
-    }
+// Función para manejar el desplazamiento del carrusel
+function handleCarouselScroll(direction) {
+    return (e) => {
+        const arrow = e.currentTarget;
+        const carouselWrapper = direction === 'left'
+            ? arrow.nextElementSibling
+            : arrow.previousElementSibling;
 
-    let currentScroll = Number(carousel.dataset.scroll);
-    if (isNaN(currentScroll)) {
-        currentScroll = 0;
-    }
+        if (!carouselWrapper) return;
 
-    let newScrollValue = Math.max(currentScroll - 400, minX);
-    carousel.style.transition = `1s ease`;
-    carousel.style.transform = `translateX(-${newScrollValue}px)`;
-    carousel.dataset.scroll = newScrollValue;
-});
+        const carousel = carouselWrapper.querySelector('.carousel');
+        if (!carousel) return;
 
-document.querySelector(".arrow-right").addEventListener('click', (e) => {
-    let carousel = e.target.parentElement.previousElementSibling.firstElementChild.nextElementSibling;
-    let minX = 0;
-    let maxX = (carousel.querySelectorAll(".card").length )* 220 - 1400;//limite de scroll 220 es el ancho de la card
+        const cards = carousel.querySelectorAll(".card");
+        const maxScroll = Math.max(0, cards.length * CARD_WIDTH - VIEWPORT_WIDTH);
 
-    if (!carousel.dataset.scroll) {
-        carousel.dataset.scroll = 0;
-    }
+        // Inicializar o recuperar el valor de desplazamiento actual
+        let currentScroll = Number(carousel.dataset.scroll || 0);
+        if (isNaN(currentScroll)) currentScroll = 0;
 
-    let currentScroll = Number(carousel.dataset.scroll);
-    if (isNaN(currentScroll)) {
-        currentScroll = 0;
-    }
+        // Calcular el nuevo valor de desplazamiento
+        let newScrollValue = direction === 'left'
+            ? Math.max(currentScroll - SCROLL_AMOUNT, 0)
+            : Math.min(currentScroll + SCROLL_AMOUNT, maxScroll);
 
-    let newScrollValue = Math.min(currentScroll + 400, maxX);
-    carousel.style.transition = `1s ease`;
-    carousel.style.transform = `translateX(-${newScrollValue}px)`;
-    carousel.dataset.scroll = newScrollValue;
+        // Aplicar el desplazamiento
+        carousel.style.transition = `1s ease`;
+        carousel.style.transform = `translateX(-${newScrollValue}px)`;
+        carousel.dataset.scroll = newScrollValue;
 
-    console.log(carousel.dataset.scroll);
-    console.log(maxX);
-});
+        // Actualizar visibilidad de las flechas
+        updateArrowVisibility(carousel, newScrollValue, maxScroll);
+    };
+}
 
-// Ejecutar init cuando el DOM esté completamente cargado
+// Función para actualizar la visibilidad de las flechas
+function updateArrowVisibility(carousel, currentScroll, maxScroll) {
+    const container = carousel.closest('.carousel-container');
+    if (!container) return;
+
+    const leftArrow = container.querySelector('.arrow-left');
+    const rightArrow = container.querySelector('.arrow-right');
+
+    if (leftArrow) leftArrow.style.visibility = currentScroll > 0 ? 'visible' : 'hidden';
+    if (rightArrow) rightArrow.style.visibility = currentScroll < maxScroll ? 'visible' : 'hidden';
+}
+
+// Configurar los controladores para todas las flechas
+function setupCarouselControls() {
+    document.querySelectorAll(".arrow-left").forEach(arrow => {
+        arrow.addEventListener('click', handleCarouselScroll('left'));
+    });
+
+    document.querySelectorAll(".arrow-right").forEach(arrow => {
+        arrow.addEventListener('click', handleCarouselScroll('right'));
+    });
+}
+
+
+function init() {
+    document.getElementById("logo")?.addEventListener("click", () => navigateTo(ROUTES.HOME));
+    document.getElementById("loginButton")?.addEventListener("click", () => navigateTo(ROUTES.LOGIN_REGISTER));
+    document.querySelector('.hamburger-button')?.addEventListener('click', deployMenu);
+    document.querySelectorAll(".card").forEach((e)=>{e.addEventListener("click",()=>{navigateTo(ROUTES.GAME)})})
+    window.addEventListener('click', handleWindowClick);
+    updateBreadcrumbs(getCurrentRoute());
+}
+document.addEventListener('DOMContentLoaded', setupCarouselControls);
 document.addEventListener('DOMContentLoaded', init);
