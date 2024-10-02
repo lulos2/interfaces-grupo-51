@@ -6,7 +6,9 @@ const ROUTES = {
 };
 
 // Configuración del carrusel
-const CARD_WIDTH = 240;
+const CARD_MARGIN = 20;
+const CARD_WIDTH = 200 + CARD_MARGIN;
+const SUPER_CARD_WIDTH = 350 + CARD_MARGIN;
 const SCROLL_AMOUNT = 400;
 const VIEWPORT_WIDTH = 1400;
 
@@ -14,7 +16,6 @@ const VIEWPORT_WIDTH = 1400;
 function navigateTo(route) {
     window.location.href = route;
 }
-
 
 // Obtener la ruta actual
 function getCurrentRoute() {
@@ -118,6 +119,64 @@ function setupCarouselControls() {
 }
 
 
+
+function handleSuperCarouselScroll(direction) {
+    return (e) => {
+        const arrow = e.currentTarget;
+        const carouselWrapper = direction === 'left'
+            ? arrow.nextElementSibling
+            : arrow.previousElementSibling;
+
+        if (!carouselWrapper) return;
+
+        const carousel = carouselWrapper.querySelector('.super-carousel');
+        if (!carousel) return;
+
+        const cards = carousel.querySelectorAll(".super-card");
+        const maxScroll = Math.max(0, cards.length * SUPER_CARD_WIDTH - VIEWPORT_WIDTH);
+
+        // Inicializar o recuperar el valor de desplazamiento actual
+        let currentScroll = Number(carousel.dataset.scroll || 0);
+        if (isNaN(currentScroll)) currentScroll = 0;
+
+        // Calcular el nuevo valor de desplazamiento
+        let newScrollValue = direction === 'left'
+            ? Math.max(currentScroll - SCROLL_AMOUNT, 0)
+            : Math.min(currentScroll + SCROLL_AMOUNT, maxScroll);
+
+        // Aplicar el desplazamiento
+        carousel.style.transition = `1s ease`;
+        carousel.style.transform = `translateX(-${newScrollValue}px)`;
+        carousel.dataset.scroll = newScrollValue;
+
+        // Actualizar visibilidad de las flechas
+        updateSuperArrowVisibility(carousel, newScrollValue, maxScroll);
+    };
+}
+
+// Función para actualizar la visibilidad de las flechas
+function updateSuperArrowVisibility(carousel, currentScroll, maxScroll) {
+    const container = carousel.closest('.super-carousel-container');
+    if (!container) return;
+
+    const leftArrow = container.querySelector('.arrow-left');
+    const rightArrow = container.querySelector('.arrow-right');
+
+    if (leftArrow) leftArrow.style.visibility = currentScroll > 0 ? 'visible' : 'hidden';
+    if (rightArrow) rightArrow.style.visibility = currentScroll < maxScroll ? 'visible' : 'hidden';
+}
+
+// Configurar los controladores para todas las flechas
+function setupSuperCarouselControls() {
+    document.querySelectorAll(".arrow-left").forEach(arrow => {
+        arrow.addEventListener('click', handleSuperCarouselScroll('left'));
+    });
+
+    document.querySelectorAll(".arrow-right").forEach(arrow => {
+        arrow.addEventListener('click', handleSuperCarouselScroll('right'));
+    });
+}
+
 function init() {
     document.getElementById("logo")?.addEventListener("click", () => navigateTo(ROUTES.HOME));
     document.getElementById("loginButton")?.addEventListener("click", () => navigateTo(ROUTES.LOGIN_REGISTER));
@@ -127,4 +186,5 @@ function init() {
     updateBreadcrumbs(getCurrentRoute());
 }
 document.addEventListener('DOMContentLoaded', setupCarouselControls);
+document.addEventListener('DOMContentLoaded', setupSuperCarouselControls);
 document.addEventListener('DOMContentLoaded', init);

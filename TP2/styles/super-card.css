@@ -1,7 +1,7 @@
 
-.card {
-    max-width: 200px;
-    height: 300px;
+.super-card {
+    max-width: 350px;
+    height: 350px;
     flex: 0 0 70%;
     margin: 10px;
     scroll-snap-align: start;
@@ -13,7 +13,7 @@
     overflow: hidden;
 }
 
-.card img {
+.super-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -23,11 +23,11 @@
     transition: transform 0.5s ease;
 }
 
-.card:hover img {
+.super-card:hover img {
     transform: scale(1.1);
 }
 
-.card-details {
+.super-card-details {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -41,12 +41,12 @@
     align-items: center;
 }
 
-.card h3 {
+.super-card h3 {
     padding-bottom: 40px;
     margin: 0;
 }
 
-.card-price {
+.super-card-price {
     padding-right: 200px;
     display: inline;
     font-weight: bold;
@@ -67,7 +67,7 @@
 
 @media (max-width: 800px) {
 
-    .card {
+    .super-card {
         max-width: 400px;
         height: 400px;
         flex: 0 0 70%;
@@ -80,24 +80,24 @@
         border-radius: 3%;
     }
 
-    .card .button-secondary{
+    .super-card .button-secondary{
         width: 100%;
         margin-bottom: 24px;
     }
 
-    .card-details{
+    .super-card-details{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
 
-    .card-price{
+    .super-card-price{
         display: flex;
         padding-right: 0;
         align-items: center;
     }
 
-    .carousel-card-container{
+    .super-carousel-card-container{
         overflow: hidden;
         height: 650px;
     }

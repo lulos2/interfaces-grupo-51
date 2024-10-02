@@ -1,69 +1,16 @@
-.carousel-container {
+.super-carousel-container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     background: var(--secondaryColorDark75);
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.carousel-container h3 {
-    color: var(--highLight);
-    left: 50px;
-    margin: 0;
-    position: absolute;
-    z-index: 3;
-}
-
-.carousel-card-container{
-    width: 1400px;
-    overflow: hidden;
-}
-
-.arrow-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-    width: 50px;
-    text-align: center;
-}
-.arrow-left :hover {
-    background: var(--secondaryColorDark75);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-    width: 50px;
-    text-align: center;
-    border-radius: 4px;
-}
-
-.arrow-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-    width: 50px;
-    text-align: center;
-    margin-left: 10px;
-}
-
-.arrow-right :hover {
-    background: var(--secondaryColorDark75);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-    width: 50px;
-    text-align: center;
-    border-radius: 4px;
-}
-
-.carousel {
-    height: 380px;
+.super-carousel {
+    height: 400px;
     display: flex;
     overflow-x: visible;
     width: 100%;
@@ -71,6 +18,61 @@
     align-items: center;
 }
 
-.carousel::-webkit-scrollbar{
+.super-carousel::-webkit-scrollbar{
     display: none;
 }
+
+.super-carousel-container h3 {
+    color: var(--highLight);
+    left: 50px;
+    margin: 0;
+    position: absolute;
+    z-index: 3;
+}
+
+.super-carousel-card-container{
+    width: 1400px;
+    overflow: hidden;
+}
+
+.super-carousel-container .arrow-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 50px;
+    text-align: center;
+}
+
+.super-carousel-container .arrow-left :hover {
+    background: var(--secondaryColorDark75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 50px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.super-carousel-container .arrow-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 50px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.super-carousel-container .arrow-right :hover {
+    background: var(--secondaryColorDark75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 50px;
+    text-align: center;
+    border-radius: 4px;
+}
+
