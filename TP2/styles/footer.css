@@ -1,0 +1,49 @@
+footer{
+    background: linear-gradient(to top, var(--primaryColorLight2), var(--black)); 
+    color: var(--white);
+    display: block;
+    text-align: center;
+    justify-content:end;
+    align-items: center;
+    padding: 60px;
+    height: 450px;
+    font-size: small;
+}
+
+footer h1{
+    color: var(--highLight);
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+
+.incorporations img{
+    width:125px;
+    border-radius: 5px;
+}
+
+.selected img{
+    width:150px;
+    border-radius: 5px;
+}
+
+footer img{
+    padding-right: 5px;
+}
+
+li{
+    list-style-type: none;
+    padding-bottom: 8px;
+}
+
+.cont-foot{
+    width: 25%;
+    height: 50%;
+    display: block;
+}
+
+.separador-foot{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
