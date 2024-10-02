@@ -17,7 +17,7 @@
     --secondaryColorLight1: #524B4B;
     --secondaryColor: #3F3C3C;
     --secondaryColorDark1: #252525;
-    --secondaryColorDark2: #252525;
+    --secondaryColorDark2: #1B1B1B;
     --secondaryColorDark75: rgba(37, 37, 37, 0.75);
     --black:#100B16;
     --white:#F8F3FF;
@@ -93,8 +93,8 @@ input {
     width: 157px;
     height: 41px;
     border-radius: 100px;
-    background-color: transparent;
-    border: var(--primaryColor) 1px ;
+    background-color: var(--secondaryColorDark1);
+    border: 1px solid var(--primaryColor);
     color: var(--white);
     text-align: center;
     font-family: 'Nunito', sans-serif;
@@ -105,8 +105,7 @@ input {
 }
 
 .button-secondary:hover {
-    border: var(--white);
-    border: solid 1px ;
+    background-color: var(--secondaryColorDark2);
 }
 
 /*esta demás?????*/
