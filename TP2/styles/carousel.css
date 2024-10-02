@@ -29,6 +29,7 @@
     height: 300px;
     width: 50px;
     text-align: center;
+    margin-right: 10px;
 }
 .arrow-left :hover {
     background: var(--secondaryColorDark75);
