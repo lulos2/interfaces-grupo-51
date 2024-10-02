@@ -1,380 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>MPK juegos</title>
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://kit.fontawesome.com/320dc3e6ca.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo-container">
-        <div class="dropdown">
-          <button class="hamburger-button">&#9776;</button>
-          <div id="myDropdown" class="dropdown-content">
-            <div class="menu-options-section">
-              <div class="option">
-                <img src="media/icons/menu_icon_1.svg" alt="">
-                <p class="h3-baloo">Reciente</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MPK juegos</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/320dc3e6ca.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo-container">
+          <div class="dropdown">
+            <button class="hamburger-button">&#9776;</button>
+            <div id="myDropdown" class="dropdown-content">
+              <div class="menu-options-section">
+                <div class="option">
+                  <img src="media/icons/menu_icon_1.svg" alt="" />
+                  <p class="h3-baloo">Reciente</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_2.svg" alt="" />
+                  <p class="h3-baloo">Nuevo</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_3.svg" alt="" />
+                  <p class="h3-baloo">Tendencia</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_4.svg" alt="" />
+                  <p class="h3-baloo">Gratis</p>
+                </div>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_2.svg" alt="">
-                <p class="h3-baloo">Nuevo</p>
-              </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_3.svg" alt="">
-                <p class="h3-baloo">Tendencia</p>
-              </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_4.svg" alt="">
-                <p class="h3-baloo">Gratis</p>
+              <!----------- Categorias ----------->
+              <div class="menu-options-section">
+                <div class="option">
+                  <img src="media/icons/menu_icon_5.svg" alt="" />
+                  <p class="h3-baloo">Básquet</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_6.svg" alt="" />
+                  <p class="h3-baloo">Aventura</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_7.svg" alt="" />
+                  <p class="h3-baloo">Disparos</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_8.svg" alt="" />
+                  <p class="h3-baloo">Acción</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_9.svg" alt="" />
+                  <p class="h3-baloo">Carreras</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_10.svg" alt="" />
+                  <p class="h3-baloo">Cocina</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_5.svg" alt="" />
+                  <p class="h3-baloo">Basketball</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_8.svg" alt="" />
+                  <p class="h3-baloo">Acción</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_6.svg" alt="" />
+                  <p class="h3-baloo">Aventura</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_7.svg" alt="" />
+                  <p class="h3-baloo">Carrera</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_8.svg" alt="" />
+                  <p class="h3-baloo">Cocina</p>
+                </div>
+                <div class="option">
+                  <img src="media/icons/menu_icon_9.svg" alt="" />
+                  <p class="h3-baloo">Disparos</p>
+                </div>
               </div>
             </div>
-            <!----------- Categorias ----------->
-            <div class="menu-options-section">
-              <div class="option">
-                <img src="media/icons/menu_icon_5.svg" alt="">
-                <p class="h3-baloo">Básquet</p>
+          </div>
+          <div id="logo" class="navbar-logo">
+            <img src="media/icons/MPKLogo.webp" alt="" />
+          </div>
+        </div>
+
+        <div class="navbar-search">
+          <input type="text" placeholder="Buscar..." />
+          <img
+            src="media/icons/search.svg"
+            class="search-button"
+            alt="search"
+          />
+        </div>
+        <div class="navbar-icons">
+          <button
+            id="loginButton"
+            class="profile-button"
+            onclick="navigateTo(ROUTES.LOGIN_REGISTER)"
+          >
+            <i class="fa-regular fa-user" style="color: #f5ecfe"></i>
+          </button>
+        </div>
+      </nav>
+      <ul id="breadcrumbs"></ul>
+    </header>
+    <!------------------- carousel ------------------------------------>
+    <main>
+      <div class="carousel-container">
+        <div class="arrow-left">
+          <i class="fa-solid fa-chevron-left fa-2x"></i>
+        </div>
+        <div class="carousel-card-container">
+          <h3>Destacados</h3>
+          <div class="carousel" data-scroll="0">
+            <div class="card">
+              <img src="media/images/games/assesinCreed.jpg" alt="Producto 1" />
+              <div class="card-details">
+                <button class="button-secondary">Assassin's Creed</button>
+                <div class="card-price">$12.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_6.svg" alt="">
-                <p class="h3-baloo">Aventura</p>
+            </div>
+            <div class="card">
+              <img src="media/images/games/battlefield1.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Battlefield</button>
+                <div class="card-price">$4.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_7.svg" alt="">
-                <p class="h3-baloo">Disparos</p>
+            </div>
+            <div class="card">
+              <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Bloodborne</button>
+                <div class="card-price">$2.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_8.svg" alt="">
-                <p class="h3-baloo">Acción</p>
+            </div>
+            <div class="card">
+              <img
+                src="media/images/games/callofdutyMW3.jpg"
+                alt="Producto 2"
+              />
+              <div class="card-details">
+                <button class="button-secondary">Call of Duty MW3</button>
+                <div class="card-price">$3.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_9.svg" alt="">
-                <p class="h3-baloo">Carreras</p>
+            </div>
+            <div class="card">
+              <img src="media/images/games/crash.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Crash</button>
+                <div class="card-price">$26.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_10.svg" alt="">
-                <p class="h3-baloo">Cocina</p>
+            </div>
+            <div class="card">
+              <img src="media/images/games/assesinCreed.jpg" alt="Producto 1" />
+              <div class="card-details">
+                <button class="button-secondary">Assassin's Creed</button>
+                <div class="card-price">$12.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_5.svg" alt="">
-                <p class="h3-baloo">Basketball</p>
+            </div>
+            <div class="card">
+              <img src="media/images/games/battlefield1.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Battlefield</button>
+                <div class="card-price">$4.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_8.svg" alt="">
-                <p class="h3-baloo">Acción</p>
+            </div>
+            <div class="card">
+              <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Bloodborne</button>
+                <div class="card-price">$2.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_6.svg" alt="">
-                <p class="h3-baloo">Aventura</p>
+            </div>
+            <div class="card">
+              <img
+                src="media/images/games/callofdutyMW3.jpg"
+                alt="Producto 2"
+              />
+              <div class="card-details">
+                <button class="button-secondary">Call of Duty MW3</button>
+                <div class="card-price">$3.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_7.svg" alt="">
-                <p class="h3-baloo">Carrera</p>
+            </div>
+            <div class="card">
+              <img src="media/images/games/crash.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Crash</button>
+                <div class="card-price">$26.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_8.svg" alt="">
-                <p class="h3-baloo">Cocina</p>
-              </div>
-              <div class="option">
-                <img src="media/icons/menu_icon_9.svg" alt="">
-                <p class="h3-baloo">Disparos</p>
+            </div>
+            <div class="card">
+              <img src="media/images/games/dota.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Dota</button>
+                <div class="card-price">Free</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <div id="logo" class="navbar-logo">
-          <img src="media/icons/MPKLogo.webp" alt="">
+        <div class="arrow-right">
+          <i class="fa-solid fa-chevron-right fa-2x" style="color: #ebe1fe"></i>
+        </div>
+      </div>
+      <!----------------------------------------------------------------->
+      <div class="carousel-container">
+        <div class="arrow-left">
+          <i class="fa-solid fa-chevron-left fa-2x"></i>
+        </div>
+        <div class="carousel-card-container">
+          <h3>Destacados</h3>
+          <div class="carousel" data-scroll="0">
+            <div class="card">
+              <img src="media/images/games/battlefield1.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Battlefield</button>
+                <div class="card-price">$4.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/assesinCreed.jpg" alt="Producto 1" />
+              <div class="card-details">
+                <button class="button-secondary">Assassin's Creed</button>
+                <div class="card-price">$12.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="media/images/games/callofdutyMW3.jpg"
+                alt="Producto 2"
+              />
+              <div class="card-details">
+                <button class="button-secondary">Call of Duty MW3</button>
+                <div class="card-price">$3.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Bloodborne</button>
+                <div class="card-price">$2.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/crash.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Crash</button>
+                <div class="card-price">$26.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/dota.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Dota</button>
+                <div class="card-price">Free</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Bloodborne</button>
+                <div class="card-price">$2.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="media/images/games/callofdutyMW3.jpg"
+                alt="Producto 2"
+              />
+              <div class="card-details">
+                <button class="button-secondary">Call of Duty MW3</button>
+                <div class="card-price">$3.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="arrow-right">
+          <i class="fa-solid fa-chevron-right fa-2x" style="color: #ebe1fe"></i>
+        </div>
+      </div>
+      <!----------------------------------------------------------------->
+      <div class="carousel-container">
+        <div class="arrow-left">
+          <i class="fa-solid fa-chevron-left fa-2x"></i>
+        </div>
+        <div class="carousel-card-container">
+          <h3>Destacados</h3>
+          <div class="carousel" data-scroll="0">
+            <div class="card">
+              <img src="media/images/games/battlefield1.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Battlefield</button>
+                <div class="card-price">$4.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/assesinCreed.jpg" alt="Producto 1" />
+              <div class="card-details">
+                <button class="button-secondary">Assassin's Creed</button>
+                <div class="card-price">$12.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/crash.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Crash</button>
+                <div class="card-price">$26.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="media/images/games/callofdutyMW3.jpg"
+                alt="Producto 2"
+              />
+              <div class="card-details">
+                <button class="button-secondary">Call of Duty MW3</button>
+                <div class="card-price">$3.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Bloodborne</button>
+                <div class="card-price">$2.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/dota.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Dota</button>
+                <div class="card-price">Free</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/battlefield1.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Battlefield</button>
+                <div class="card-price">$4.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/assesinCreed.jpg" alt="Producto 1" />
+              <div class="card-details">
+                <button class="button-secondary">Assassin's Creed</button>
+                <div class="card-price">$12.99</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="media/images/games/dota.jpg" alt="Producto 2" />
+              <div class="card-details">
+                <button class="button-secondary">Dota</button>
+                <div class="card-price">Free</div>
+                <button class="addCart">
+                  <i class="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="arrow-right">
+          <i class="fa-solid fa-chevron-right fa-2x" style="color: #ebe1fe"></i>
+        </div>
+      </div>
+    </main>
+    <!------------------------------------------------------->
+    <footer>
+      <div class="separador-foot">
+        <div class="cont-foot">
+          <ul class="selected">
+            <li><h1>On fire</h1></li>
+            <li>
+              <img src="media/images/games/assesinCreed.jpg" />
+            </li>
+          </ul>
+        </div>
+        
+        <div class="cont-foot">
+          <ul>
+            <li><h1>Ayuda y soporte</h1></li>
+            <li>Envíanos un comentario</li>
+            <li>Sobre Copyright</li>
+            <li>Preguntas frecuentes</li>
+            <li>Guías y tutoriales</li>
+            <li>Foros de la comunidad</li>
+            <li>Soporte técnico</li>
+          </ul>
+        </div>
+
+        <div class="cont-foot">
+          <ul>
+            <li><h1>Compartir</h1></li>
+            <li>Invita a un amigo</li>
+            <li>Tarjetas MPK</li>
+            <li>Copiar enlace</li>
+            <li>Comparte y gana puntos extra</li>
+            <li>Desafía a tus amigos</li>
+          </ul>
+        </div>
+
+        <div class="cont-foot">
+          <ul>
+            <li><h1>Contactos</h1></li>
+            <li>clients@mpkjuegos.com</li>
+            <li>+54 9 2255524391</li>
+            <li>Av. Mari Piper 1322</li>
+            <li>Tandil, Argentina</li>
+          </ul>
         </div>
       </div>
 
-      <div class="navbar-search">
-        <input type="text" placeholder="Buscar...">
-        <img src="media/icons/search.svg" class="search-button" alt="search"/>
-      </div>
-      <div class="navbar-icons">
-        <button id="loginButton" class="profile-button" onclick="navigateTo(ROUTES.LOGIN_REGISTER)"><i class="fa-regular fa-user" style="color: #f5ecfe;"></i></button>
-      </div>
-    </nav>
-    <ul id="breadcrumbs">
-    </ul>
-  </header>
-  <!------------------- carousel ------------------------------------>
-  <main>
-    <div class="carousel-container">
-      <div class="arrow-left">
-        <i class="fa-solid fa-chevron-left fa-2x" ></i>
-      </div>
-      <div class="carousel-card-container">
-        <h3>Destacados</h3>
-        <div class="carousel" data-scroll="0">
-          <div class="card">
-            <img src="media/images/games/assesinCreed.jpg" alt="Producto 1">
-            <div class="card-details">
-              <button class="button-secondary">Assassin's Creed</button>
-              <div class="card-price">$12.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/battlefield1.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Battlefield</button>
-              <div class="card-price">$4.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/bloodborne.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Bloodborne</button>
-              <div class="card-price">$2.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/callofdutyMW3.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Call of Duty MW3</button>
-              <div class="card-price">$3.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/crash.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Crash</button>
-              <div class="card-price">$26.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/assesinCreed.jpg" alt="Producto 1">
-            <div class="card-details">
-              <button class="button-secondary">Assassin's Creed</button>
-              <div class="card-price">$12.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/battlefield1.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Battlefield</button>
-              <div class="card-price">$4.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/bloodborne.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Bloodborne</button>
-              <div class="card-price">$2.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/callofdutyMW3.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Call of Duty MW3</button>
-              <div class="card-price">$3.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/crash.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Crash</button>
-              <div class="card-price">$26.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/dota.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Dota</button>
-              <div class="card-price">Free</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
+      <div class="separador-foot">
+        <div class="cont-foot">
+          <ul>
+            <li><h1>Sobre nosotros</h1></li>
+            <li>¿Quiénes somos?</li>
+            <li>¿Qué hacemos?</li>
+            <li>Nuestra historia</li>
+            <li>Noticias</li>
+            <li>Proyectos destacados</li>
+          </ul>
         </div>
-      </div>
-      <div class="arrow-right">
-        <i class="fa-solid fa-chevron-right fa-2x" style="color: #ebe1fe;"></i>
-      </div>
-    </div>
-    <!----------------------------------------------------------------->
-    <div class="carousel-container">
-      <div class="arrow-left">
-        <i class="fa-solid fa-chevron-left fa-2x" ></i>
-      </div>
-      <div class="carousel-card-container">
-        <h3>Destacados</h3>
-        <div class="carousel" data-scroll="0">
-          <div class="card">
-            <img src="media/images/games/battlefield1.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Battlefield</button>
-              <div class="card-price">$4.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/assesinCreed.jpg" alt="Producto 1">
-            <div class="card-details">
-              <button class="button-secondary">Assassin's Creed</button>
-              <div class="card-price">$12.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/callofdutyMW3.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Call of Duty MW3</button>
-              <div class="card-price">$3.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/bloodborne.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Bloodborne</button>
-              <div class="card-price">$2.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/crash.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Crash</button>
-              <div class="card-price">$26.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/dota.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Dota</button>
-              <div class="card-price">Free</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/bloodborne.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Bloodborne</button>
-              <div class="card-price">$2.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/callofdutyMW3.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Call of Duty MW3</button>
-              <div class="card-price">$3.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="arrow-right">
-        <i class="fa-solid fa-chevron-right fa-2x" style="color: #ebe1fe;"></i>
-      </div>
-    </div>
-    <!----------------------------------------------------------------->
-    <div class="carousel-container">
-      <div class="arrow-left">
-        <i class="fa-solid fa-chevron-left fa-2x" ></i>
-      </div>
-      <div class="carousel-card-container">
-        <h3>Destacados</h3>
-        <div class="carousel" data-scroll="0">
-          <div class="card">
-            <img src="media/images/games/battlefield1.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Battlefield</button>
-              <div class="card-price">$4.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/assesinCreed.jpg" alt="Producto 1">
-            <div class="card-details">
-              <button class="button-secondary">Assassin's Creed</button>
-              <div class="card-price">$12.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/crash.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Crash</button>
-              <div class="card-price">$26.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/callofdutyMW3.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Call of Duty MW3</button>
-              <div class="card-price">$3.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/bloodborne.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Bloodborne</button>
-              <div class="card-price">$2.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/dota.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Dota</button>
-              <div class="card-price">Free</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/battlefield1.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Battlefield</button>
-              <div class="card-price">$4.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/assesinCreed.jpg" alt="Producto 1">
-            <div class="card-details">
-              <button class="button-secondary">Assassin's Creed</button>
-              <div class="card-price">$12.99</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="media/images/games/dota.jpg" alt="Producto 2">
-            <div class="card-details">
-              <button class="button-secondary">Dota</button>
-              <div class="card-price">Free</div>
-              <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="arrow-right">
-        <i class="fa-solid fa-chevron-right fa-2x" style="color: #ebe1fe;"></i>
-      </div>
-    </div>
-  </main>
-  <!------------------------------------------------------->
-  <footer>
 
-  </footer>
-  <script src="js/main.js"></script>
-  <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
-</body>
+        <div class="cont-foot">
+          <ul>
+            <li><h1>Usuario</h1></li>
+            <li>Mi cuenta</li>
+            <li>Políticas de privacidad</li>
+            <li>Términos de uso</li>
+            <li>Otras políticas</li>
+            <li>Directrices de la marca</li>
+          </ul>
+        </div>
+
+        <div class="cont-foot">
+          <ul>
+            <li><h1>Seguinos</h1></li>
+            <li>
+              <img src="media/icons/Facebook.png" />
+              <img src="media/icons/X.png" />
+            </li>
+
+            <li>
+              <img src="media/icons/Youtube.png" />
+              <img src="media/icons/Instagram.png" />
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="cont-foot">
+          <ul class="incorporations">
+            <li><h1>Proximamente</h1></li>
+            <li>
+              <img src="media/images/games/blackmithwukong.png" />
+            </li>
+            <li>
+              <img src="media/images/games/manorlords.jpg" />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+  </body>
 </html>
