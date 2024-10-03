@@ -99,3 +99,24 @@ body {
     margin: 10px;
     width: 100%;
 }
+
+.coment-time {
+    align-items: start;
+    padding-bottom: 30px;
+}
+
+.coment-time h5 {
+    color: var(--secondaryColorLight1)
+}
+
+.coment-buttons {
+    display: flex;
+    padding-right: 20px;
+}
+
+.coment-buttons button{
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
