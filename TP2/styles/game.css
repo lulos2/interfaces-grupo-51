@@ -1,0 +1,62 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../media/icons/MPKLogo.webp);
+}
+
+.game-title h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--highLight);
+}
+
+.canvas-conteiner {
+    display: flex;
+    justify-content: center;
+}
+
+.canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primaryColorDark1);
+    width: 700px;
+    height: 600px;  
+}
+
+.canvas-information {
+    height: 450px;
+    margin: 25px;
+}
+
+.variated {
+    background-color: rgba(25, 25, 25, 0.75);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.variated-cont {
+    width: 33%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 30px;
+    margin-top: 20px;
+}
+
+.variated-cont-esp {
+    border-right: 1px solid var(--secondaryColor);
+    border-left: 1px solid var(--secondaryColor);
+}
+
+.description {
+    margin-top: 20px;
+    height: 200px;
+    background-color: rgba(25, 25, 25, 0.75);
+    text-align: left;
+    padding: 40px;
+    border-radius: 10px;
+}

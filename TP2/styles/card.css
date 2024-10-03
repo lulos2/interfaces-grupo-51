@@ -39,6 +39,7 @@
     display: block;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
 }
 
 .card h3 {
@@ -47,10 +48,14 @@
 }
 
 .card-price {
-    padding-right: 200px;
+    padding-right: 0px;
     display: inline;
     font-weight: bold;
     color: var(--white);
+}
+
+.bottom-card-details {
+    display: flex;
 }
 
 .add-to-cart {
