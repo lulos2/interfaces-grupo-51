@@ -20,29 +20,43 @@ body {
     align-items: center;
     background-color: var(--primaryColorDark1);
     width: 700px;
-    height: 600px;
-    margin-bottom: 50px;
+    height: 600px;  
 }
 
 .canvas-information {
-    background-color: rgba(25, 25, 25, 0.75);
     height: 450px;
-    margin-bottom: 50px;
+    margin: 25px;
 }
 
 .variated {
+    background-color: rgba(25, 25, 25, 0.75);
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    margin-right: 40px;
+    border-radius: 10px;
 }
 
 .variated-cont {
     width: 33%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 30px;
+    margin-top: 20px;
+}
+
+.variated-cont-esp {
+    border-right: 1px solid var(--secondaryColor);
+    border-left: 1px solid var(--secondaryColor);
 }
 
 .description {
+    margin-top: 20px;
+    height: 200px;
+    background-color: rgba(25, 25, 25, 0.75);
     text-align: left;
     padding: 40px;
+    border-radius: 10px;
 }
