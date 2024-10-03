@@ -11,16 +11,28 @@
 
 .carousel-container h3 {
     color: var(--highLight);
-    left: 50px;
-    margin: 0;
+    margin-top: 10px;
     position: absolute;
     z-index: 3;
 }
 
 .carousel-card-container{
     width: 1400px;
-    padding: 15px;
     overflow: hidden;
+}
+
+.carousel {
+    margin-top: 5px;
+    height: 380px;
+    display: flex;
+    overflow-x: visible;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.carousel::-webkit-scrollbar{
+    display: none;
 }
 
 .arrow-left {
@@ -62,17 +74,4 @@
     width: 50px;
     text-align: center;
     border-radius: 4px;
-}
-
-.carousel {
-    height: 380px;
-    display: flex;
-    overflow-x: visible;
-    width: 100%;
-    max-width: 1200px;
-    align-items: center;
-}
-
-.carousel::-webkit-scrollbar{
-    display: none;
 }

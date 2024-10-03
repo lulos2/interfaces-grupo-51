@@ -1,3 +1,8 @@
+header {
+    height: 80px;
+    background: transparent;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;

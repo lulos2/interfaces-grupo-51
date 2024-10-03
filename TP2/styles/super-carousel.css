@@ -16,6 +16,8 @@
     width: 100%;
     max-width: 1200px;
     align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .super-carousel::-webkit-scrollbar{
@@ -24,10 +26,9 @@
 
 .super-carousel-container h3 {
     color: var(--highLight);
-    left: 50px;
-    margin: 0;
     position: absolute;
     z-index: 3;
+    margin-top: 10px;
 }
 
 .super-carousel-card-container{
