@@ -102,9 +102,10 @@
 }
 
 .base-register{
+    margin-top: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
 }
 
@@ -125,4 +126,5 @@
 .captcha{
     margin-top: 20px;
     text-align: center;
+    
 }
