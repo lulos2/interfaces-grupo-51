@@ -36,7 +36,7 @@
     padding: 10px;
     background: var(--secondaryColorDark75);
     z-index: 2;
-    display: flex;
+    display: flexbox;
     justify-content: space-between;
     align-items: center;
 }

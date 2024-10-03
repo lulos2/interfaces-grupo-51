@@ -107,27 +107,27 @@
         <div class="backgroundImage">
             <div id="registerForm" class="userForm d-none" >
                 <form class="loginForm" action="post">
-                    <div>
+                    <div class="campo">
                         <p>Nombre</p>
                         <input type="text" placeholder="Nombre">
                     </div>
-                    <div>
+                    <div class="campo">
                         <p>Nombre de Usuario</p>
                         <input type="text" placeholder="Nombre de Usuario">
                     </div>
-                    <div>
+                    <div class="campo">
                         <p>Email</p>
                         <input type="text" placeholder="Email">
                     </div>
-                    <div>
+                    <div class="campo">
                         <p>Edad</p>
                         <input type="text" placeholder="Edad">
                     </div>
-                    <div>
+                    <div class="campo">
                         <p>Contraseña</p>
                         <input type="password" placeholder="Contraseña">
                     </div>
-                    <div>
+                    <div class="campo">
                         <p>Confirmar Contraseña</p>
                         <input type="password" placeholder="Confirmar Contraseña">
                     </div>
@@ -144,11 +144,13 @@
 
                     </div>
                     <div class="login-button-wrapper register-wrapper">
-                        <button id="register" class="button-primary">Registrar</button>
-                        <button id="showLoginForm" class="button-secondary">Iniciar Sesion</button>
-                        <div class="network-login">
-                            <img src="media/icons/google_search_new_logo_icon_159150.svg" alt="">
-                            <img src="media/icons/facebook_logo_icon_color.svg" alt="">
+                        <button id="register" class="button-primary">Registrarse</button>
+                        <div class="base-register">
+                            <button id="showLoginForm" class="button-secondary">Iniciar Sesion</button>
+                            <div class="network-login">
+                                <img src="media/icons/google_search_new_logo_icon_159150.svg" alt="">
+                                <img src="media/icons/facebook_logo_icon_color.svg" alt="">
+                            </div>
                         </div>
                     </div>
 
@@ -158,23 +160,32 @@
 
             <div id="loginForm" class="userForm d-flex">
                 <form class="loginForm" action="post">
-                    <div>
-                        <p>Nickname</p>
+
+                    <div class="campo">
+                        <p>Nombre de usuario</p>
                         <input type="text"placeholder="Nickname">
                     </div>
-                    <div>
-                        <p>Password</p>
+                    <div class="campo">
+                        <p>Contraseña</p>
                         <input type="password" placeholder="Password">
                     </div>
-                    <div class="login-button-container">
+
+                    <div class="login-button-wrapper register-wrapper">
                         <div class="login-button-wrapper">
-                            <button id="login" class="button-primary">login</button>
-                            <button id="showRegisterForm" class="button-secondary">Create Acount</button>
+                            <button id="login" class="button-primary">Login</button>
                         </div>
 
                         <div class="network-login">
-                            <img src="media/icons/google_search_new_logo_icon_159150.svg" alt="">
-                            <img src="media/icons/facebook_logo_icon_color.svg" alt="">
+                            <p>O continúa con</p>
+                            <div>
+                                <img src="media/icons/google_search_new_logo_icon_159150.svg" alt="">
+                                <img src="media/icons/facebook_logo_icon_color.svg" alt="">    
+                            </div>
+                            <p>No tienes una cuenta?</p>
+                        </div>
+
+                        <div>
+                            <button id="showRegisterForm" class="button-secondary">Crear Cuenta</button>
                         </div>
                     </div>
                 </form>
@@ -183,8 +194,102 @@
         </div>
     </main>
     <footer>
-
-    </footer>
+        <div class="separador-foot">
+          <div class="cont-foot">
+            <ul class="selected">
+              <li><h1>On fire</h1></li>
+              <li>
+                <img src="media/images/games/assesinCreed.jpg" />
+              </li>
+            </ul>
+          </div>
+    
+          <div class="cont-foot">
+            <ul>
+              <li><h1>Ayuda y soporte</h1></li>
+              <li>Envíanos un comentario</li>
+              <li>Sobre Copyright</li>
+              <li>Preguntas frecuentes</li>
+              <li>Guías y tutoriales</li>
+              <li>Foros de la comunidad</li>
+              <li>Soporte técnico</li>
+            </ul>
+          </div>
+    
+          <div class="cont-foot">
+            <ul>
+              <li><h1>Compartir</h1></li>
+              <li>Invita a un amigo</li>
+              <li>Tarjetas MPK</li>
+              <li>Copiar enlace</li>
+              <li>Comparte y gana puntos extra</li>
+              <li>Desafía a tus amigos</li>
+            </ul>
+          </div>
+    
+          <div class="cont-foot">
+            <ul>
+              <li><h1>Contactos</h1></li>
+              <li>clients@mpkjuegos.com</li>
+              <li>+54 9 2255524391</li>
+              <li>Av. Mari Piper 1322</li>
+              <li>Tandil, Argentina</li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="separador-foot">
+          <div class="cont-foot">
+            <ul>
+              <li><h1>Sobre nosotros</h1></li>
+              <li>¿Quiénes somos?</li>
+              <li>¿Qué hacemos?</li>
+              <li>Nuestra historia</li>
+              <li>Noticias</li>
+              <li>Proyectos destacados</li>
+            </ul>
+          </div>
+    
+          <div class="cont-foot">
+            <ul>
+              <li><h1>Usuario</h1></li>
+              <li>Mi cuenta</li>
+              <li>Políticas de privacidad</li>
+              <li>Términos de uso</li>
+              <li>Otras políticas</li>
+              <li>Directrices de la marca</li>
+            </ul>
+          </div>
+    
+          <div class="cont-foot">
+            <ul>
+              <li><h1>Seguinos</h1></li>
+              <li>
+                <img src="media/icons/Facebook.png" />
+                <img src="media/icons/X.png" />
+              </li>
+    
+              <li>
+                <img src="media/icons/Youtube.png" />
+                <img src="media/icons/Instagram.png" />
+              </li>
+    
+            </ul>
+          </div>
+    
+          <div class="cont-foot">
+            <ul class="incorporations">
+              <li><h1>Proximamente</h1></li>
+              <li>
+                <img src="media/images/games/blackmithwukong.png" />
+              </li>
+              <li>
+                <img src="media/images/games/manorlords.jpg" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     <script src="js/main.js"></script>
     <script src="js/login-register.js"></script>
     <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
