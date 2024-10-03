@@ -1,4 +1,4 @@
-footer{
+footer {
     background: linear-gradient(to top, var(--primaryColorLight2), var(--black)); 
     color: var(--white);
     display: block;
@@ -6,8 +6,17 @@ footer{
     justify-content:end;
     align-items: center;
     padding: 60px;
-    height: 450px;
+    height: 500px;
     font-size: small;
+}
+
+footer p {
+    color: var(--secondaryColorLight2);
+}
+
+.copyright { 
+    width: 100%;
+    text-align: left;
 }
 
 footer h1{
