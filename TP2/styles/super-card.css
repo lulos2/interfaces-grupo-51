@@ -36,7 +36,6 @@
     padding: 10px;
     background: var(--secondaryColorDark75);
     z-index: 2;
-    display: flexbox;
     justify-content: space-between;
     align-items: center;
 }
@@ -47,7 +46,6 @@
 }
 
 .super-card-price {
-    padding-right: 200px;
     display: inline;
     font-weight: bold;
     color: var(--white);
