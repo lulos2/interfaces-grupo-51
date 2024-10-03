@@ -5,6 +5,7 @@
 @import url('card.css');
 @import url('super-card.css');
 @import url('super-carousel.css');
+@import url('game.css');
 
 :root {
     --primaryColorLight2: #6716D2;
@@ -106,6 +107,18 @@ input {
 
 .button-secondary:hover {
     background-color: var(--secondaryColorDark2);
+}
+
+.button-game {
+    width: 157px;
+    height: 41px;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
 }
 
 /*esta demás?????*/
