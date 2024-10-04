@@ -125,14 +125,35 @@ function setupGenericCarouselControls() {
     });
 }
 
+function handleAddToCart(event) {
+    const card = event.currentTarget.closest('.card') ? event.currentTarget.closest('.card') : event.currentTarget.closest('.super-card');
+    let addedLabel = card.querySelector('.added-label');
+
+    if (!addedLabel) {
+        addedLabel = document.createElement('div');
+        addedLabel.className = 'added-label';
+        addedLabel.textContent = 'En Carrito';
+        card.appendChild(addedLabel);
+    }
+
+    if (addedLabel.style.display === 'block') {
+        addedLabel.style.display = 'none';
+    } else {
+        addedLabel.style.display = 'block';
+    }
+}
+
 function init() {
     document.getElementById("logo")?.addEventListener("click", () => navigateTo(ROUTES.HOME));
     document.getElementById("loginButton")?.addEventListener("click", () => navigateTo(ROUTES.LOGIN_REGISTER));
     document.querySelector('.hamburger-button')?.addEventListener('click', deployMenu);
-    document.querySelectorAll(".card").forEach((e)=>{e.addEventListener("click",()=>{navigateTo(ROUTES.GAME)})})
-    document.querySelectorAll(".super-card").forEach((e)=>{e.addEventListener("click",()=>{navigateTo(ROUTES.GAME)})})
+    document.querySelectorAll(".play-button").forEach((e)=>{
+        e.addEventListener("click",()=>{navigateTo(ROUTES.GAME)})})
     window.addEventListener('click', handleWindowClick);
     updateBreadcrumbs(getCurrentRoute());
+    document.querySelectorAll('.add-to-cart').forEach((button) => {
+        button.addEventListener('click', handleAddToCart);
+    });
 }
 document.addEventListener('DOMContentLoaded', setupGenericCarouselControls);
 document.addEventListener('DOMContentLoaded', init);

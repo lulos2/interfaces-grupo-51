@@ -65,6 +65,19 @@
     height: 30px;
 }
 
+.added-label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--highLight);
+    color: var(--black);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 5;
+}
+
 @media (max-width: 800px) {
 
     .card {
