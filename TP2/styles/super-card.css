@@ -33,7 +33,7 @@
     left: 0;
     width: 100%;
     height: 30%;
-    padding: 10px;
+    
     background: var(--secondaryColorDark75);
     z-index: 2;
     justify-content: space-between;

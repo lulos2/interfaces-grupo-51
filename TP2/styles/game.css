@@ -25,7 +25,7 @@ body {
 }
 
 .canvas-information {
-    height: 450px;
+    height: 600px;
     margin: 25px;
     margin-top: 40px;
     margin-bottom: 100px;
@@ -54,6 +54,20 @@ body {
 .variated-cont-esp {
     border-right: 1px solid var(--secondaryColor);
     border-left: 1px solid var(--secondaryColor);
+}
+
+.gameplays {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(25, 25, 25, 0.75);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.gameplays img{
+    width: 150px;
+    height: 130px;
+    border-radius: 5px;
 }
 
 .description {
