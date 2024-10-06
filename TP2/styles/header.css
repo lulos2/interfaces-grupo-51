@@ -20,6 +20,17 @@ header {
     background-color:var(--secondaryColor);
     color: var(--secondaryColor);
     padding: 10px 20px;
+    position: fixed;
+    width: 98%;
+    z-index: 5;
+}
+
+.navbar-logo {
+    cursor: pointer;
+}
+
+.profile-button {
+    cursor: pointer;
 }
 
 .navbar .logo-container{
