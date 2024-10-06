@@ -47,6 +47,11 @@ function deployMenu() {
     document.getElementById("myDropdown")?.classList.toggle("show");
 }
 
+// Despliegue del perfil
+function deployProfile() {
+    document.getElementById("profile-dropdown").classList.toggle("show-profile");
+}
+
 // Manejo de clics en la ventana
 function handleWindowClick(event) {
     if (!event.target.matches('.hamburger-button')) {
@@ -145,7 +150,7 @@ function handleAddToCart(event) {
 
 function init() {
     document.getElementById("logo")?.addEventListener("click", () => navigateTo(ROUTES.HOME));
-    document.getElementById("loginButton")?.addEventListener("click", () => navigateTo(ROUTES.LOGIN_REGISTER));
+    document.getElementById("profileButton")?.addEventListener("click", deployProfile);
     document.querySelector('.hamburger-button')?.addEventListener('click', deployMenu);
     document.querySelectorAll(".play-button").forEach((e)=>{
         e.addEventListener("click",()=>{navigateTo(ROUTES.GAME)})})
