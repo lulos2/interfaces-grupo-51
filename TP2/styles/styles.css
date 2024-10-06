@@ -59,7 +59,7 @@ h4{
 }
 
 p{
-    height: 14px;
+    height: fit-content;
 }
 
 input {
