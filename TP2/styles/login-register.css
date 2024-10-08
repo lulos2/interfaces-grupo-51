@@ -11,8 +11,8 @@
 .backgroundImage {
     display: flex;
     background-size: 900px;
-    height: 900px;
-    width: 900px;
+    height: fit-content;
+    width: fit-content;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../media/icons/MPKLogo.webp);
     border-radius: 50px;
@@ -46,7 +46,9 @@
 }
 
 #registerForm {
-    height: 800px;
+    height: fit-content;
+    margin: 50px;
+    margin-inline: 100px;
 }
 
 .userForm p {

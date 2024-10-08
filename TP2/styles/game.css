@@ -20,8 +20,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--primaryColorDark1);
-    width: 675px;
-    height: 575px;  
+    width: 45.15%;  /* Width adaptado al porcentaje de la pantalla (35,15% corresponde a px anterior)*/
+    height: 575px;  /*no funciona con height REVISAR (53,24% corresponde a px actual)*/
 }
 
 .canvas-information {
