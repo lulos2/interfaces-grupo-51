@@ -191,7 +191,7 @@ header {
     display: inline-flex;
     margin-top: 50px;
     margin-right: 10px;
-    z-index: 1000;
+    z-index: 3;
 }
 
 #breadcrumbs li::after{
