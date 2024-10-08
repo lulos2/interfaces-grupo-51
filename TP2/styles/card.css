@@ -52,6 +52,7 @@
     display: inline;
     font-weight: bold;
     color: var(--white);
+    animation: colorFade 2s infinite alternate;
 }
 
 .bottom-card-details {
