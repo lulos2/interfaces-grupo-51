@@ -94,9 +94,21 @@ function handleGenericCarouselScroll(direction, carouselClass, cardClass, cardWi
         carousel.style.transform = `translateX(-${newScrollValue}px)`;
         carousel.dataset.scroll = newScrollValue;
 
+        animateCards(cards);
+
         // Actualizar visibilidad de las flechas
         updateArrowVisibility(carousel, newScrollValue, maxScroll, carouselClass);
     };
+}
+
+function animateCards(cards) {
+    cards.forEach(card => {
+        card.style.transform = `matrix(1.02,tan(0.01),tan(0.00),0.98,0,0)`;
+        card.style.transition = `transform 0.5s ease`;
+        setTimeout(() => {
+            card.style.transform = `matrix(1,0,0,1,0,0)`;
+        }, 500);
+    });
 }
 
 // Función genérica para actualizar la visibilidad de las flechas
@@ -163,4 +175,19 @@ function init() {
 document.addEventListener('DOMContentLoaded', setupGenericCarouselControls);
 document.addEventListener('DOMContentLoaded', init);
 
+// Función para simular el incremento de porcentaje de carga
+window.addEventListener("load", function() {
+    const loader = document.getElementById('loader');
+    const percentageText = document.getElementById('loading-percentage');
 
+    let percentage = 0;
+    const interval = setInterval(function() {
+        percentage += 1;
+        percentageText.innerText = percentage + '%';
+
+        if (percentage === 100) {
+            clearInterval(interval);
+            loader.style.display = 'none';
+        }
+    }, 30);
+});
