@@ -39,6 +39,7 @@
     justify-content: center;
     border-radius: 30px;
     padding: 10px;
+    margin: 150px;
 }
 
 .campo{
@@ -125,8 +126,8 @@
     height: 164px;
     align-items: center;
 }
+
 .captcha{
     margin-top: 20px;
     text-align: center;
-    
 }
