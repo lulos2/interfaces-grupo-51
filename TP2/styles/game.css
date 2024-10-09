@@ -27,8 +27,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--primaryColorDark1);
-    width: 1120px;
-    height: 700px;
+    width: 1000px;
+    height: 625px;
     padding: 10px;
 }
 
@@ -55,8 +55,11 @@ body {
     text-align: center;
     border-radius: 10px;
     padding-bottom: 20px;
+    margin: 25px;
+    border-inline: 1px solid var(--secondaryColor);
 }
 
+/*Innecesario*/
 .description p, .variated li{
     font-size: 15px;
 }
@@ -71,9 +74,9 @@ body {
     margin-top: 20px;
 }
 
+/*Innecesario*/
 .variated-cont-esp {
-    border-right: 1px solid var(--secondaryColor);
-    border-left: 1px solid var(--secondaryColor);
+    border-inline: 1px solid var(--secondaryColor);
 }
 
 .gameplays {
@@ -94,9 +97,10 @@ body {
 
 .info-img {
     padding-bottom: 25px;
-    padding-top: 25px;
+    padding-top: 40px;
 }
 
+/*Innecesario*/
 .description {
     margin-top: 10px;
     height: fit-content;
@@ -110,6 +114,7 @@ body {
     background-color: rgba(25, 25, 25, 0.75);
     margin: 25px;
     border-radius: 10px;  
+    border-inline: 1px solid var(--primaryColor);
 }
 
 .coment {
@@ -119,6 +124,10 @@ body {
     text-align: left;
     padding: 10px;
     padding-left: 25px;
+}
+
+.coment p{
+    font-size: 15px;
 }
 
 .coment-user {
