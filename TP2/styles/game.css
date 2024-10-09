@@ -27,8 +27,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--primaryColorDark1);
-    width: 900px;  /* Width adaptado al porcentaje de la pantalla (35,15% corresponde a px anterior)*/
-    height: 575px;  /*no funciona con height REVISAR (53,24% corresponde a px actual)*/
+    width: 1120px;
+    height: 700px;
     padding: 10px;
 }
 
