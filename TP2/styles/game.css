@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../media/icons/MPKLogo.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url(../media/icons/MPKLogo.webp);
     background-size: contain;
 }
 
@@ -12,7 +12,14 @@ body {
 
 .canvas-conteiner {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 40px;
+    height: fit-content;
+}
+
+.canvas-game {
+    display: flex;
+    align-items: end;
 }
 
 .canvas {
@@ -20,8 +27,17 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--primaryColorDark1);
-    width: 45.15%;  /* Width adaptado al porcentaje de la pantalla (35,15% corresponde a px anterior)*/
+    width: 900px;  /* Width adaptado al porcentaje de la pantalla (35,15% corresponde a px anterior)*/
     height: 575px;  /*no funciona con height REVISAR (53,24% corresponde a px actual)*/
+    padding: 10px;
+}
+
+.share{
+    background-color: transparent;
+    width: fit-content;
+    align-items: end;
+    left: 0px;
+    display: block;
 }
 
 .canvas-information {
@@ -32,13 +48,17 @@ body {
 }
 
 .variated {
-    background-color: rgba(25, 25, 25, 0.75);
+    background-color: rgba(33, 04, 72, 0.60);
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
     border-radius: 10px;
     padding-bottom: 20px;
+}
+
+.description p, .variated li{
+    font-size: 15px;
 }
 
 .variated-cont {
@@ -57,12 +77,13 @@ body {
 }
 
 .gameplays {
-    display: flex;
-    justify-content: space-around;
-    background-color: rgba(25, 25, 25, 0.75);
+    display: block;
+    background-color: rgba(33, 04, 72, 0.6);
     border-radius: 10px;
     padding: 20px;
-    margin-top: 10px;
+    width: fit-content;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .gameplays img{
@@ -71,10 +92,15 @@ body {
     border-radius: 5px;
 }
 
+.info-img {
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
 .description {
     margin-top: 10px;
     height: fit-content;
-    background-color: rgba(25, 25, 25, 0.75);
+    background-color: rgba(33, 04, 72, 0.6);
     text-align: left;
     padding: 40px;
     border-radius: 10px;
@@ -134,3 +160,4 @@ body {
     font-size: 12px;
     font-weight: normal;
 }
+
