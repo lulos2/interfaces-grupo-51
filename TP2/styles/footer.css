@@ -5,9 +5,10 @@ footer {
     text-align: center;
     justify-content:end;
     align-items: center;
-    padding: 60px;
-    height: 500px;
+    padding: 0px;
+    height: 570px;
     font-size: small;
+    bottom: 0;
 }
 
 footer p {
@@ -21,8 +22,8 @@ footer p {
 
 footer h1{
     color: var(--highLight);
-    margin-bottom: 5px;
     font-size: x-large;
+    margin-bottom: 0px;
 }
 
 .incorporations img{
@@ -53,6 +54,6 @@ li{
 .separador-foot{
     display: flex;
     justify-content: space-evenly;
-
+    margin-right: 45px;
 }
 
