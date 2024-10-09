@@ -1,58 +1,60 @@
-// Definición de rutas
 const ROUTES = {
     HOME: 'index.html',
     LOGIN_REGISTER: 'login-register.html',
     GAME: 'gamePage.html'
 };
 
-// Configuración del carrusel
 const CARD_MARGIN = 20;
 const CARD_WIDTH = 200 + CARD_MARGIN;
 const SUPER_CARD_WIDTH = 350 + CARD_MARGIN;
 const SCROLL_AMOUNT = 400;
 const VIEWPORT_WIDTH = 1400;
 
-// Función de navegación
 function navigateTo(route) {
     window.location.href = route;
 }
 
-// Obtener la ruta actual
 function getCurrentRoute() {
     const path = window.location.pathname;
     return Object.values(ROUTES).find(route => path.endsWith(route)) || ROUTES.HOME;
 }
 
-// Actualización de migas de pan
-function updateBreadcrumbs(actualRoute) {
+function updateBreadcrumbs() {
     const breadCrumb = document.getElementById("breadcrumbs");
     if (!breadCrumb) return;
 
-    const breadcrumbItems = Array.from(breadCrumb.querySelectorAll("li"));
-    const index = breadcrumbItems.findIndex((item) => item.textContent === actualRoute);
+    breadCrumb.innerHTML = '';
 
-    if (index === -1) {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.textContent = actualRoute;
-        li.appendChild(a);
-        breadCrumb.appendChild(li);
-    } else {
-        breadcrumbItems.slice(index + 1).forEach(item => item.remove());
+    let homeLi = document.createElement("li");
+    let homeA = document.createElement("a");
+    homeA.href = ROUTES.HOME;
+    homeA.textContent = 'Inicio';
+    homeLi.appendChild(homeA);
+    breadCrumb.appendChild(homeLi);
+
+    const currentPath = window.location.pathname;
+
+    if (currentPath.endsWith(ROUTES.HOME) || currentPath === '/' || currentPath === '') {
+        homeLi.removeChild(homeA);
+        homeLi.textContent = 'Inicio';
+        homeLi.classList.add('active');
+    }
+    else if (currentPath.endsWith(ROUTES.GAME)) {
+        let gameLi = document.createElement("li");
+        gameLi.textContent = "4 en Línea";
+        gameLi.classList.add('active');
+        breadCrumb.appendChild(gameLi);
     }
 }
 
-// Despliegue del menú
 function deployMenu() {
     document.getElementById("myDropdown")?.classList.toggle("show");
 }
 
-// Despliegue del perfil
 function deployProfile() {
     document.getElementById("profile-dropdown").classList.toggle("show-profile");
 }
 
-// Manejo de clics en la ventana
 function handleWindowClick(event) {
     if (!event.target.matches('.hamburger-button')) {
         const dropdowns = document.getElementsByClassName("dropdown-content");
@@ -64,7 +66,6 @@ function handleWindowClick(event) {
     }
 }
 
-// Función para manejar el desplazamiento del carrusel
 function handleGenericCarouselScroll(direction, carouselClass, cardClass, cardWidth) {
     return (e) => {
         const arrow = e.currentTarget;
@@ -96,7 +97,6 @@ function handleGenericCarouselScroll(direction, carouselClass, cardClass, cardWi
 
         animateCards(cards);
 
-        // Actualizar visibilidad de las flechas
         updateArrowVisibility(carousel, newScrollValue, maxScroll, carouselClass);
     };
 }
@@ -111,7 +111,6 @@ function animateCards(cards) {
     });
 }
 
-// Función genérica para actualizar la visibilidad de las flechas
 function updateArrowVisibility(carousel, currentScroll, maxScroll, carouselClass) {
     const container = carousel.closest(`.${carouselClass}-container`);
     if (!container) return;
@@ -123,7 +122,6 @@ function updateArrowVisibility(carousel, currentScroll, maxScroll, carouselClass
     if (rightArrow) rightArrow.style.visibility = currentScroll < maxScroll ? 'visible' : 'hidden';
 }
 
-// Configurar los controladores para todas las flechas
 function setupGenericCarouselControls() {
     // Configurar carrusel normal
     document.querySelectorAll(".carousel-container .arrow-left").forEach(arrow => {
@@ -167,7 +165,6 @@ function init() {
     document.querySelectorAll(".play-button").forEach((e)=>{
         e.addEventListener("click",()=>{navigateTo(ROUTES.GAME)})})
     window.addEventListener('click', handleWindowClick);
-    updateBreadcrumbs(getCurrentRoute());
     document.querySelectorAll('.add-to-cart').forEach((button) => {
         button.addEventListener('click', handleAddToCart);
     });
@@ -175,19 +172,24 @@ function init() {
 document.addEventListener('DOMContentLoaded', setupGenericCarouselControls);
 document.addEventListener('DOMContentLoaded', init);
 
-// Función para simular el incremento de porcentaje de carga
+
 window.addEventListener("load", function() {
-    const loader = document.getElementById('loader');
-    const percentageText = document.getElementById('loading-percentage');
+    if (getCurrentRoute() === ROUTES.HOME){
+        const loader = document.getElementById('loader');
+        const percentageText = document.getElementById('loading-percentage');
 
-    let percentage = 0;
-    const interval = setInterval(function() {
-        percentage += 1;
-        percentageText.innerText = percentage + '%';
+        let percentage = 0;
+        const interval = setInterval(function() {
+            percentage += 1;
+            percentageText.innerText = percentage + '%';
+            if (percentage === 100) {
+                clearInterval(interval);
+                loader.style.display = 'none';
+            }
+        }, 30);
+    }
+});
 
-        if (percentage === 100) {
-            clearInterval(interval);
-            loader.style.display = 'none';
-        }
-    }, 30);
+document.addEventListener('DOMContentLoaded', () => {
+    updateBreadcrumbs();
 });
