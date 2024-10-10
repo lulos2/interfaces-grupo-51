@@ -52,18 +52,12 @@
     display: inline;
     font-weight: bold;
     color: var(--white);
-    animation: colorFade 2s infinite alternate;
 }
 
 .bottom-card-details {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.add-to-cart i{
-    width: 30px;
-    height: 30px;
 }
 
 .added-label {
@@ -76,7 +70,10 @@
     padding: 5px 10px;
     border-radius: 5px;
     display: none;
-    z-index: 5;
+    z-index: 4;
+    opacity: 0;
+    animation: slideInOut 1.5s ease-in-out;
+    transform: translateX(-50%);
 }
 
 @media (max-width: 800px) {

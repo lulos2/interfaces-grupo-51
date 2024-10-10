@@ -141,23 +141,53 @@ function setupGenericCarouselControls() {
 }
 
 function handleAddToCart(event) {
-    const card = event.currentTarget.closest('.card') ? event.currentTarget.closest('.card') : event.currentTarget.closest('.super-card');
+    const button = event.currentTarget;
+    const card = button.closest('.card') || button.closest('.super-card');
     let addedLabel = card.querySelector('.added-label');
+    let icon = button.querySelector('i');
+
+    function showAnimatedLabel() {
+        addedLabel.style.display = 'block';
+        addedLabel.style.animation = 'none';
+        addedLabel.offsetHeight; // Trigger reflow
+        addedLabel.style.animation = null;
+
+        setTimeout(() => {
+            addedLabel.style.display = 'none';
+        }, 1500);
+    }
 
     if (!addedLabel) {
+        // Crear y añadir la etiqueta 'En Carrito'
         addedLabel = document.createElement('div');
         addedLabel.className = 'added-label';
         addedLabel.textContent = 'En Carrito';
         card.appendChild(addedLabel);
-    }
 
-    if (addedLabel.style.display === 'block') {
-        addedLabel.style.display = 'none';
+        animateIconChange(icon, 'fa-cart-plus', 'fa-check');
+        showAnimatedLabel();
     } else {
-        addedLabel.style.display = 'block';
+        // Si ya existe la etiqueta, solo cambiamos el icono
+        if (icon.classList.contains('fa-cart-plus')) {
+            animateIconChange(icon, 'fa-cart-plus', 'fa-check');
+            showAnimatedLabel();
+        } else {
+            animateIconChange(icon, 'fa-check', 'fa-cart-plus');
+            addedLabel.style.display = 'none';
+        }
     }
 }
 
+function animateIconChange(icon, fromClass, toClass) {
+    icon.classList.add('animate');
+    setTimeout(() => {
+        icon.classList.remove(fromClass);
+        icon.classList.add(toClass);
+    }, 150); // Cambia el icono a mitad de la animación
+    setTimeout(() => {
+        icon.classList.remove('animate');
+    }, 300); // Elimina la clase de animación al final
+}
 function init() {
     document.getElementById("logo")?.addEventListener("click", () => navigateTo(ROUTES.HOME));
     document.getElementById("profileButton")?.addEventListener("click", deployProfile);
