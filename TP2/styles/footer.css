@@ -6,7 +6,7 @@ footer {
     justify-content:end;
     align-items: center;
     padding: 0px;
-    height: 570px;
+    height: fit-content;
     font-size: small;
     bottom: 0;
 }
@@ -55,5 +55,38 @@ li{
     display: flex;
     justify-content: space-evenly;
     margin-right: 45px;
+}
+
+
+
+
+
+.contenido-footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.contenido-footer img{
+    width: 30px;
+}
+
+.division-foot{
+    justify-content: center;
+    width: 25%;
+}
+
+.seccion-foot{
+    border: 1px solid red;
+}
+
+.seccion-foot1{
+    height: fit-content;
+}
+.patrocinadores img{
+    width: 130px;
+}
+.seccion-foot2{
+    height: fit-content;
 }
 
