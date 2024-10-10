@@ -27,8 +27,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--primaryColorDark1);
-    width: 1000px;
-    height: 625px;
+    width: 880px;
+    height: 550px;
     padding: 10px;
 }
 
@@ -54,8 +54,7 @@ body {
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    padding-bottom: 20px;
-    margin: 25px;
+    padding-bottom: 10px;
     border-inline: 1px solid var(--secondaryColor);
 }
 
@@ -65,18 +64,33 @@ body {
 }
 
 .variated-cont {
-    width: 33%;
+    width: 40%;
     height: 200px;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding-right: 30px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
-/*Innecesario*/
-.variated-cont-esp {
-    border-inline: 1px solid var(--secondaryColor);
+.variated-imgs{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.variated-imgs img{
+    width: 190px;
+    margin: 10px;
+}
+
+.imgs-variated{
+    padding-left: 30px;
+}
+
+.imgs-variated img{
+    width: 225px;
+    margin-top: 10px;
 }
 
 .gameplays {
@@ -96,23 +110,14 @@ body {
 }
 
 .info-img {
-    padding-bottom: 25px;
-    padding-top: 40px;
-}
-
-/*Innecesario*/
-.description {
-    margin-top: 10px;
-    height: fit-content;
-    background-color: rgba(33, 04, 72, 0.6);
-    text-align: left;
-    padding: 40px;
-    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-top: 22px;
 }
 
 .coments {
     background-color: rgba(25, 25, 25, 0.75);
-    margin: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     border-radius: 10px;  
     border-inline: 1px solid var(--primaryColor);
 }
