@@ -70,25 +70,10 @@
     padding: 5px 10px;
     border-radius: 5px;
     display: none;
-    z-index: 5;
+    z-index: 4;
     opacity: 0;
     animation: slideInOut 1.5s ease-in-out;
     transform: translateX(-50%);
-}
-
-@keyframes slideInOut {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    10%, 90% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
 }
 
 @media (max-width: 800px) {

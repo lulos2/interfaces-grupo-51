@@ -8,6 +8,7 @@
 @import url('game.css');
 @import url('buttons.css');
 @import url('loader.css');
+@import url('animations.css');
 
 :root {
     --primaryColorLight2: #6716D2;
