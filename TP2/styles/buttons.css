@@ -75,11 +75,21 @@
     position: relative;
     width: 40px;
     height: 40px;
-    animation: colorFade 2s infinite alternate;
+    overflow: hidden;
 }
 
 .add-to-cart:hover {
     color: var(--highLight);
+}
+
+.add-to-cart i{
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart i.animate {
+    animation: fadeOutIn 0.3s ease-in-out;
 }
 
 .play-button-outer {
@@ -101,7 +111,6 @@
     border-style: solid;
     border-width: 12px 0 12px 22px;
     border-color: transparent transparent #00000000 var(--white);
-    animation: borderFade 2s infinite alternate;
 }
 
 .play-button-outer:hover {
@@ -136,5 +145,20 @@
     }
     100% {
         border-color: transparent transparent #00000000 rgb(255, 238, 183);
+    }
+}
+
+@keyframes fadeOutIn {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
