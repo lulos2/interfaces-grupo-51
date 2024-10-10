@@ -40,13 +40,13 @@
     font-style: normal;
     font-weight: 800;
     line-height: normal;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-secondary:hover {
     background-color: var(--secondaryColorDark2);
-    transform: scale(1.01); /* Increase size and rotate on hover */
-    box-shadow: 0 0 10px var(--primaryColor), 0 0 20px var(--primaryColorLight1); /* Add a glowing effect */
+    transform: scale(1.01);
+    box-shadow: 0 0 10px var(--primaryColor), 0 0 20px var(--primaryColorLight1);
 }
 
 .button-game {

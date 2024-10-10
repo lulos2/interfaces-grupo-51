@@ -35,26 +35,7 @@
     display: none;
 }
 
-.arrow-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-    width: 50px;
-    text-align: center;
-    margin-right: 10px;
-}
-.arrow-left :hover {
-    background: var(--secondaryColorDark75);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-    width: 50px;
-    text-align: center;
-    border-radius: 4px;
-}
-
+.arrow-left,
 .arrow-right {
     display: flex;
     flex-direction: column;
@@ -62,16 +43,48 @@
     height: 300px;
     width: 50px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: color 0.3s ease;
+}
+
+.arrow-left {
+    margin-right: 10px;
+}
+
+.arrow-right {
     margin-left: 10px;
 }
 
-.arrow-right :hover {
-    background: var(--secondaryColorDark75);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-    width: 50px;
-    text-align: center;
-    border-radius: 4px;
+.arrow-left::before,
+.arrow-right::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: var(--secondaryColorDark75);
+    transition: height 0.3s ease, top 0.3s ease;
+    z-index: -1;
+}
+
+.arrow-left:hover::before,
+.arrow-right:hover::before {
+    height: 100%;
+    top: 0;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+    color: var(--white);
+}
+
+.arrow-left img,
+.arrow-right img,
+.arrow-left i,
+.arrow-right i {
+    position: relative;
+    z-index: 1;
 }
