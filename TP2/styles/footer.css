@@ -109,3 +109,8 @@ li{
     margin: 1px;
 }
 
+@media (max-width: 600px) {
+    footer {
+        display: none;
+    }
+}

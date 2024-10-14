@@ -25,14 +25,8 @@
     margin-top: 5px;
     height: 380px;
     display: flex;
-    overflow-x: visible;
-    width: 100%;
-    max-width: 1200px;
+    width: max-content;
     align-items: center;
-}
-
-.carousel::-webkit-scrollbar{
-    display: none;
 }
 
 .arrow-left,
@@ -88,3 +82,19 @@
     position: relative;
     z-index: 1;
 }
+
+@media (width < 600px) {
+    .arrow-left,
+    .arrow-right {
+        display: none;
+    }
+
+    .carousel-card-container {
+        width: 100%;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+}
+

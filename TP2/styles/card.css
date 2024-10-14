@@ -76,41 +76,7 @@
     transform: translateX(-50%);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
-    .card {
-        max-width: 400px;
-        height: 400px;
-        flex: 0 0 70%;
-        margin: 10px;
-        scroll-snap-align: start;
-        background-color:var(--secondaryColor);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        position: relative;
-        border-radius: 3%;
-    }
-
-    .card .button-secondary{
-        width: 100%;
-        margin-bottom: 24px;
-    }
-
-    .card-details{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .card-price{
-        display: flex;
-        padding-right: 0;
-        align-items: center;
-    }
-
-    .carousel-card-container{
-        overflow: hidden;
-        height: 650px;
-    }
 
 }

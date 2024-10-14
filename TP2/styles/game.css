@@ -30,6 +30,7 @@ body {
     width: 1000px;
     height: 625px;
     padding: 10px;
+    border-radius: 10px
 }
 
 .share {

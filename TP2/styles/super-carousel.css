@@ -13,14 +13,14 @@
     height: 400px;
     display: flex;
     overflow-x: visible;
-    width: 100%;
+    width: max-content;
     max-width: 1200px;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
-.super-carousel::-webkit-scrollbar{
+.super-carousel::-webkit-scrollbar {
     display: none;
 }
 
@@ -31,7 +31,7 @@
     margin-top: 10px;
 }
 
-.super-carousel-card-container{
+.super-carousel-card-container {
     width: 1400px;
     overflow: hidden;
 }
@@ -78,3 +78,14 @@
     border-radius: 4px;
 }
 
+@media (max-width: 600px) {
+    .super-carousel-container .arrow-left,
+    .super-carousel-container .arrow-right {
+        display: none;
+    }
+
+    .super-carousel {
+        overflow-x: scroll;
+        width: fit-content;
+    }
+}

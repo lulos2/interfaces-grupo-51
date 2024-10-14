@@ -221,10 +221,14 @@ header {
     text-decoration: underline;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
     .navbar-search {
         display: none;
+    }
+    .navbar {
+        width: 100svw;
+        padding: 10px 0px;
     }
 
 }
