@@ -45,6 +45,9 @@ function updateBreadcrumbs() {
         gameLi.classList.add('active');
         breadCrumb.appendChild(gameLi);
     }
+    else if (currentPath.endsWith(ROUTES.LOGIN_REGISTER)) {
+        homeLi.removeChild(homeA);
+    }
 }
 
 function deployMenu() {
@@ -81,16 +84,16 @@ function handleGenericCarouselScroll(direction, carouselClass, cardClass, cardWi
         const cards = carousel.querySelectorAll(`.${cardClass}`);
         const maxScroll = Math.max(0, cards.length * cardWidth - VIEWPORT_WIDTH);
 
-        // Inicializar o recuperar el valor de desplazamiento actual
+        // recupera el valor de desplazamiento actual
         let currentScroll = Number(carousel.dataset.scroll || 0);
         if (isNaN(currentScroll)) currentScroll = 0;
 
-        // Calcular el nuevo valor de desplazamiento
+        // Calcula el nuevo valor de desplazamiento
         let newScrollValue = direction === 'left'
             ? Math.max(currentScroll - SCROLL_AMOUNT, 0)
             : Math.min(currentScroll + SCROLL_AMOUNT, maxScroll);
 
-        // Aplicar el desplazamiento
+        // Aplica el desplazamiento
         carousel.style.transition = `1s ease`;
         carousel.style.transform = `translateX(-${newScrollValue}px)`;
         carousel.dataset.scroll = newScrollValue;

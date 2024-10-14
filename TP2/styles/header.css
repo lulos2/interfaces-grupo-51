@@ -125,7 +125,7 @@ header {
 }
 
 .hamburger-button:hover{
-    transform: matrix(1.05,tan(0),tan(3),1.05,0,0);
+    transform: matrix(1.05,tan(0),tan(0),1.05,0,0);
 }
 
 .dropdown {
@@ -134,7 +134,7 @@ header {
 }
 
 .dropdown-content {
-    height: fit-content;
+    height: 90vh;
     overflow: auto;
     width: 200px;
     display: none;
@@ -203,7 +203,7 @@ header {
 }
 
 #breadcrumbs li::after{
-    color: #007bff;
+    color: var(--linkColor);
     margin-left: 10px;
     content: "/";
 }
@@ -214,7 +214,7 @@ header {
 
 #breadcrumbs a {
     text-decoration: none;
-    color: #007bff;
+    color: var(--linkColor);
 }
 
 #breadcrumbs a:hover {

@@ -12,7 +12,7 @@ body {
 
 .canvas-conteiner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 40px;
     height: fit-content;
 }
@@ -27,12 +27,12 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--primaryColorDark1);
-    width: 880px;
-    height: 550px;
+    width: 1000px;
+    height: 625px;
     padding: 10px;
 }
 
-.share{
+.share {
     background-color: transparent;
     width: fit-content;
     align-items: end;
@@ -58,7 +58,6 @@ body {
     border-inline: 1px solid var(--secondaryColor);
 }
 
-/*Innecesario*/
 .description p, .variated li{
     font-size: 15px;
 }
