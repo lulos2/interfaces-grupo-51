@@ -111,6 +111,73 @@ li{
 
 @media (max-width: 600px) {
     footer {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
     }
+
+    footer h2 {
+        font-size: medium;
+    }
+
+    footer li {
+        font-size: smaller;
+    }
+
+    .contenido-footer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .division-foot {
+        width: 100%; 
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    
+    .seccion-foot{
+        margin-top: 0px;
+        padding-bottom: 0px;
+        margin-inline: 0px;
+        margin-inline: 0;
+        text-align: center;
+        border-top: none;
+        border: 0px;
+        margin-bottom: 8px;
+    }
+
+    .seccion-foot6, .seccion-foot4, .seccion-foot5, .seccion-foot10, .seccion-foot8{
+        border-top: none;
+        border-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    
+
+    .aa {
+        justify-content: center; 
+    }
+
+    .aa li {
+        margin: 5px;
+    }
+
+    .seccion-foot1 {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100px; 
+        justify-content: center;
+    }
+
+    .patrocinadores {
+        visibility: visible;
+        overflow: visible;
+    }
+
+    .patrocinadores img{
+        width: 100px;
+        height: auto;
+    }
+    
 }
