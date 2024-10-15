@@ -152,7 +152,9 @@ li{
         margin-bottom: 0px;
     }
 
-    
+    ul {
+        padding-inline-start: 0px;
+    }
 
     .aa {
         justify-content: center; 
