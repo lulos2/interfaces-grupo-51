@@ -1,0 +1,234 @@
+header {
+    height: 55px;
+    background: transparent;
+}
+
+.option img{
+    width: 25px;
+    height: 25px;
+}
+
+.option {
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:var(--secondaryColor);
+    color: var(--secondaryColor);
+    padding: 10px 20px;
+    position: fixed;
+    width: 98%;
+    z-index: 5;
+}
+
+.navbar-logo {
+    cursor: pointer;
+}
+
+.navbar-logo img {
+    transform: scale(1.45);
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+
+.profile-button {
+    cursor: pointer;
+}
+
+.navbar .logo-container{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.navbar-logo img{
+    display: flex;
+    align-items: center;
+    height: 35px;
+    border-radius: 4px;
+}
+
+.navbar-logo a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-search {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--secondaryColorLight1);
+    border-radius: 40px;
+    max-width:360px;
+}
+
+.navbar-search input::placeholder{
+    color:var(--secondaryColorLight2);
+}
+
+.search-button {
+    background-color:transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 12px;
+    cursor: pointer;
+    opacity: .7;
+}
+
+.navbar-search input {
+    all: unset;
+    padding: 8px;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 16px;
+}
+
+.navbar-search input:focus {
+    color: var(--secondaryColor);
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.cart-button {
+    background-color: transparent;
+    color: var(--white);
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.profile-button {
+    background-color: transparent;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 100%;
+    border-color: var(--white);
+}
+
+.hamburger-button {
+    background-color:  var(--secondaryColorDark1);
+    border-radius: 6px;
+    border: none;
+    font-size: 24px;
+    color: var(--white);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.hamburger-button:hover{
+    transform: matrix(1.05,tan(0),tan(0),1.05,0,0);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    height: 90vh;
+    overflow: auto;
+    width: 200px;
+    display: none;
+    position: absolute;
+    background-color: var(--secondaryColorDark1);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 4;
+    border-radius: 4px;
+}
+
+.dropdown-prof {
+    height:fit-content;
+    right: 0;
+}
+
+.dropdown-content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    opacity: 0.9;
+    background-color: var(--primaryColorDark2);
+    border-radius: 6px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.dropdown-content .option {
+    color: var(--white);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+}
+
+.dropdown-content .option p {
+    padding-left: 10px;
+}
+
+.dropdown-content .option:hover {background-color: var(--primaryColor)}
+
+.show {display:block;}
+
+.show-profile {display: block;}
+
+.dropdown .menu-options-section {
+    border-bottom: solid 1px var(--secondaryColor);
+}
+
+#breadcrumbs {
+    background-color: transparent;
+    padding: 0 24px;
+    display: inline-flex;
+    margin-top: 20px;
+    margin-left: 18px;
+    margin-bottom: 20px;
+}
+
+#breadcrumbs li {
+    display: inline-flex;
+    margin-top: 50px;
+    margin-right: 10px;
+    z-index: 3;
+}
+
+#breadcrumbs li::after{
+    color: var(--linkColor);
+    margin-left: 10px;
+    content: "/";
+}
+
+#breadcrumbs :last-child::after {
+    content: none;
+}
+
+#breadcrumbs a {
+    text-decoration: none;
+    color: var(--linkColor);
+}
+
+#breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+
+    .navbar-search {
+        display: none;
+    }
+    .navbar {
+        width: 100svw;
+        padding: 10px 0px;
+    }
+
+}
