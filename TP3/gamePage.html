@@ -134,8 +134,23 @@
     </header>
     <main>
       <div class="canvas-conteiner">
+        <div class="controls">
+          <label>Tamaño del tablero: </label>
+          <select id="boardSize">
+            <option value="4">4 en línea</option>
+            <option value="5">5 en línea</option>
+            <option value="6">6 en línea</option>
+            <option value="7">7 en línea</option>
+          </select>
+          <button id="restartBtn">Reiniciar Juego</button>
+          <span id="timer">Tiempo: 300s</span>
+        </div>
+
         <div class="canvas-game">
-          <canvas id="gameCanvas" width="1000" height="625"></canvas>
+
+
+
+          <canvas id="gameCanvas" width="1000px" height="625px"></canvas>
   
           <div class="canvas share">
             <div>
@@ -412,11 +427,10 @@
         </div>
       </div>
     </footer>
-    <script src="js/main.js"></script>
-    <script src="js/fourInLine/Figure.js"></script>
-    <script src="js/fourInLine/Circle.js"></script>
-    <script src="js/fourInLine/Rect.js"></script>
-    <script src="js/fourInLine/game.js"></script>
+    <script src="js/fourInLine/Piece.js"></script>
+    <script src="js/fourInLine/Board.js"></script>
+    <script src="js/fourInLine/Game.js"></script>
     <script src="js/gamePage.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

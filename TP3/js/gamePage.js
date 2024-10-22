@@ -1,26 +1,36 @@
-/*
 
-let ctx =  document.getElementById('gameCanvas').getContext('2d');
-ctx.fillStyle = 'red';
-ctx.beginPath();
-ctx.arc(200, 200, 50, 0, 2 * Math.PI);
-ctx.fill();
-ctx.closePath();
-*/
+document.addEventListener('DOMContentLoaded', () => {
+    // Elementos del DOM
+    const canvas = document.getElementById('gameCanvas');
+    canvas.width = 1000;
+    canvas.height = 625;
+    const boardSizeSelect = document.getElementById('boardSize');
+    const restartBtn = document.getElementById('restartBtn');
+    let game;
 
-let circle = new Circle(200,200,'red',50,ctx);
-circle.draw();
+    // Inicializar el juego
+    function initializeGame() {
+        const boardSize = parseInt(boardSizeSelect.value);
+        game = new Game(canvas, boardSize);
 
-let rect = new Rect(100,100,'blue',ctx,50,50);
-rect.draw();
+        // Iniciar el loop de dibujado
+        game.draw();
+    }
 
-for (let i = 0; i < 100; i++) {
-    let circle = new Circle(Math.random()*1000,Math.random()*615,randomColor(),Math.random()*50,ctx);
-    circle.draw();
-    let rect = new Rect(Math.random()*1000,Math.random()*615,randomColor(),ctx,Math.random()*50,Math.random()*50);
-    rect.draw();
-}
+    // Event Listeners
+    canvas.addEventListener('mousedown', (e) => game.handleClick(e));
+    canvas.addEventListener('mousemove', (e) => game.handleMove(e));
+    canvas.addEventListener('mouseup', (e) => game.handleRelease(e));
+    canvas.addEventListener('mouseleave', (e) => game.handleRelease(e));
 
-function randomColor(){
-    return 'rgb('+Math.random()*255+','+Math.random()*255+','+Math.random()*255+')';
-}
+    boardSizeSelect.addEventListener('change', () => {
+        game.setBoardSize(boardSizeSelect.value);
+    });
+
+    restartBtn.addEventListener('click', () => {
+        game.initGame();
+    });
+
+    // Iniciar el juego
+    initializeGame();
+});
