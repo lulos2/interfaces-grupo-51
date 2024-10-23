@@ -56,17 +56,20 @@ class Piece {
     reset() {
         this.x = this.originalX;
         this.y = this.originalY;
-        this.velocityY = 0;
+        this.velocityY = 0; // Iniciar con velocidad 0
         this.isDropping = false;
     }
 
     drop(targetY) {
-        this.isDropping = true;
+        if (!this.isDropping) return false;
+
+        // Ajustar la velocidad y gravedad para una caída más suave
         this.velocityY += this.gravity;
         this.y += this.velocityY;
 
+        // Verificar si hemos llegado al objetivo
         if (this.y >= targetY) {
-            this.y = targetY;
+            this.y = targetY; // Asegurar la posición exacta
             this.isDropping = false;
             this.velocityY = 0;
             return true;

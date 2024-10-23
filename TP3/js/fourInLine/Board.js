@@ -3,18 +3,15 @@ class Board {
         this.totalWidth = width;
         this.totalHeight = height;
 
-        // Ajustar el ancho del tablero al 70% del ancho total
         this.width = Math.floor(width * 0.7);
         this.offsetX = Math.floor((width - this.width) / 2);
 
-        // Ajustar altura del tablero
-        this.height = height - 60;
-        this.offsetY = 60;
+        this.height = height - 90;
+        this.offsetY = 90;
 
         this.rows = rows;
         this.cols = cols;
 
-        // Calcular el tamaño de las celdas basado en el área jugable
         this.cellWidth = this.width / cols;
         this.cellHeight = this.height / rows;
 
@@ -25,7 +22,6 @@ class Board {
         this.boardColor = 'rgba(37, 37, 37, 0.5)';
         this.cellColor = 'rgba(37, 37, 37, 0.5)';
 
-        // Ajustar las posiciones de las flechas para que coincidan con las columnas
         this.arrows = Array(cols).fill().map((_, i) => ({
             x: this.offsetX + (i * this.cellWidth) + (this.cellWidth / 2),
             y: 30,
@@ -92,9 +88,10 @@ class Board {
     }
 
     getColumnFromX(x) {
-        // Ajustar el cálculo para considerar el offset
+        // Mejorar la detección de columna considerando el offset
         if (x < this.offsetX || x > this.offsetX + this.width) return -1;
-        return Math.floor((x - this.offsetX) / this.cellWidth);
+        const relativeX = x - this.offsetX;
+        return Math.floor(relativeX / this.cellWidth);
     }
 
     getLowestEmptyRow(col) {

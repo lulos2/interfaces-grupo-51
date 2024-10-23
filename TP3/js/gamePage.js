@@ -2,8 +2,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Elementos del DOM
     const canvas = document.getElementById('gameCanvas');
-    canvas.width = 1000;
-    canvas.height = 625;
     const boardSizeSelect = document.getElementById('boardSize');
     const restartBtn = document.getElementById('restartBtn');
     let game;

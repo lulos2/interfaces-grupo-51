@@ -54,9 +54,9 @@ class Game {
             this.pieces[1].push(new Piece(
                 1,
                 pieceRadius * 2,
-                50 + i * (pieceRadius * 2.5),
+                50 + i * (pieceRadius * 0.2),
                 pieceRadius,
-                'media/images/adicionales/mbappe.png'
+                'media/images/adicionales/messi.png'
             ));
         }
 
@@ -65,7 +65,7 @@ class Game {
             this.pieces[2].push(new Piece(
                 2,
                 this.canvas.width - pieceRadius * 2,
-                50 + i * (pieceRadius * 1.5),
+                50 + i * (pieceRadius * 0.2),
                 pieceRadius,
                 'media/images/adicionales/mbappe.png'
             ));
@@ -122,14 +122,25 @@ class Game {
             const row = this.board.getLowestEmptyRow(column);
 
             if (row >= 0) {
-                const targetY = row * this.board.cellHeight + this.board.cellHeight / 2;
-                this.selectedPiece.x = column * this.board.cellWidth + this.board.cellWidth / 2;
+                // Calcular la posición final correcta
+                const targetX = this.board.offsetX + (column * this.board.cellWidth) + (this.board.cellWidth / 2);
+                const targetY = this.board.offsetY + (row * this.board.cellHeight) + (this.board.cellHeight / 2);
+
+                // Establecer la posición X final inmediatamente
+                this.selectedPiece.x = targetX;
+                this.selectedPiece.originalX = targetX;
+
+                // Iniciar la animación de caída desde la posición actual
+                const startY = this.selectedPiece.y;
                 this.selectedPiece.isDropping = true;
 
-                // Animar la caída
                 const dropInterval = setInterval(() => {
                     if (this.selectedPiece && this.selectedPiece.drop(targetY)) {
                         clearInterval(dropInterval);
+
+                        // Asegurar la posición final correcta
+                        this.selectedPiece.x = targetX;
+                        this.selectedPiece.y = targetY;
                         this.board.grid[row][column] = this.selectedPiece;
 
                         // Verificar victoria
@@ -138,21 +149,25 @@ class Game {
                         } else {
                             this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
                         }
+
+                        // Remover la pieza usada del array de piezas disponibles
+                        const index = this.pieces[this.currentPlayer].indexOf(this.selectedPiece);
+                        if (index > -1) {
+                            this.pieces[this.currentPlayer].splice(index, 1);
+                        }
                     }
                 }, 16);
 
-                // Remover la pieza usada del array de piezas disponibles
-                const index = this.pieces[this.currentPlayer].indexOf(this.selectedPiece);
-                if (index > -1) {
-                    this.pieces[this.currentPlayer].splice(index, 1);
-                }
+                return; // Importante: salir de la función si la pieza se colocó correctamente
             }
         }
 
+        // Si llegamos aquí, la pieza no se pudo colocar, así que la devolvemos a su posición original
         this.selectedPiece.reset();
         this.selectedPiece.stopDragging();
         this.selectedPiece = null;
     }
+
 
     endGame(message) {
         this.gameOver = true;
