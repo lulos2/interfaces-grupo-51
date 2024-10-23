@@ -9,8 +9,8 @@ class Piece {
         this.isDragging = false;
         this.originalX = x;
         this.originalY = y;
-        this.velocityY = 10;
-        this.gravity = 0.5;
+        this.velocityY = 0;
+        this.gravity = 0.8;
         this.isDropping = false;
     }
 
@@ -43,7 +43,7 @@ class Piece {
     }
 
     drag(mouseX, mouseY) {
-        if (this.isDragging) {
+        if (this.isDragging && !this.isDropping) {
             this.x = mouseX + this.dragOffsetX;
             this.y = mouseY + this.dragOffsetY;
         }
@@ -56,7 +56,7 @@ class Piece {
     reset() {
         this.x = this.originalX;
         this.y = this.originalY;
-        this.velocityY = 0; // Iniciar con velocidad 0
+        this.velocityY = 0;
         this.isDropping = false;
     }
 
