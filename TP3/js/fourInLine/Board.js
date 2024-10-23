@@ -25,7 +25,7 @@ class Board {
         this.arrows = Array(cols).fill().map((_, i) => ({
             x: this.offsetX + (i * this.cellWidth) + (this.cellWidth / 2),
             y: 30,
-            alpha: 1,
+            alpha: 0.7,
             direction: 1
         }));
     }
@@ -47,9 +47,11 @@ class Board {
 
     drawArrows(ctx) {
         ctx.save();
-        this.arrows.forEach(arrow => {
-            arrow.alpha = 0.7;
-            ctx.fillStyle = `rgba(255, 255, 255, ${arrow.alpha})`;
+        this.arrows.forEach((arrow, index) => {
+            let columnIsFull = this.getLowestEmptyRow(index) === -1;
+            let alpha = columnIsFull ? 0.3 : arrow.alpha;
+
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
             ctx.beginPath();
             ctx.moveTo(arrow.x - 15, arrow.y);
             ctx.lineTo(arrow.x + 15, arrow.y);

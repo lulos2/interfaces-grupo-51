@@ -7,6 +7,8 @@ class Game {
         this.setBoardSize(boardSize);
         this.initGame();
         this.isDragging = false;
+        this.highlightedColumn = -1;
+        this.dropZoneHeight = 90;
     }
 
     setBoardSize(size) {
@@ -114,6 +116,12 @@ class Game {
 
         // Solo mover la pieza si estamos en modo dragging
         this.selectedPiece.drag(mouseX, mouseY);
+
+        if (mouseY <= this.dropZoneHeight) {
+            this.highlightedColumn = this.board.getColumnFromX(mouseX);
+        } else {
+            this.highlightedColumn = -1;
+        }
     }
 
     handleRelease(e) {
@@ -121,46 +129,51 @@ class Game {
 
         const rect = this.canvas.getBoundingClientRect();
         const mouseX = e.clientX - rect.left;
-        const column = this.board.getColumnFromX(mouseX);
+        const mouseY = e.clientY - rect.top;
 
         this.isDragging = false;
 
-        if (column >= 0 && column < this.board.cols) {
-            const row = this.board.getLowestEmptyRow(column);
+        // Solo procesar el drop si estamos en la zona válida
+        if (mouseY <= this.dropZoneHeight) {
+            const column = this.board.getColumnFromX(mouseX);
 
-            if (row >= 0) {
-                const targetX = this.board.offsetX + (column * this.board.cellWidth) + (this.board.cellWidth / 2);
-                const targetY = this.board.offsetY + (row * this.board.cellHeight) + (this.board.cellHeight / 2);
+            if (column >= 0 && column < this.board.cols) {
+                const row = this.board.getLowestEmptyRow(column);
 
-                this.selectedPiece.x = targetX;
-                this.selectedPiece.originalX = targetX;
-                this.selectedPiece.isDropping = true;
+                if (row >= 0) {
+                    const targetX = this.board.offsetX + (column * this.board.cellWidth) + (this.board.cellWidth / 2);
+                    const targetY = this.board.offsetY + (row * this.board.cellHeight) + (this.board.cellHeight / 2);
 
-                const dropInterval = setInterval(() => {
-                    if (this.selectedPiece && this.selectedPiece.drop(targetY)) {
-                        clearInterval(dropInterval);
+                    this.selectedPiece.x = targetX;
+                    this.selectedPiece.originalX = targetX;
+                    this.selectedPiece.isDropping = true;
 
-                        this.selectedPiece.x = targetX;
-                        this.selectedPiece.y = targetY;
-                        this.board.grid[row][column] = this.selectedPiece;
+                    const dropInterval = setInterval(() => {
+                        if (this.selectedPiece && this.selectedPiece.drop(targetY)) {
+                            clearInterval(dropInterval);
 
-                        // Remover la pieza del array de piezas disponibles antes de verificar la victoria
-                        const index = this.pieces[this.currentPlayer].indexOf(this.selectedPiece);
-                        if (index > -1) {
-                            this.pieces[this.currentPlayer].splice(index, 1);
+                            this.selectedPiece.x = targetX;
+                            this.selectedPiece.y = targetY;
+                            this.board.grid[row][column] = this.selectedPiece;
+
+                            const index = this.pieces[this.currentPlayer].indexOf(this.selectedPiece);
+                            if (index > -1) {
+                                this.pieces[this.currentPlayer].splice(index, 1);
+                            }
+
+                            if (this.board.checkWin(row, column, this.winCount)) {
+                                this.endGame(`¡Jugador ${this.currentPlayer} gana!`);
+                            } else {
+                                this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+                            }
+
+                            this.selectedPiece = null;
                         }
+                    }, 16);
 
-                        if (this.board.checkWin(row, column, this.winCount)) {
-                            this.endGame(`¡Jugador ${this.currentPlayer} gana!`);
-                        } else {
-                            this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
-                        }
-
-                        this.selectedPiece = null;
-                    }
-                }, 16);
-
-                return;
+                    this.highlightedColumn = -1;
+                    return;
+                }
             }
         }
 
@@ -168,6 +181,7 @@ class Game {
         this.selectedPiece.reset();
         this.selectedPiece.stopDragging();
         this.selectedPiece = null;
+        this.highlightedColumn = -1;
     }
 
     endGame(message) {
@@ -181,6 +195,9 @@ class Game {
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
+        // Dibujar la zona de drop
+        this.drawDropZone();
+
         // Dibujar tablero
         this.board.draw(this.ctx);
 
@@ -191,5 +208,34 @@ class Game {
 
         // Solicitar siguiente frame
         requestAnimationFrame(() => this.draw());
+    }
+
+    drawDropZone() {
+        this.ctx.save();
+
+        // Dibujar el área de drop
+        this.ctx.fillStyle = 'rgba(200, 200, 200, 0.2)';
+        this.ctx.fillRect(this.board.offsetX, 0, this.board.width, this.dropZoneHeight);
+
+        // Dibujar el highlight de la columna
+        if (this.highlightedColumn >= 0 && this.highlightedColumn < this.board.cols) {
+            const columnX = this.board.offsetX + (this.highlightedColumn * this.board.cellWidth);
+            this.ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            this.ctx.fillRect(columnX, 0, this.board.cellWidth, this.dropZoneHeight);
+
+            // Dibujar la flecha destacada
+            if (this.board.arrows[this.highlightedColumn]) {
+                const arrow = this.board.arrows[this.highlightedColumn];
+                this.ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                this.ctx.beginPath();
+                this.ctx.moveTo(arrow.x - 15, arrow.y);
+                this.ctx.lineTo(arrow.x + 15, arrow.y);
+                this.ctx.lineTo(arrow.x, arrow.y + 20);
+                this.ctx.closePath();
+                this.ctx.fill();
+            }
+        }
+
+        this.ctx.restore();
     }
 }
