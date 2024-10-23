@@ -134,34 +134,40 @@
     </header>
     <main>
       <div class="canvas-conteiner">
-        <div class="controls">
-          <label>Tamaño del tablero: </label>
-          <select id="boardSize">
-            <option value="4">4 en línea</option>
-            <option value="5">5 en línea</option>
-            <option value="6">6 en línea</option>
-            <option value="7">7 en línea</option>
-          </select>
-          <button id="restartBtn">Reiniciar Juego</button>
-          <span id="timer">Tiempo: 300s</span>
-        </div>
-
-        <div class="canvas-game">
-
-
-
-          <canvas id="gameCanvas" width="1000px" height="625px"></canvas>
-  
-          <div class="canvas share">
-            <div>
-              <img src="media/icons/share.png">
+          <div class="game-container">
+            <div class="controls-container">
+              <button id="restartBtn" class="menu-button">Reiniciar</button>
+              <button id="menuBtn" class="menu-button">Menú</button>
+              <span id="timer">Tiempo: 300s</span>
             </div>
-            <div>
-              <img src="media/icons/document-text.png">
+            <!-- Menú superpuesto -->
+            <div id="menuOverlay" class="menu-overlay">
+              <div class="menu-content">
+                <h1 class="menu-title">4 en Línea</h1>
+                <div class="game-options">
+                  <select id="boardSize">
+                    <option value="4">4 en línea</option>
+                    <option value="5">5 en línea</option>
+                    <option value="6">6 en línea</option>
+                    <option value="7">7 en línea</option>
+                  </select>
+                </div>
+                <button id="playButton" class="menu-button">Jugar</button>
+              </div>
             </div>
-            <div>
-              <img src="media/icons/star.png">
-            </div>
+
+            <canvas id="gameCanvas" width="1000px" height="625px"></canvas>
+          </div>
+
+        <div class="canvas share">
+          <div>
+            <img src="media/icons/share.png">
+          </div>
+          <div>
+            <img src="media/icons/document-text.png">
+          </div>
+          <div>
+            <img src="media/icons/star.png">
           </div>
         </div>
 

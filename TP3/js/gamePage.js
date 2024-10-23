@@ -32,3 +32,57 @@ document.addEventListener('DOMContentLoaded', () => {
     // Iniciar el juego
     initializeGame();
 });
+
+class GameMenu {
+    constructor() {
+        this.menuOverlay = document.getElementById('menuOverlay');
+        this.playButton = document.getElementById('playButton');
+        this.menuButton = document.getElementById('menuBtn');
+        this.restartButton = document.getElementById('restartBtn');
+        this.boardSizeSelect = document.getElementById('boardSize');
+        this.game = null;
+
+        this.initializeEventListeners();
+    }
+
+    initializeEventListeners() {
+        this.playButton.addEventListener('click', () => {
+            this.hideMenu();
+            this.startGame();
+        });
+
+        this.menuButton.addEventListener('click', () => {
+            this.showMenu();
+        });
+
+        this.restartButton.addEventListener('click', () => {
+            if (this.game) {
+                this.game.initGame();
+            }
+        });
+    }
+
+    showMenu() {
+        this.menuOverlay.classList.remove('hidden');
+    }
+
+    hideMenu() {
+        this.menuOverlay.classList.add('hidden');
+    }
+
+    startGame() {
+        const canvas = document.getElementById('gameCanvas');
+        const boardSize = parseInt(this.boardSizeSelect.value);
+
+        if (!this.game) {
+            this.game = new Game(canvas, boardSize);
+        } else {
+            this.game.setBoardSize(boardSize);
+            this.game.initGame();
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const gameMenu = new GameMenu();
+});
