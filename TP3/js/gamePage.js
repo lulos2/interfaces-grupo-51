@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeGame() {
         const boardSize = parseInt(boardSizeSelect.value);
         game = new Game(canvas, boardSize);
+        gameMenu.setGame(game);
 
         // Iniciar el loop de dibujado
         game.draw();
@@ -26,10 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     restartBtn.addEventListener('click', () => {
-        game.initGame();
+       game.resetGame();
     });
 
     // Iniciar el juego
+    const gameMenu = new GameMenu();
     initializeGame();
 });
 
@@ -48,7 +50,6 @@ class GameMenu {
     initializeEventListeners() {
         this.playButton.addEventListener('click', () => {
             this.hideMenu();
-            this.startGame();
         });
 
         this.menuButton.addEventListener('click', () => {
@@ -57,17 +58,23 @@ class GameMenu {
 
         this.restartButton.addEventListener('click', () => {
             if (this.game) {
-                this.game.initGame();
+                this.game.resetGame();
             }
         });
     }
 
+    setGame(gameInstance) {
+        this.game = gameInstance;
+    }
+
     showMenu() {
         this.menuOverlay.classList.remove('hidden');
+        this.game?.stopTimer();
     }
 
     hideMenu() {
         this.menuOverlay.classList.add('hidden');
+        this.game?.starTimer();
     }
 
     startGame() {
@@ -82,7 +89,3 @@ class GameMenu {
         }
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const gameMenu = new GameMenu();
-});

@@ -2,20 +2,19 @@ class Game {
     constructor(canvas, boardSize = 4) {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
-        this.canvasWidth = canvas.width;
-        this.canvasHeight = canvas.height;
         this.setBoardSize(boardSize);
         this.initGame();
         this.isDragging = false;
         this.highlightedColumn = -1;
         this.dropZoneHeight = 90;
+        this.timerPlayer1 = new Timer("timerPlayer1",0,2);
+        this.timerPlayer2 = new Timer("timerPlayer2",0,2);
     }
 
     setBoardSize(size) {
         this.winCount = parseInt(size);
         this.rows = this.winCount + 2;
         this.cols = this.winCount + 3;
-
 
         if (this.board) {
             this.initGame();
@@ -26,16 +25,15 @@ class Game {
         this.board = new Board(this.canvas.width, this.canvas.height, this.rows, this.cols);
         this.currentPlayer = 1;
         this.gameOver = false;
-        this.timeLeft = 300; // 5 minutos
         this.selectedPiece = null;
-        this.draggedPiece = null;
 
         // Crear piezas para ambos jugadores
         this.initializePieces();
+    }
 
-        // Iniciar timer
-        if (this.timer) clearInterval(this.timer);
-        this.startTimer();
+    resetGame(){
+        this.initGame();
+        this.resetTimer();
     }
 
     initializePieces() {
@@ -46,11 +44,6 @@ class Game {
             1: [],
             2: []
         };
-
-        const leftMargin = this.board.offsetX / 2; // Mitad del espacio lateral izquierdo
-        const rightMargin = this.canvasWidth - (this.board.offsetX / 2); // Mitad del espacio lateral derecho
-        const startY = this.board.offsetY;
-        const verticalSpacing = (this.canvasHeight - startY) / piecesPerPlayer;
 
         // Crear piezas para jugador 1 (lado izquierdo)
         for (let i = 0; i < piecesPerPlayer; i++) {
@@ -73,17 +66,6 @@ class Game {
                 'media/images/adicionales/mbappe.png'
             ));
         }
-    }
-
-    startTimer() {
-        this.timer = setInterval(() => {
-            this.timeLeft--;
-            document.getElementById('timer').textContent = `Tiempo: ${this.timeLeft}s`;
-
-            if (this.timeLeft <= 0) {
-                this.endGame('¡Se acabó el tiempo!');
-            }
-        }, 1000);
     }
 
     handleClick(e) {
@@ -164,6 +146,7 @@ class Game {
                             if (this.board.checkWin(row, column, this.winCount)) {
                                 this.endGame(`¡Jugador ${this.currentPlayer} gana!`);
                             } else {
+                                this.changeTimer();
                                 this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
                             }
 
@@ -186,10 +169,8 @@ class Game {
 
     endGame(message) {
         this.gameOver = true;
-        clearInterval(this.timer);
-        setTimeout(() => {
-            alert(message);
-        }, 100);
+        this.stopTimer();
+        alert(message);
     }
 
     draw() {
@@ -237,5 +218,34 @@ class Game {
         }
 
         this.ctx.restore();
+    }
+
+    stopTimer(){
+        this.timerPlayer1.stop();
+        this.timerPlayer2.stop();
+    }
+
+    starTimer(){
+        if(this.currentPlayer === 1) {
+            this.timerPlayer1.start();
+        } else {
+            this.timerPlayer2.start();
+            console.log("timer 2");
+        }
+    }
+
+    changeTimer(){
+        if(this.currentPlayer === 1){
+            this.timerPlayer1.stop();
+            this.timerPlayer2.start();
+        }else{
+            this.timerPlayer2.stop();
+            this.timerPlayer1.start();
+        }
+    }
+
+    resetTimer(){
+        this.timerPlayer1.reset(2,0);
+        this.timerPlayer2.reset(2,0);
     }
 }
