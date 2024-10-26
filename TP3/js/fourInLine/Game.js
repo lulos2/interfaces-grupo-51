@@ -176,11 +176,11 @@ class Game {
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        // Dibujar la zona de drop
-        this.drawDropZone();
-
         // Dibujar tablero
         this.board.draw(this.ctx);
+
+        // Dibujar la zona de drop
+        this.drawDropZone();
 
         // Dibujar piezas disponibles
         for (let player in this.pieces) {

@@ -17,7 +17,7 @@ class Board {
 
         this.grid = Array(rows).fill().map(() => Array(cols).fill(null));
         this.background = new Image();
-        this.background.src = 'media/icons/MPKlogo2.png';
+        this.background.src = 'media/images/4inLine/wordCup.jpg';
 
         this.boardColor = 'rgba(37, 37, 37, 0.5)';
         this.cellColor = 'rgba(37, 37, 37, 0.5)';
@@ -90,7 +90,6 @@ class Board {
     }
 
     getColumnFromX(x) {
-        // Mejorar la detección de columna considerando el offset
         if (x < this.offsetX || x > this.offsetX + this.width) return -1;
         const relativeX = x - this.offsetX;
         return Math.floor(relativeX / this.cellWidth);
