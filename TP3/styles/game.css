@@ -241,11 +241,29 @@ body {
     pointer-events: none;
 }
 
-.controls-container {
+.controlsLeft-container {
     left: 10px;
     top: 10px;
     position: relative;
     display: flex;
     gap: 1rem;
     flex-direction: column;
+}
+
+.controlsRight-container {
+    right: 10px;
+    top: 10px;
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+#timerPlayer1, #timerPlayer2 {
+    color: var(--highLight);
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

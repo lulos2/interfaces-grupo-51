@@ -135,11 +135,9 @@
     <main>
       <div class="canvas-conteiner">
           <div class="game-container">
-            <div class="controls-container">
-              <button id="restartBtn" class="menu-button">Reiniciar</button>
+            <div class="controlsLeft-container">
               <button id="menuBtn" class="menu-button">Menú</button>
               <div id="timerPlayer1">00:00</div>
-              <div id="timerPlayer2">00:00</div>
             </div>
             <!-- Menú superpuesto -->
             <div id="menuOverlay" class="menu-overlay">
@@ -156,8 +154,12 @@
                 <button id="playButton" class="menu-button">Jugar</button>
               </div>
             </div>
-
             <canvas id="gameCanvas" width="1000px" height="625px"></canvas>
+
+            <div class="controlsRight-container">
+              <button id="restartBtn" class="menu-button">Reiniciar</button>
+              <div id="timerPlayer2">00:00</div>
+            </div>
           </div>
 
         <div class="canvas share">
