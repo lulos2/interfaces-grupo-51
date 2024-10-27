@@ -1,14 +1,17 @@
 class Game {
-    constructor(canvas, boardSize = 4) {
+
+    constructor(canvas, boardSize = 4, imgPlayer1, imgPlayer2 ) {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
-        this.setBoardSize(boardSize);
-        this.initGame();
         this.isDragging = false;
         this.highlightedColumn = -1;
         this.dropZoneHeight = 90;
         this.timerPlayer1 = new Timer("timerPlayer1",0,2);
         this.timerPlayer2 = new Timer("timerPlayer2",0,2);
+        this.imagePlayer1 = imgPlayer1;
+        this.imagePlayer2 = imgPlayer2;
+        this.setBoardSize(boardSize);
+        this.initGame();
     }
 
     setBoardSize(size) {
@@ -19,6 +22,16 @@ class Game {
         if (this.board) {
             this.initGame();
         }
+    }
+
+    setPlayer1Image(player1){
+        this.imagePlayer1 = player1;
+        this.initializePieces();
+    }
+
+    setPlayer2Image(player2){
+        this.imagePlayer2 = player2;
+        this.initializePieces();
     }
 
     initGame() {
@@ -52,7 +65,7 @@ class Game {
                 pieceRadius * 2,
                 50 + i * (pieceRadius * 0.2),
                 pieceRadius,
-                'media/images/adicionales/messi.png'
+                'media/images/4inLine/' + this.imagePlayer1
             ));
         }
 
@@ -63,7 +76,7 @@ class Game {
                 this.canvas.width - pieceRadius * 2,
                 50 + i * (pieceRadius * 0.2),
                 pieceRadius,
-                'media/images/adicionales/mbappe.png'
+                'media/images/4inLine/' + this.imagePlayer2
             ));
         }
     }

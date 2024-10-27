@@ -4,12 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('gameCanvas');
     const boardSizeSelect = document.getElementById('boardSize');
     const restartBtn = document.getElementById('restartBtn');
+    let tokensP1 = document.getElementById('tokensP1');
+    let tokensP2 = document.getElementById('tokensP2');
     let game;
 
     // Inicializar el juego
     function initializeGame() {
         const boardSize = parseInt(boardSizeSelect.value);
-        game = new Game(canvas, boardSize);
+
+        game = new Game(canvas, boardSize, 'messi.jpg', 'mbappe.jpg');
         gameMenu.setGame(game);
 
         // Iniciar el loop de dibujado
@@ -28,6 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     restartBtn.addEventListener('click', () => {
        game.resetGame();
+    });
+
+    tokensP1.addEventListener('change', () => {
+        game.setPlayer1Image(tokensP1.value);
+        console.log(tokensP1.value);
+    });
+
+    tokensP2.addEventListener('change', () => {
+        game.setPlayer2Image(tokensP2.value);
+        console.log(tokensP2.value);
     });
 
     // Iniciar el juego
@@ -75,17 +88,5 @@ class GameMenu {
     hideMenu() {
         this.menuOverlay.classList.add('hidden');
         this.game?.starTimer();
-    }
-
-    startGame() {
-        const canvas = document.getElementById('gameCanvas');
-        const boardSize = parseInt(this.boardSizeSelect.value);
-
-        if (!this.game) {
-            this.game = new Game(canvas, boardSize);
-        } else {
-            this.game.setBoardSize(boardSize);
-            this.game.initGame();
-        }
     }
 }
