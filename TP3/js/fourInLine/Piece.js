@@ -12,6 +12,7 @@ class Piece {
         this.velocityY = 0;
         this.gravity = 0.8;
         this.isDropping = false;
+        this.isWinningPiece = false;
     }
 
     draw(ctx) {
@@ -19,6 +20,9 @@ class Piece {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.clip();
+        if (this.isWinningPiece) {
+            ctx.globalAlpha = Math.abs(Math.sin(Date.now() / 200));
+        }
         ctx.drawImage(this.image,
             this.x - this.radius,
             this.y - this.radius,
@@ -75,5 +79,9 @@ class Piece {
             return true;
         }
         return false;
+    }
+
+    setWinner() {
+        this.isWinningPiece = true;
     }
 }

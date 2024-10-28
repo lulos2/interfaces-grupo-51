@@ -113,6 +113,7 @@ class Board {
         ];
 
         const player = this.grid[row][col].player;
+        let winCombination = [[row, col]];
 
         for (let [dy, dx] of directions) {
             let count = 1;
@@ -126,6 +127,7 @@ class Board {
                 if (!this.grid[newRow][newCol]) break;
                 if (this.grid[newRow][newCol].player !== player) break;
 
+                winCombination.push([newRow, newCol]);
                 count++;
             }
 
@@ -138,10 +140,16 @@ class Board {
                 if (!this.grid[newRow][newCol]) break;
                 if (this.grid[newRow][newCol].player !== player) break;
 
+                winCombination.push([newRow, newCol]);
                 count++;
             }
 
-            if (count >= winCount) return true;
+            if (count >= winCount) {
+                winCombination.forEach(([row, col]) => {
+                    this.grid[row][col].setWinner();
+                });
+                return true;
+            }
         }
         return false;
     }
