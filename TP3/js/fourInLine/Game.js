@@ -6,8 +6,11 @@ class Game {
         this.isDragging = false;
         this.highlightedColumn = -1;
         this.dropZoneHeight = 90;
-        this.timerPlayer1 = new Timer("timerPlayer1",0,2);
-        this.timerPlayer2 = new Timer("timerPlayer2",0,2);
+
+        //enviamos la funcion resetGame, como parametro, al timer
+        this.timerPlayer1 = new Timer("timerPlayer1",0,2, () => this.resetGame());
+        this.timerPlayer2 = new Timer("timerPlayer2",0,2, () => this.resetGame());
+        
         this.imagePlayer1 = imgPlayer1;
         this.imagePlayer2 = imgPlayer2;
         this.winnerText = '';
