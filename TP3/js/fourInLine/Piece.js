@@ -13,6 +13,8 @@ class Piece {
         this.gravity = 0.8;
         this.isDropping = false;
         this.isWinningPiece = false;
+        this.reboundEffectFactor = 0.4;
+        this.minVelocity = 1;
     }
 
     draw(ctx) {
@@ -74,9 +76,15 @@ class Piece {
         // Verificar si hemos llegado al objetivo
         if (this.y >= targetY) {
             this.y = targetY; // Asegurar la posición exacta
-            this.isDropping = false;
-            this.velocityY = 0;
-            return true;
+
+            if (Math.abs(this.velocityY) > this.minVelocity) {
+                this.velocityY = -this.velocityY * this.reboundEffectFactor;  // Rebote
+            } else {
+                // Si la velocidad es muy baja, terminamos el rebote
+                this.isDropping = false;
+                this.velocityY = 0;
+                return true;
+            }
         }
         return false;
     }
