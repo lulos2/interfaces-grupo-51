@@ -20,7 +20,7 @@ class Board {
         this.background.src = 'media/images/4inLine/wordCup.jpg';
 
         this.boardColor = 'rgba(37, 37, 37, 0.5)';
-        this.cellColor = 'rgba(37, 37, 37, 0.5)';
+        this.cellColor = 'rgba(255, 255, 255, 0.1)';
 
         this.arrows = Array(cols).fill().map((_, i) => ({
             x: this.offsetX + (i * this.cellWidth) + (this.cellWidth / 2),
@@ -31,8 +31,18 @@ class Board {
     }
 
     draw(ctx) {
-        // Dibujar fondo
+
+        // Guardar el estado del contexto
+        ctx.save();
+
+        // Ajustar la opacidad de la imagen de fondo
+        ctx.globalAlpha = 0.3;  // Cambia este valor para ajustar la opacidad (0.0 es transparente, 1.0 es completamente opaco)
+
+        // Dibujar fondo con opacidad ajustada
         ctx.drawImage(this.background, 0, 0, this.totalWidth, this.totalHeight);
+
+        // Restaurar el estado del contexto para evitar que la opacidad afecte a otros elementos
+        ctx.restore();
 
         // Dibujar el tablero
         ctx.fillStyle = this.boardColor;
