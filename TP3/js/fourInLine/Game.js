@@ -6,8 +6,10 @@ class Game {
         this.isDragging = false;
         this.highlightedColumn = -1;
         this.dropZoneHeight = 90;
-        this.timerPlayer1 = new Timer("timerPlayer1",0,2);
-        this.timerPlayer2 = new Timer("timerPlayer2",0,2);
+
+        this.timerPlayer1 = new Timer("timerPlayer1",0,2, () => this.endGame("Gano Jugador 2"));
+        this.timerPlayer2 = new Timer("timerPlayer2",0,2, () => this.endGame("Gano Jugador 1"));
+        
         this.imagePlayer1 = imgPlayer1;
         this.imagePlayer2 = imgPlayer2;
         this.winnerText = '';

@@ -1,10 +1,11 @@
 class Timer {
-    constructor(elementId, seconds , minutes) {
+    constructor(elementId, seconds , minutes, onTimeUpCallback) {
         this.element = document.getElementById(elementId);
         this.seconds = 0;
         this.minutes = 0;
         this.isCountdown = false;
         this.timer = null;
+        this.onTimeUpCallback = onTimeUpCallback || function() {};
         this.setTime(minutes, seconds);
     }
 
@@ -58,7 +59,7 @@ class Timer {
         this.element.textContent = `${String(this.minutes).padStart(2, '0')}:${String(this.seconds).padStart(2, '0')}`;
     }
 
-    timeIsUp(message = '¡Tiempo terminado!') {
-        alert(message);
+    timeIsUp() {
+        this.onTimeUpCallback();
     }
 }
