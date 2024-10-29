@@ -12,8 +12,9 @@ body {
 
 .canvas-conteiner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 40px;
+    margin-inline: 25px;
     height: fit-content;
 }
 
