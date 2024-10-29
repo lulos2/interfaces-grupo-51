@@ -59,8 +59,7 @@ class Timer {
         this.element.textContent = `${String(this.minutes).padStart(2, '0')}:${String(this.seconds).padStart(2, '0')}`;
     }
 
-    timeIsUp(message = '¡Tiempo terminado!') {
-        alert(message);
+    timeIsUp() {
         this.onTimeUpCallback();
     }
 }
