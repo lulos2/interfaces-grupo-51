@@ -10,6 +10,8 @@ class Game {
         this.timerPlayer2 = new Timer("timerPlayer2",0,2);
         this.imagePlayer1 = imgPlayer1;
         this.imagePlayer2 = imgPlayer2;
+        this.winnerText = '';
+        this.winnerTextAlpha = 0;
         this.setBoardSize(boardSize);
         this.initGame();
     }
@@ -42,11 +44,6 @@ class Game {
 
         // Crear piezas para ambos jugadores
         this.initializePieces();
-    }
-
-    resetGame(){
-        this.initGame();
-        this.resetTimer();
     }
 
     initializePieces() {
@@ -183,7 +180,14 @@ class Game {
     endGame(message) {
         this.gameOver = true;
         this.stopTimer();
-        alert(message);
+        this.winnerText = message;
+        this.winnerTextAlpha = 0;
+    }
+
+    resetGame(){
+        this.initGame();
+        this.resetTimer();
+        this.winnerText = '';
     }
 
     draw() {
@@ -198,6 +202,10 @@ class Game {
         // Dibujar piezas disponibles
         for (let player in this.pieces) {
             this.pieces[player].forEach(piece => piece.draw(this.ctx));
+        }
+
+        if (this.winnerText) {
+            this.drawWinnerText();
         }
 
         // Solicitar siguiente frame
@@ -231,6 +239,20 @@ class Game {
         }
 
         this.ctx.restore();
+    }
+
+    drawWinnerText() {
+        this.ctx.save();
+        this.ctx.font = 'bold 48px Arial';
+        this.ctx.fillStyle = `rgba(255, 215, 0, ${this.winnerTextAlpha})`;
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
+        this.ctx.fillText(this.winnerText, this.canvas.width / 2, this.canvas.height / 2);
+        this.ctx.restore();
+
+        if (this.winnerTextAlpha < 1) {
+            this.winnerTextAlpha += 0.01;
+        }
     }
 
     stopTimer(){
