@@ -27,16 +27,13 @@ header {
 
 .navbar-logo {
     cursor: pointer;
+    margin-left: 100px;
 }
 
 .navbar-logo img {
     transform: scale(1.45);
     margin-left: 5px;
     margin-bottom: 1px;
-}
-
-.profile-button {
-    cursor: pointer;
 }
 
 .navbar .logo-container{
@@ -109,7 +106,7 @@ header {
 .profile-button {
     background-color: transparent;
     padding: 8px 12px;
-    margin-left: 10px;
+    margin-left: 100px;
     border-radius: 100%;
     border-color: var(--white);
 }

@@ -36,7 +36,7 @@ function updateBreadcrumbs() {
 
     if (currentPath.endsWith(ROUTES.HOME) || currentPath === '/' || currentPath === '') {
         homeLi.removeChild(homeA);
-        homeLi.textContent = 'Inicio';
+        homeLi.textContent = '';
         homeLi.classList.add('active');
     }
     else if (currentPath.endsWith(ROUTES.GAME)) {
