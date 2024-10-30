@@ -29,10 +29,11 @@
                     <div class="campo">
                         <p>Nombre</p>
                         <input type="text" placeholder="Nombre">
-                    </div>
-                    <div class="campo">
+                      </div>
+                      <div class="campo">
                         <p>Nombre de Usuario</p>
-                        <input type="text" placeholder="Nombre de Usuario">
+                        <input  id="usernameInput" type="text" placeholder="Nombre de Usuario"><span id="usernameTick" class="d-none">✓</span></input>
+                        <span id="usernameTick" class="d-none">✓</span>
                     </div>
                     <div class="campo">
                         <p>Email</p>
@@ -85,7 +86,15 @@
                     </div>
                     <div class="campo">
                         <p>Contraseña</p>
-                        <input type="password" placeholder="Password">
+                        <input id="passwordInput" type="password" placeholder="Password">
+                        <div id="passwordRules" class="d-none">
+                          <p>La contraseña debe contener:</p>
+                          <ul>
+                            <li>Al menos una mayúscula</li>
+                            <li>Al menos un número</li>
+                            <li>No debe estar relacionada con el nombre de usuario</li>
+                          </ul>
+                        </div>
                     </div>
 
                     <div class="login-button-wrapper register-wrapper">

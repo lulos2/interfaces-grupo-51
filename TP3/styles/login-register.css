@@ -26,6 +26,10 @@
     display: flex;
 }
 
+.d-block{
+    display: block;
+}
+
 .d-none{
     display: none;
 }
@@ -44,6 +48,47 @@
 
 .campo{
     margin-bottom: 10px;
+    position: relative;
+}
+
+#usernameTick {
+    position: absolute;
+    margin-left: 10px; 
+    margin-top: 3px;
+    font-size: 20px;
+    color: rgb(67, 223, 67);
+    right: 10%;
+}
+
+#passwordRules {
+    background-color: #000000; 
+    border-left: 5px solid #4907A1; 
+    border-radius: 8px;
+    padding: 15px;
+    position: absolute;
+    z-index: 10;
+    width: 250px; 
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; 
+}
+
+#passwordRules ul {
+    list-style: none; /* Quitar marcadores de lista */
+    padding-left: 0;
+}
+
+#passwordRules li {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+#passwordRules li::before {
+    content: '✓'; /* Icono de verificación */
+    color: #4907A1;
+    margin-right: 10px; 
 }
 
 #registerForm {
