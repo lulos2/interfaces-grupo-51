@@ -228,4 +228,8 @@ header {
         padding: 10px 0px;
     }
 
+    .navbar-logo {
+        margin-left: 27vw;
+    }
+
 }
