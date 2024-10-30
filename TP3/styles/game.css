@@ -112,12 +112,29 @@ body {
     padding-top: 22px;
 }
 
+.container-flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-flex-row div {
+    border-radius: 10px;
+}
+
+.publicity {
+    width: 48vw;
+}
+
 .coments {
+    width: 46vw;
+    height: 390px;
     background-color: rgba(25, 25, 25, 0.75);
     margin-top: 25px;
     margin-bottom: 25px;
     border-radius: 10px;
     border-inline: 1px solid var(--primaryColor);
+    overflow: scroll;
 }
 
 .coment {
