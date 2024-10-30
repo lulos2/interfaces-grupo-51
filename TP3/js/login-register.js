@@ -47,7 +47,8 @@ passwordInput.addEventListener('focus', function () {
     passwordRules.style.display = "block"; // Muestra el popup
 });
 
-// Ocultar las reglas al perder el foco
-passwordInput.addEventListener('blur', function () {
-    passwordRules.style.display = "none"; // Oculta el popup
+passwordInput.addEventListener('input', function () {
+    passwordRules.style.display = 'none'; // Oculta el popup al empezar a escribir
 });
+
+
