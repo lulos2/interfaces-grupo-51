@@ -141,4 +141,8 @@
         background-color: transparent;
         padding-top: 15px;
     }
+
+    .play-button-outer:hover {
+        background-color: transparent;
+    }
 }
