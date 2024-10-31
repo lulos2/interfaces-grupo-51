@@ -78,8 +78,8 @@
 
 @media (max-width: 600px) {
     .card {
-        max-width: 100px;
-        height: 150px;
+        max-width: 120px;
+        height: 180px;
         flex: 0 0 70%;
         margin: 10px;
         scroll-snap-align: start;
@@ -101,6 +101,10 @@
         transition: transform 0.5s ease;
     }
 
+    .card button {
+        background-color: transparent;
+    }
+
     .card-details {
         position: absolute;
         bottom: 0;
@@ -118,10 +122,16 @@
 
     .card-price {
         font-size: 12px;
-        padding-bottom: 25px;
+
     }
 
-    .button-game {
-        margin-right: 200px;
+    .bottom-card-details {
+        align-items: baseline;
+        justify-content: space-between;
+        padding-left: 15px;
+    }
+
+    .free {
+        margin-bottom: 20px;
     }
 }

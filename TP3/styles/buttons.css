@@ -120,3 +120,25 @@
 .play-button-outer:hover .play-button {
     border-color: transparent transparent transparent var(--highLight)
 }
+
+@media (max-width: 600px) {
+    .button-game {
+        width: fit-content;
+        height: fit-content;
+        background: radial-gradient(ellipse at center, var(--secondaryColorDark75) 10%, transparent 100%);
+        border: none;
+        border-radius: 20px;
+        color: var(--white);
+        text-align: center;
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        animation: colorFade 2s infinite alternate;
+        margin-top: 5px;
+    }
+
+    .play-button-outer {
+        background-color: transparent;
+        padding-top: 15px;
+    }
+}
