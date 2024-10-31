@@ -51,6 +51,14 @@
     position: relative;
 }
 
+.input-error {
+    border: 2px solid red;
+}
+
+.input-valid {
+    border: 2px solid rgb(23, 212, 23); 
+}
+
 #usernameTick {
     position: absolute;
     margin-left: 10px; 
