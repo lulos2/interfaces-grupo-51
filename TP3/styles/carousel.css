@@ -83,18 +83,19 @@
     z-index: 1;
 }
 
-@media (width < 600px) {
+@media (max-width: 600px) {
+    .carousel {
+        height: 200px;
+    }
+
+    .carousel-card-container h3 {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
     .arrow-left,
     .arrow-right {
         display: none;
-    }
-
-    .carousel-card-container {
-        width: 100%;
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
     }
 }
 

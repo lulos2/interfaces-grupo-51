@@ -87,5 +87,17 @@
     .super-carousel {
         overflow-x: scroll;
         width: fit-content;
+        height: 200px;
+        display: flex;
+        overflow-x: visible;
+
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .super-carousel-card-container h3{
+        font-size: 12px;
+        margin-left: 10px;
     }
 }
