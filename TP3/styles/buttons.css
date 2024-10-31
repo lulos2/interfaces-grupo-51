@@ -123,7 +123,10 @@
 
 @media (max-width: 600px) {
     .button-game {
-        width: fit-content;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
         height: fit-content;
         background: radial-gradient(ellipse at center, var(--secondaryColorDark75) 10%, transparent 100%);
         border: none;
@@ -139,10 +142,23 @@
 
     .play-button-outer {
         background-color: transparent;
-        padding-top: 15px;
+        margin-right: 5px;
+    }
+
+    .super-card .play-button-outer {
+        background-color: transparent;
+        margin-right: 14px;
     }
 
     .play-button-outer:hover {
         background-color: transparent;
+    }
+
+    .card .add-to-cart i {
+        margin-right: 10px;
+    }
+
+    .super-card .add-to-cart {
+        width: 75px;
     }
 }

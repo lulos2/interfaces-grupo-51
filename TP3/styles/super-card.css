@@ -85,7 +85,6 @@
     .super-card-price {
         font-size: 13px;
         padding-right: 60px;
-        margin-top: 30px;
         align-items: baseline;
 
     }
@@ -107,7 +106,7 @@
         background-color: transparent;
     }
 
-    .add-to-cart i {
-        padding-right: 23px;
+    .super-card .add-to-cart i {
+        /*padding-right: 23px;*/
     }
 }

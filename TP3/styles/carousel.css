@@ -85,7 +85,12 @@
 
 @media (max-width: 600px) {
     .carousel {
-        height: 200px;
+        height: 240px;
+    }
+
+    .carousel-container {
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .carousel-card-container h3 {
@@ -94,6 +99,7 @@
     }
 
     .carousel-card-container {
+        height: 230px;
         width: 100%;
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch;

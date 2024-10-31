@@ -126,12 +126,7 @@
     }
 
     .bottom-card-details {
-        align-items: baseline;
         justify-content: space-between;
         padding-left: 15px;
-    }
-
-    .free {
-        margin-bottom: 20px;
     }
 }

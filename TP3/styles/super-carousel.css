@@ -84,7 +84,13 @@
         display: none;
     }
 
+    .super-carousel-container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     .super-carousel {
+        overflow-y: hidden;
         overflow-x: scroll;
         width: fit-content;
         height: 200px;
