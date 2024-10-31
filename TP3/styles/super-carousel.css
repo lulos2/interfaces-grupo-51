@@ -89,7 +89,6 @@
         width: fit-content;
         height: 200px;
         display: flex;
-        overflow-x: visible;
         padding-bottom: 30px;
         align-items: center;
         margin-top: 20px;

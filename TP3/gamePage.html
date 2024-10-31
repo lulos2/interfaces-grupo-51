@@ -1,629 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>MPK juegos</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="media/icons/MPKlogo2.png" type="image/x-icon">
-    <script
-      src="https://kit.fontawesome.com/320dc3e6ca.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo-container">
-          <div class="dropdown">
-            <button class="hamburger-button">&#9776;</button>
-            <div id="myDropdown" class="dropdown-content">
-              <div class="menu-options-section">
-                <div class="option">
-                  <img src="media/icons/menu_icon_1.svg" alt="" />
-                  <p class="h3-baloo">Reciente</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_2.svg" alt="" />
-                  <p class="h3-baloo">Nuevo</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_3.svg" alt="" />
-                  <p class="h3-baloo">Tendencia</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_4.svg" alt="" />
-                  <p class="h3-baloo">Gratis</p>
-                </div>
-              </div>
-              <!----------- Categorias ----------->
-              <div class="menu-options-section">
-                <div class="option">
-                  <img src="media/icons/menu_icon_5.svg" alt="" />
-                  <p class="h3-baloo">Básquet</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_6.svg" alt="" />
-                  <p class="h3-baloo">Aventura</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_7.svg" alt="" />
-                  <p class="h3-baloo">Disparos</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_8.svg" alt="" />
-                  <p class="h3-baloo">Acción</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_9.svg" alt="" />
-                  <p class="h3-baloo">Carreras</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_10.svg" alt="" />
-                  <p class="h3-baloo">Cocina</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_5.svg" alt="" />
-                  <p class="h3-baloo">Basketball</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_8.svg" alt="" />
-                  <p class="h3-baloo">Acción</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_6.svg" alt="" />
-                  <p class="h3-baloo">Aventura</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_7.svg" alt="" />
-                  <p class="h3-baloo">Carrera</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_8.svg" alt="" />
-                  <p class="h3-baloo">Cocina</p>
-                </div>
-                <div class="option">
-                  <img src="media/icons/menu_icon_9.svg" alt="" />
-                  <p class="h3-baloo">Disparos</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="logo" class="navbar-logo">
-            <img src="media/icons/MPKlogo3.png" alt="" />
-          </div>
-        </div>
 
-        <div class="navbar-search">
-          <input type="text" placeholder="Buscar..." />
-          <img
-            src="media/icons/search.svg"
-            class="search-button"
-            alt="search"
-          />
-        </div>
-        <div class="navbar-icons">
-          <div class="dropdown">
-            <button id="profileButton" class="profile-button">
-              <i class="fa-regular fa-user" style="color: #f5ecfe"></i>
-            </button>
-            <div id="profile-dropdown" class="dropdown-content dropdown-prof">
+<head>
+  <meta charset="UTF-8" />
+  <title>MPK juegos</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="shortcut icon" href="media/icons/MPKlogo2.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/320dc3e6ca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <div class="dropdown">
+          <button class="hamburger-button">&#9776;</button>
+          <div id="myDropdown" class="dropdown-content">
+            <div class="menu-options-section">
               <div class="option">
-                <img src="media/icons/user (1).png" alt="" />
-                <p class="h3-baloo">My profile</p>
+                <img src="media/icons/menu_icon_1.svg" alt="" />
+                <p class="h3-baloo">Reciente</p>
               </div>
               <div class="option">
-                <img src="media/icons/cog.png" alt="" />
-                <p class="h3-baloo">Settings</p>
+                <img src="media/icons/menu_icon_2.svg" alt="" />
+                <p class="h3-baloo">Nuevo</p>
               </div>
               <div class="option">
-                <img src="media/icons/phone.png" alt="" />
-                <p class="h3-baloo">Contact</p>
+                <img src="media/icons/menu_icon_3.svg" alt="" />
+                <p class="h3-baloo">Tendencia</p>
               </div>
-              <div class="option" onclick="navigateTo(ROUTES.LOGIN_REGISTER)">
-                <img src="media/icons/exit.png" alt="" />
-                <p class="h3-baloo">Logout</p>
+              <div class="option">
+                <img src="media/icons/menu_icon_4.svg" alt="" />
+                <p class="h3-baloo">Gratis</p>
+              </div>
+            </div>
+            <!----------- Categorias ----------->
+            <div class="menu-options-section">
+              <div class="option">
+                <img src="media/icons/menu_icon_5.svg" alt="" />
+                <p class="h3-baloo">Básquet</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_6.svg" alt="" />
+                <p class="h3-baloo">Aventura</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_7.svg" alt="" />
+                <p class="h3-baloo">Disparos</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_8.svg" alt="" />
+                <p class="h3-baloo">Acción</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_9.svg" alt="" />
+                <p class="h3-baloo">Carreras</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_10.svg" alt="" />
+                <p class="h3-baloo">Cocina</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_5.svg" alt="" />
+                <p class="h3-baloo">Basketball</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_8.svg" alt="" />
+                <p class="h3-baloo">Acción</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_6.svg" alt="" />
+                <p class="h3-baloo">Aventura</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_7.svg" alt="" />
+                <p class="h3-baloo">Carrera</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_8.svg" alt="" />
+                <p class="h3-baloo">Cocina</p>
+              </div>
+              <div class="option">
+                <img src="media/icons/menu_icon_9.svg" alt="" />
+                <p class="h3-baloo">Disparos</p>
               </div>
             </div>
           </div>
         </div>
-      </nav>
+        <div id="logo" class="navbar-logo">
+          <img src="media/icons/MPKlogo3.png" alt="" />
+        </div>
+      </div>
 
-      <ul id="breadcrumbs"></ul>
-    </header>
-    <main>
-      <div class="canvas-conteiner">
-          <div class="game-container">
-            <div class="controlsLeft-container">
-              <button id="menuBtn" class="menu-button">Menú</button>
-              <div id="timerPlayer1">00:00</div>
+      <div class="navbar-search">
+        <input type="text" placeholder="Buscar..." />
+        <img src="media/icons/search.svg" class="search-button" alt="search" />
+      </div>
+      <div class="navbar-icons">
+        <div class="dropdown">
+          <button id="profileButton" class="profile-button">
+            <i class="fa-regular fa-user" style="color: #f5ecfe"></i>
+          </button>
+          <div id="profile-dropdown" class="dropdown-content dropdown-prof">
+            <div class="option">
+              <img src="media/icons/user (1).png" alt="" />
+              <p class="h3-baloo">My profile</p>
             </div>
-            <!-- Menú superpuesto -->
-            <div id="menuOverlay" class="menu-overlay">
-              <div class="menu-content">
-                <h1 class="menu-title">4 en Línea</h1>
-                <div class="game-options">
-                  <select id="boardSize">
-                    <option value="4">4 en línea</option>
-                    <option value="5">5 en línea</option>
-                    <option value="6">6 en línea</option>
-                    <option value="7">7 en línea</option>
-                  </select>
-                  <div class="player-option">
-                    <label>Argentina:</label>
-                    <select id="tokensP1">
-                      <option value="messi.jpg">Messi</option>
-                      <option value="di-maria.jpg">Di María</option>
-                      <option value="cuti.webp">Cuti</option>
-                      <option value="dibu.jpg">Dibu</option>
-                    </select>
-                  </div>
-                  <div class="player-option">
-                    <label>Francia:</label>
-                    <select id="tokensP2">
-                      <option value="mbappe.jpg">Mbappé</option>
-                      <option value="giroud.jpg">Giroud</option>
-                      <option value="dembele.jpg">Dembélé</option>
-                      <option value="griezmann.jpg">Griezmann</option>
-                    </select>
-                  </div>
-                </div>
-                <button id="playButton" class="menu-button">Jugar</button>
+            <div class="option">
+              <img src="media/icons/cog.png" alt="" />
+              <p class="h3-baloo">Settings</p>
+            </div>
+            <div class="option">
+              <img src="media/icons/phone.png" alt="" />
+              <p class="h3-baloo">Contact</p>
+            </div>
+            <div class="option" onclick="navigateTo(ROUTES.LOGIN_REGISTER)">
+              <img src="media/icons/exit.png" alt="" />
+              <p class="h3-baloo">Logout</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <ul id="breadcrumbs"></ul>
+  </header>
+  <main>
+    <div class="canvas-conteiner">
+      <div class="game-container">
+        <div class="controlsLeft-container">
+          <button id="menuBtn" class="menu-button">Menú</button>
+          <div id="timerPlayer1">00:00</div>
+        </div>
+        <!-- Menú superpuesto -->
+        <div id="menuOverlay" class="menu-overlay">
+          <div class="menu-content">
+            <h1 class="menu-title">4 en Línea</h1>
+            <div class="game-options">
+              <select id="boardSize">
+                <option value="4">4 en línea</option>
+                <option value="5">5 en línea</option>
+                <option value="6">6 en línea</option>
+                <option value="7">7 en línea</option>
+              </select>
+              <div class="player-option">
+                <label>Argentina:</label>
+                <select id="tokensP1">
+                  <option value="messi.jpg">Messi</option>
+                  <option value="di-maria.jpg">Di María</option>
+                  <option value="cuti.webp">Cuti</option>
+                  <option value="dibu.jpg">Dibu</option>
+                </select>
+              </div>
+              <div class="player-option">
+                <label>Francia:</label>
+                <select id="tokensP2">
+                  <option value="mbappe.jpg">Mbappé</option>
+                  <option value="giroud.jpg">Giroud</option>
+                  <option value="dembele.jpg">Dembélé</option>
+                  <option value="griezmann.jpg">Griezmann</option>
+                </select>
               </div>
             </div>
-            <canvas id="gameCanvas" width="1000px" height="625px"></canvas>
+            <button id="playButton" class="menu-button">Jugar</button>
+          </div>
+        </div>
+        <canvas id="gameCanvas" width="1000px" height="625px"></canvas>
 
             <div class="controlsRight-container">
               <button id="restartBtn" class="menu-button">Reiniciar</button>
               <div id="timerPlayer2">00:00</div>
             </div>
-
-            <div class="canvas share">
-              <div>
-                <img src="media/icons/share.png">
-              </div>
-              <div>
-                <img src="media/icons/document-text.png">
-              </div>
-              <div>
-                <img src="media/icons/star.png">
-              </div>
-            </div>
           </div>
 
-        
+        <div class="canvas share">
+          <div>
+            <img src="media/icons/share.png">
+          </div>
+          <div>
+            <img src="media/icons/document-text.png">
+          </div>
+          <div>
+            <img src="media/icons/star.png">
+          </div>
+        </div>
 
-        <div class="gameplays">
-          <div class="info-img"><img src="media/images/connect-4/4-en-linea-1.webp" alt="" srcset="" /></div>
-          <div class="info-img"><img src="media/images/connect-4/4-en-linea-futurista.webp" alt="" srcset="" /></div>
-          <div class="info-img"><img src="media/images/connect-4/connect-4-1.jpg" alt="" srcset="" /></div>
+      <div class="gameplays">
+        <div class="info-img"><img src="media/images/connect-4/4-en-linea-1.webp" alt="" srcset="" /></div>
+        <div class="info-img"><img src="media/images/connect-4/4-en-linea-futurista.webp" alt="" srcset="" /></div>
+        <div class="info-img"><img src="media/images/connect-4/connect-4-1.jpg" alt="" srcset="" /></div>
+      </div>
+    </div>
+
+    <div class="canvas-information">
+      <div class="variated">
+        <div class="variated-cont">
+          <h4>Descripcion</h4>
+          <ul>
+            <li>
+              ¡Bienvenido a "4 en Línea - Fútbol Internacional", el emocionante juego donde la estrategia
+              y la pasión por el fútbol se unen! Elige tu país favorito y compite contra otros jugadores
+              para ver quién puede conectar cuatro de sus piezas en línea primero.
+              En cada partida, podrás desplegar tus habilidades tácticas mientras colocas tus fichas en el
+              tablero, buscando formar líneas horizontales, verticales o diagonales.
+              Pero ten cuidado: tu oponente también intentará bloquear tus movimientos y formar su propia
+              conexión.
+            </li>
+          </ul>
+        </div>
+        <div class="variated-imgs">
+          <div><img src="media/images/4inLine/messi.png"></div>
+          <div><img src="media/images/4inLine/mbappe.png"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="canvas-information">
+      <div class="variated">
+        <div class="imgs-variated">
+          <div><img src="media/images/4inLine/cristiano.png"></div>
+        </div>
+        <div class="variated-cont">
+          <h4>Objetivo</h4>
+          <ul>
+            <li>
+              Se colocan las fichas referenciantes una a una en el tablero,
+              alternando con el país adversario.
+              Alinear 4 fichas de manera horizontal, vertical o diagonal.
+              El país que cumpla con el objetivo obtendrá la victoria inmediatamente, de lo
+              contrario se declarará un empate entre ambos dos.
+            </li>
+          </ul>
+        </div>
+        <div class="variated-cont">
+          <h4>Tips</h4>
+          <ul>
+            <li>
+              Utiliza la estrategia para bloquear a tu país enemigo mientras
+              intentas ser el primero en colocar 4 en línea para llevarse la victoria.
+            </li>
+            <li>
+              Estar atento a la ubicación de las fichas de su adversario antes
+              de tirar o podrías darle la victoria.
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div class="canvas-information">
-        <div class="variated">
-          <div class="variated-cont">
-            <h4>Descripcion</h4>
-            <ul>
-              <li>
-                ¡Bienvenido a "4 en Línea - Fútbol Internacional", el emocionante juego donde la estrategia 
-                y la pasión por el fútbol se unen! Elige tu país favorito y compite contra otros jugadores 
-                para ver quién puede conectar cuatro de sus piezas en línea primero.
-                En cada partida, podrás desplegar tus habilidades tácticas mientras colocas tus fichas en el 
-                tablero, buscando formar líneas horizontales, verticales o diagonales. 
-                Pero ten cuidado: tu oponente también intentará bloquear tus movimientos y formar su propia 
-                conexión.
-              </li>
-            </ul>
+      <div class="container-flex-row">
+        <div class="coments">
+          <div class="add-coment">
+            <div><img src="media/icons/zorrito 1.png" /></div>
+            <div class="add">
+              <h5>Agregar un comentario...</h5>
+            </div>
+
+            <div class="coment-buttons">
+              <button class="button-primary">Comentar</button>
+              <button class="button-secondary">Cancelar</button>
+            </div>
           </div>
-          <div class="variated-imgs">
-            <div><img src="media/images/4inLine/messi.png"></div>
-            <div><img src="media/images/4inLine/mbappe.png"></div>
+
+          <div class="coment">
+            <div>
+              <img src="media/icons/dragon.png" />
+            </div>
+            <div class="coment-user">
+              <div class="coment-header">
+                <h5>@usuario3323</h5>
+                <div class="coment-time">
+                  <h5>Hace 5 horas</h5>
+                </div>
+              </div>
+              <p>que buen juego!!</p>
+            </div>
+          </div>
+
+          <div class="coment">
+            <div>
+              <img src="media/icons/personaje 1.png" />
+            </div>
+            <div class="coment-user">
+              <div class="coment-header">
+                <h5>@usuarioAnonimo13</h5>
+                <div class="coment-time">
+                  <h5>Hace 6 horas</h5>
+                </div>
+              </div>
+              <p>Excelente</p>
+            </div>
+          </div>
+
+          <div class="coment">
+            <div>
+              <img src="media/icons/gatito.png" />
+            </div>
+            <div class="coment-user">
+              <div class="coment-header">
+                <h5>@juanCarlosIII</h5>
+                <div class="coment-time">
+                  <h5>Hace 7 horas</h5>
+                </div>
+              </div>
+              <p>No recomiendo, no pierdan el tiempo, el dbz zparking es mucho mas divertido</p>
+            </div>
+          </div>
+
+          <div class="coment">
+            <div>
+              <img src="media/icons/zorrito 1.png" />
+            </div>
+            <div class="coment-user">
+              <div class="coment-header">
+                <h5>@romeoSantos</h5>
+                <div class="coment-time">
+                  <h5>Hace 7 horas</h5>
+                </div>
+              </div>
+              <p>sin comentarios, simplemente épico</p>
+            </div>
+          </div>
+
+          <div class="coment">
+            <div>
+              <img src="media/icons/dragon.png" />
+            </div>
+            <div class="coment-user">
+              <div class="coment-header">
+                <h5>@Tapia24</h5>
+                <div class="coment-time">
+                  <h5>Hace 7 horas</h5>
+                </div>
+              </div>
+              <p>muy entretenido y optimizado. me encanta</p>
+            </div>
+          </div>
+          <div class="coment">
+            <div>
+              <img src="media/icons/gatito.png" />
+            </div>
+            <div class="coment-user">
+              <div class="coment-header">
+                <h5>@LaOrca</h5>
+                <div class="coment-time">
+                  <h5>Hace 8 horas</h5>
+                </div>
+              </div>
+              <p> es uno de esos juegos de mesa que, a pesar de su simplicidad, nunca pasan de moda. Es un clásico en el
+                que dos jugadores se enfrentan tratando de alinear cuatro fichas en una cuadrícula de 7x6, ya sea en
+                horizontal, vertical o diagonal.</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="canvas-information">
-        <div class="variated">
-          <div class="imgs-variated">
-            <div><img src="media/images/4inLine/cristiano.png"></div>
-          </div>
-          <div class="variated-cont">
-            <h4>Objetivo</h4>
-            <ul>
-              <li>
-                Se colocan las fichas referenciantes una a una en el tablero, 
-                alternando con el país adversario.
-                Alinear 4 fichas de manera horizontal, vertical o diagonal.
-                El país que cumpla con el objetivo obtendrá la victoria inmediatamente, de lo
-                contrario se declarará un empate entre ambos dos. 
-              </li>
-            </ul>
-          </div>
-          <div class="variated-cont">
-            <h4>Tips</h4>
-            <ul>
-              <li>
-                Utiliza la estrategia para bloquear a tu país enemigo mientras
-                intentas ser el primero en colocar 4 en línea para llevarse la victoria.
-              </li>
-              <li>
-                Estar atento a la ubicación de las fichas de su adversario antes
-                de tirar o podrías darle la victoria.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="container-flex-row">
-          <div class="coments">
-            <div class="add-coment">
-              <div><img src="media/icons/zorrito 1.png" /></div>
-              <div class="add"><h5>Agregar un comentario...</h5></div>
-
-              <div class="coment-buttons">
-                <button class="button-primary">Comentar</button>
-                <button class="button-secondary">Cancelar</button>
-              </div>
+        <div class="publicity">
+          <div class="carousel-container">
+            <div class="arrow-left">
+              <i class="fa-solid fa-chevron-left fa-2x"></i>
             </div>
-
-            <div class="coment">
-              <div>
-                <img src="media/icons/dragon.png" />
-              </div>
-              <div class="coment-user">
-                <div class="coment-header">
-                  <h5>@usuario3323</h5>
-                  <div class="coment-time"><h5>Hace 5 horas</h5></div>
+            <div class="carousel-card-container">
+              <h3>Tambien te puede interesar</h3>
+              <div class="carousel" data-scroll="0">
+                <div class="card">
+                  <img src="media/images/games/mortalKombat.jpg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">Mortal Kombat</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$4.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p>que buen juego!!</p>
-              </div>
-            </div>
-
-            <div class="coment">
-              <div>
-                <img src="media/icons/personaje 1.png" />
-              </div>
-              <div class="coment-user">
-                <div class="coment-header">
-                  <h5>@usuarioAnonimo13</h5>
-                  <div class="coment-time"><h5>Hace 6 horas</h5></div>
+                <div class="card">
+                  <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">Bloodborne</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$2.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p>Excelente</p>
-              </div>
-            </div>
-
-            <div class="coment">
-              <div>
-                <img src="media/icons/gatito.png" />
-              </div>
-              <div class="coment-user">
-                <div class="coment-header">
-                  <h5>@juanCarlosIII</h5>
-                  <div class="coment-time"><h5>Hace 7 horas</h5></div>
+                <div class="card">
+                  <img src="media/images/games/callofdutyMW3.jpg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">Call of Duty MW3</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$3.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p>No recomiendo, no pierdan el tiempo, el dbz zparking es mucho mas divertido</p>
-              </div>
-            </div>
-
-            <div class="coment">
-              <div>
-                <img src="media/icons/zorrito 1.png" />
-              </div>
-              <div class="coment-user">
-                <div class="coment-header">
-                  <h5>@romeoSantos</h5>
-                  <div class="coment-time"><h5>Hace 7 horas</h5></div>
+                <div class="card">
+                  <img src="media/images/games/grandTheft.jpg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">GTA Vice City</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$26.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p>sin comentarios, simplemente épico</p>
-              </div>
-            </div>
-
-            <div class="coment">
-              <div>
-                <img src="media/icons/dragon.png" />
-              </div>
-              <div class="coment-user">
-                <div class="coment-header">
-                  <h5>@Tapia24</h5>
-                  <div class="coment-time"><h5>Hace 7 horas</h5></div>
+                <div class="card">
+                  <img src="media/images/games/nfsnolimits.jpg" alt="Producto 1" />
+                  <div class="card-details">
+                    <button class="button-game">NFS No Limits</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$12.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p>muy entretenido y optimizado. me encanta</p>
-              </div>
-            </div>
-            <div class="coment">
-              <div>
-                <img src="media/icons/gatito.png" />
-              </div>
-              <div class="coment-user">
-                <div class="coment-header">
-                  <h5>@LaOrca</h5>
-                  <div class="coment-time"><h5>Hace 8 horas</h5></div>
+                <div class="card">
+                  <img src="media/images/games/battlefield1.jpg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">Battlefield 1</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$4.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p> es uno de esos juegos de mesa que, a pesar de su simplicidad, nunca pasan de moda. Es un clásico en el que dos jugadores se enfrentan tratando de alinear cuatro fichas en una cuadrícula de 7x6, ya sea en horizontal, vertical o diagonal.</p>
-              </div>
-            </div>
-          </div>
-          <div class="publicity">
-            <div class="carousel-container">
-              <div class="arrow-left">
-                <i class="fa-solid fa-chevron-left fa-2x"></i>
-              </div>
-              <div class="carousel-card-container">
-                <h3>Tambien te puede interesar</h3>
-                <div class="carousel" data-scroll="0">
-                  <div class="card">
-                    <img src="media/images/games/mortalKombat.jpg" alt="Producto 2" />
-                    <div class="card-details">
-                      <button class="button-game">Mortal Kombat</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$4.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
+                <div class="card">
+                  <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">Bloodborne</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$2.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
                     </div>
                   </div>
-                  <div class="card">
-                    <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
-                    <div class="card-details">
-                      <button class="button-game">Bloodborne</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$2.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
+                </div>
+                <div class="card">
+                  <img src="media/images/games/callofdutyMW3.jpg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">Call of Duty MW3</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$3.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
                     </div>
                   </div>
-                  <div class="card">
-                    <img
-                            src="media/images/games/callofdutyMW3.jpg"
-                            alt="Producto 2"
-                    />
-                    <div class="card-details">
-                      <button class="button-game">Call of Duty MW3</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$3.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
+                </div>
+                <div class="card">
+                  <img src="media/images/games/crash.jpeg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">Crash</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">$26.99</div>
+                      <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                      </button>
                     </div>
                   </div>
-                  <div class="card">
-                    <img src="media/images/games/grandTheft.jpg" alt="Producto 2" />
-                    <div class="card-details">
-                      <button class="button-game">GTA Vice City</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$26.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="media/images/games/nfsnolimits.jpg" alt="Producto 1" />
-                    <div class="card-details">
-                      <button class="button-game">NFS No Limits</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$12.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="media/images/games/battlefield1.jpg" alt="Producto 2" />
-                    <div class="card-details">
-                      <button class="button-game">Battlefield 1</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$4.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="media/images/games/bloodborne.jpg" alt="Producto 2" />
-                    <div class="card-details">
-                      <button class="button-game">Bloodborne</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$2.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img
-                            src="media/images/games/callofdutyMW3.jpg"
-                            alt="Producto 2"
-                    />
-                    <div class="card-details">
-                      <button class="button-game">Call of Duty MW3</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$3.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="media/images/games/crash.jpeg" alt="Producto 2" />
-                    <div class="card-details">
-                      <button class="button-game">Crash</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">$26.99</div>
-                        <button class="add-to-cart">
-                          <i class="fa-solid fa-cart-plus fa-2x"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="media/images/games/dota.jpg" alt="Producto 2" />
-                    <div class="card-details">
-                      <button class="button-game">Dota</button>
-                      <div class="bottom-card-details">
-                        <div class="card-price">FREE</div>
-                        <div class="play-button-outer">
-                          <div class="play-button"></div>
-                        </div>
+                </div>
+                <div class="card">
+                  <img src="media/images/games/dota.jpg" alt="Producto 2" />
+                  <div class="card-details">
+                    <button class="button-game">Dota</button>
+                    <div class="bottom-card-details">
+                      <div class="card-price">FREE</div>
+                      <div class="play-button-outer">
+                        <div class="play-button"></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="arrow-right">
-                <i class="fa-solid fa-chevron-right fa-2x" style="color: #ebe1fe"></i>
-              </div>
+            </div>
+            <div class="arrow-right">
+              <i class="fa-solid fa-chevron-right fa-2x" style="color: #ebe1fe"></i>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer>
-      <div class="copyright"><p>© interfaces 2024</p></div>
+  <footer>
+    <div class="copyright">
+      <p>© interfaces 2024</p>
+    </div>
 
-      <div class="contenido-footer">
+    <div class="contenido-footer">
 
-        <div class="division-foot">
-          <div class="seccion-foot seccion-foot4">
-            <ul>
-              <li><h2>Contactos</h2></li>
-              <li>clients@mpkjuegos.com</li>
-              <li>+54 9 2255524391</li>
-              <li>Av. Mari Piper 1322</li>
-              <li>Tandil, Argentina</li>
-              <li>@MPK en todas las redes sociales</li>
-            </ul>
-          </div>
-
-          <div class="seccion-foot seccion-foot8">
-            <ul>
-
-              <div class="aa">
-                <li>
-                  <img src="media/icons/Facebook.png" />
-                  
-                </li>
-                <li><img src="media/icons/X.png" /></li>
-                <li>
-                  <img src="media/icons/Youtube.png" />
-                  
-                </li>
-                <li><img src="media/icons/Instagram.png" /></li>
-              </div>
-            </ul>
-          </div> 
-
-          <div class="seccion-foot seccion-foot11">
-            <ul>
-              <li><h2>Compartir</h2></li>
-              <li>Invita a un amigo</li>
-              <li>Tarjetas MPK</li>
-              <li>Copiar enlace</li>
-              <li>Comparte y gana puntos extra</li><li>Desafía a tus amigos</li>
-              <li>Copiar enlace de la página</li>
-            </ul>
-          </div>
-        </div>
-  
-        <div class="division-foot">
-          <div class="seccion-foot seccion-foot6">
-            <ul>
-              <li><h2>Sobre nosotros</h2></li>
-              <li>¿Quiénes somos?</li>
-              <li>¿Qué hacemos?</li>
-              <li>Nuestra historia</li>
-              <li>Noticias</li>
-            </ul>
-          </div>
-
-          <div class="seccion-foot seccion-foot7">
-            <ul>
-              <li><h2>Usuario</h2></li>
-              <li>Mi cuenta</li>
-              <li>Personalizar mi cuenta</li>
-              <li>Políticas de privacidad</li>
-              <li>Términos de uso</li>
-              <li>Otras políticas</li>
-              <li>Directrices de la marca</li>
-              <li>Historial de actividad</li>
-              <li>Foros y grupos</li>
-            </ul>
-          </div>
-        </div>
-  
-        <div class="division-foot">
-          <div class="seccion-foot seccion-foot5">
-            <ul>
-              <li><h2>Recursos</h2></li>
-              <li>Guías y tutoriales</li>
-              <li>Trucos y consejos</li>
-              <li>Foros de discusión</li>
-              <li>Calendario de lanzamientos</li>
-              <li>Reseñas de juegos</li>
-              <li>Comparativas de juegos</li>
-              <li>Artículos de estrategia</li>
-            </ul>
-          </div>
-          <div class="seccion-foot seccion-foot2">
-            <ul>
-              <li><h2>Ayuda y soporte</h2></li>
-              <li>Envíanos un comentario</li>
-              <li>Sobre Copyright</li>
-              <li>Preguntas frecuentes</li>
-              <li>Guías y tutoriales</li>
-              <li>Foros de la comunidad</li>
-              <li><button class="button-primary">Contactanos</button></li>
-            </ul>
-          </div>
-         
+      <div class="division-foot">
+        <div class="seccion-foot seccion-foot4">
+          <ul>
+            <li>
+              <h2>Contactos</h2>
+            </li>
+            <li>clients@mpkjuegos.com</li>
+            <li>+54 9 2255524391</li>
+            <li>Av. Mari Piper 1322</li>
+            <li>Tandil, Argentina</li>
+            <li>@MPK en todas las redes sociales</li>
+          </ul>
         </div>
 
-        <div class="division-foot">
-          <div class="seccion-foot seccion-foot10">
-            <ul>
-              <li><h2>Eventos y torneos</h2></li>
-              <li>Calendario de eventos</li>
-              <li>Información de torneos</li>
-              <li>Inscripción</li>
-              <li>Resultados de torneos anteriores</li>
-              <li>Patrocinadores de eventos</li>
-              <li>Comunidad de jugadores</li>
-              <li>Premios y reconocimientos</li>
-              <li>Recursos para organizadores</li>
-            </ul>
-          </div>
+        <div class="seccion-foot seccion-foot8">
+          <ul>
 
-          <div class="seccion-foot seccion-foot1 patrocinadores">
-            <ul>
-              <li><h2>Patrocinadores</h2></li>
+            <div class="aa">
               <li>
-                <img src="media/icons/playstation.png" />
+                <img src="media/icons/Facebook.png" />
+
               </li>
+              <li><img src="media/icons/X.png" /></li>
               <li>
-                <img src="media/icons/nvidia.png" />
+                <img src="media/icons/Youtube.png" />
+
               </li>
-            </ul>
-          </div>
+              <li><img src="media/icons/Instagram.png" /></li>
+            </div>
+          </ul>
+        </div>
+
+        <div class="seccion-foot seccion-foot11">
+          <ul>
+            <li>
+              <h2>Compartir</h2>
+            </li>
+            <li>Invita a un amigo</li>
+            <li>Tarjetas MPK</li>
+            <li>Copiar enlace</li>
+            <li>Comparte y gana puntos extra</li>
+            <li>Desafía a tus amigos</li>
+            <li>Copiar enlace de la página</li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <script src="js/fourInLine/Timer.js"></script>
-    <script src="js/fourInLine/Piece.js"></script>
-    <script src="js/fourInLine/Board.js"></script>
-    <script src="js/fourInLine/Game.js"></script>
-    <script src="js/gamePage.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+
+      <div class="division-foot">
+        <div class="seccion-foot seccion-foot6">
+          <ul>
+            <li>
+              <h2>Sobre nosotros</h2>
+            </li>
+            <li>¿Quiénes somos?</li>
+            <li>¿Qué hacemos?</li>
+            <li>Nuestra historia</li>
+            <li>Noticias</li>
+          </ul>
+        </div>
+
+        <div class="seccion-foot seccion-foot7">
+          <ul>
+            <li>
+              <h2>Usuario</h2>
+            </li>
+            <li>Mi cuenta</li>
+            <li>Personalizar mi cuenta</li>
+            <li>Políticas de privacidad</li>
+            <li>Términos de uso</li>
+            <li>Otras políticas</li>
+            <li>Directrices de la marca</li>
+            <li>Historial de actividad</li>
+            <li>Foros y grupos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="division-foot">
+        <div class="seccion-foot seccion-foot5">
+          <ul>
+            <li>
+              <h2>Recursos</h2>
+            </li>
+            <li>Guías y tutoriales</li>
+            <li>Trucos y consejos</li>
+            <li>Foros de discusión</li>
+            <li>Calendario de lanzamientos</li>
+            <li>Reseñas de juegos</li>
+            <li>Comparativas de juegos</li>
+            <li>Artículos de estrategia</li>
+          </ul>
+        </div>
+        <div class="seccion-foot seccion-foot2">
+          <ul>
+            <li>
+              <h2>Ayuda y soporte</h2>
+            </li>
+            <li>Envíanos un comentario</li>
+            <li>Sobre Copyright</li>
+            <li>Preguntas frecuentes</li>
+            <li>Guías y tutoriales</li>
+            <li>Foros de la comunidad</li>
+            <li><button class="button-primary">Contactanos</button></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="division-foot">
+        <div class="seccion-foot seccion-foot10">
+          <ul>
+            <li>
+              <h2>Eventos y torneos</h2>
+            </li>
+            <li>Calendario de eventos</li>
+            <li>Información de torneos</li>
+            <li>Inscripción</li>
+            <li>Resultados de torneos anteriores</li>
+            <li>Patrocinadores de eventos</li>
+            <li>Comunidad de jugadores</li>
+            <li>Premios y reconocimientos</li>
+            <li>Recursos para organizadores</li>
+          </ul>
+        </div>
+
+        <div class="seccion-foot seccion-foot1 patrocinadores">
+          <ul>
+            <li>
+              <h2>Patrocinadores</h2>
+            </li>
+            <li>
+              <img src="media/icons/playstation.png" />
+            </li>
+            <li>
+              <img src="media/icons/nvidia.png" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/fourInLine/Timer.js"></script>
+  <script src="js/fourInLine/Piece.js"></script>
+  <script src="js/fourInLine/Board.js"></script>
+  <script src="js/fourInLine/Game.js"></script>
+  <script src="js/gamePage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

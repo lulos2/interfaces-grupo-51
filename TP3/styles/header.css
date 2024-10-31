@@ -98,15 +98,15 @@ header {
 .cart-button {
     background-color: transparent;
     color: var(--white);
-    padding: 8px 12px;
+    
     margin-left: 10px;
     cursor: pointer;
 }
 
 .profile-button {
     background-color: transparent;
-    padding: 8px 12px;
-    margin-left: 100px;
+    height: 35px;
+    width: 35px;
     border-radius: 100%;
     border-color: var(--white);
 }
