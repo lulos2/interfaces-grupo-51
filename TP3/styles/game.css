@@ -13,6 +13,7 @@ body {
 .canvas-conteiner {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin: 40px;
     margin-inline: 25px;
     height: fit-content;
@@ -92,11 +93,13 @@ body {
 }
 
 .gameplays {
+    margin-left: auto;
     display: block;
     background-color: rgba(33, 04, 72, 0.6);
     border-radius: 10px;
     padding: 20px;
     width: fit-content;
+    height: 585px;
     align-items: center;
     justify-content: space-between;
 }
@@ -123,11 +126,11 @@ body {
 }
 
 .publicity {
-    width: 48vw;
+    width: 47vw;
 }
 
 .coments {
-    width: 46vw;
+    width: 47vw;
     height: 390px;
     background-color: rgba(25, 25, 25, 0.75);
     margin-top: 25px;
