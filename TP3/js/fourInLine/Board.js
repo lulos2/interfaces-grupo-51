@@ -24,7 +24,7 @@ class Board {
         this.background = new Image();
         this.background.src = 'media/images/4inLine/wordCup.jpg';
 
-        this.boardColor = 'rgba(37, 37, 37, 0.5)'; // Color de fondo del tablero
+        this.boardColor = 'rgba(25, 25, 25, 0.8)'; // Color de fondo del tablero
         this.cellColor = 'rgba(255, 255, 255, 0.1)'; // Color de las celdas
 
         // Configura las flechas indicadoras para cada columna
