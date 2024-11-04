@@ -9,8 +9,8 @@ class Game {
         this.dropZoneHeight = 90;                 // Altura de la zona de drop
 
         // Timers para cada jugador
-        this.timerPlayer1 = new Timer("timerPlayer1", 0, 2, () => this.endGame("Gano Jugador 2"));
-        this.timerPlayer2 = new Timer("timerPlayer2", 0, 2, () => this.endGame("Gano Jugador 1"));
+        this.timerPlayer1 = new Timer("timerPlayer1", 0, 2, () => this.endGame("Gano Francia"));
+        this.timerPlayer2 = new Timer("timerPlayer2", 0, 2, () => this.endGame("Gano Argentina"));
 
         // Referencias para el indicador de turnos
         this.turnIndicator1 = document.getElementById('turnIndicator1');
