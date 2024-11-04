@@ -233,4 +233,8 @@ header {
         margin-left: 25svw;
     }
 
+    .dropdown-content {
+        height: fit-content;
+    }
+
 }

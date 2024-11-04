@@ -9,6 +9,10 @@
     margin-bottom: 15px;
 }
 
+.categorias {
+    display: none;
+}
+
 .super-carousel {
     height: 400px;
     display: flex;
@@ -97,12 +101,28 @@
         display: flex;
         padding-bottom: 30px;
         align-items: center;
-        margin-top: 20px;
+        margin-top: 25px;
         margin-bottom: 10px;
     }
 
     .super-carousel-card-container h3{
         font-size: 12px;
         margin-left: 10px;
+    } 
+
+    .categorias {
+        display: flex;
+        background-color: var(--secondaryColorDark75);
+        justify-content: space-around;
+        padding: 10px;
+        padding-inline: 15px;
+    }
+
+    .categorias img {
+        width: 15px;
+    }
+
+    .categ {
+        display: none;
     }
 }
