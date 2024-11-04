@@ -40,6 +40,22 @@ class Piece {
         ctx.drawImage(this.image, this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius * 2);
 
         ctx.restore();
+
+        // Dibuja el borde de la pieza
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.lineWidth = 2; // Establece grosor del borde
+
+        // Establece el color del borde según el jugador
+        if (this.player === 1) {
+            ctx.strokeStyle = 'rgb(114, 181, 241)'; // Color para el jugador 1
+        } else if (this.player === 2) {
+            ctx.strokeStyle = 'rgb(0, 44, 182)'; // Color para el jugador 2
+        }
+
+        ctx.stroke();
+        ctx.restore();
     }
 
     // Verifica si un punto (px, py) está dentro del área de la pieza
