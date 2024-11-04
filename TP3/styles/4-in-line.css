@@ -141,3 +141,12 @@
 .player-option select:hover {
     background: var(--secondaryColorDark1);
 }
+
+.turn-indicator {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin: 10px 0;
+    text-align: center;
+    animation: blink 1s infinite;
+}

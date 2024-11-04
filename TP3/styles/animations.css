@@ -56,3 +56,14 @@
         transform: scale(1);
     }
 }
+
+@keyframes blink {
+    0%, 100% { 
+        opacity: 1;
+        color: white;
+    }
+    50% { 
+        opacity: 0.5; 
+        color: var(--highLight);
+    }
+}

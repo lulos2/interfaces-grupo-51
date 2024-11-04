@@ -12,6 +12,10 @@ class Game {
         this.timerPlayer1 = new Timer("timerPlayer1", 0, 2, () => this.endGame("Gano Jugador 2"));
         this.timerPlayer2 = new Timer("timerPlayer2", 0, 2, () => this.endGame("Gano Jugador 1"));
 
+        // Referencias para el indicador de turnos
+        this.turnIndicator1 = document.getElementById('turnIndicator1');
+        this.turnIndicator2 = document.getElementById('turnIndicator2');
+
         // Configuración de las imágenes de las piezas de cada jugador
         this.imagePlayer1 = imgPlayer1;
         this.imagePlayer2 = imgPlayer2;
@@ -20,6 +24,20 @@ class Game {
 
         this.setBoardSize(boardSize);             // Configura el tamaño del tablero
         this.initGame();                          // Inicia el juego
+
+        // Actualizar visualmente el turno inicial
+        this.updateTurnIndicator();
+    }
+
+    // Actualiza los indicadores de turno
+    updateTurnIndicator() {
+        if (this.currentPlayer === 1) {
+            this.turnIndicator1.style.display = 'block';
+            this.turnIndicator2.style.display = 'none';
+        } else {
+            this.turnIndicator1.style.display = 'none';
+            this.turnIndicator2.style.display = 'block';
+        }
     }
 
     // Configura el tamaño del tablero y reinicia el juego si es necesario
@@ -167,10 +185,16 @@ class Game {
 
                             // Verifica si hay un ganador
                             if (this.board.checkWin(row, column, this.winCount)) {
-                                this.endGame(`¡Jugador ${this.currentPlayer} gana!`);
+                                if(this.currentPlayer === 1) {
+                                    this.endGame(`¡Gana Argentina!`);
+                                } else {
+                                    this.endGame(`¡Gana Francia!`);
+                                }
+                                
                             } else {
                                 this.changeTimer();
                                 this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+                                this.updateTurnIndicator();
                             }
 
                             this.selectedPiece = null;
@@ -252,6 +276,7 @@ class Game {
     startTimer() {
         if (this.currentPlayer === 1) {
             this.timerPlayer1.start();
+
         } else {
             this.timerPlayer2.start();
         }
