@@ -27,13 +27,6 @@ class Board {
         this.boardColor = 'rgba(37, 37, 37, 0.5)'; // Color de fondo del tablero
         this.cellColor = 'rgba(255, 255, 255, 0.1)'; // Color de las celdas
 
-        // Configura las flechas indicadoras para cada columna
-        this.arrows = Array(cols).fill().map((_, i) => ({
-            x: this.offsetX + (i * this.cellWidth) + (this.cellWidth / 2),
-            y: 30,
-            alpha: 0.7,
-            direction: 1
-        }));
     }
 
     // Dibuja el tablero y sus componentes en el contexto del canvas
@@ -49,30 +42,8 @@ class Board {
         ctx.fillStyle = this.boardColor;
         ctx.fillRect(this.offsetX, this.offsetY, this.width, this.height);
 
-        // Dibuja flechas animadas en la parte superior del tablero
-        this.drawArrows(ctx);
-
         // Dibuja la grilla del tablero
         this.drawGrid(ctx);
-    }
-
-    // Dibuja flechas sobre las columnas, indicando zonas de drop disponibles
-    drawArrows(ctx) {
-        ctx.save();
-        this.arrows.forEach((arrow, index) => {
-            let columnIsFull = this.getLowestEmptyRow(index) === -1;
-            let alpha = columnIsFull ? 0.3 : arrow.alpha;
-
-            // Dibujar la flecha si la columna no está llena
-            ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
-            ctx.beginPath();
-            ctx.moveTo(arrow.x - 15, arrow.y);
-            ctx.lineTo(arrow.x + 15, arrow.y);
-            ctx.lineTo(arrow.x, arrow.y + 20);
-            ctx.closePath();
-            ctx.fill();
-        });
-        ctx.restore();
     }
 
     // Dibuja las celdas de la grilla y las piezas dentro del tablero
