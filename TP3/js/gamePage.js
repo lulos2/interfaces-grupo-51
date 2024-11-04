@@ -98,6 +98,6 @@ class GameMenu {
     // Oculta el menú y reanuda el temporizador del juego
     hideMenu() {
         this.menuOverlay.classList.add('hidden');
-        this.game?.starTimer();
+        this.game?.startTimer();
     }
 }
