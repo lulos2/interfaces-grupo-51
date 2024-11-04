@@ -101,10 +101,10 @@ class Board {
         ];
 
         const player = this.grid[row][col].player;
-        let winCombination = [[row, col]];  // Almacena las posiciones ganadoras
 
         for (let [dy, dx] of directions) {
             let count = 1;
+            let winCombination = [[row, col]];  // Almacena las posiciones ganadoras
 
             // Revisa en una dirección para encontrar piezas consecutivas
             for (let i = 1; i < winCount; i++) {
