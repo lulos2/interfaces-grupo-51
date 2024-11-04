@@ -147,71 +147,73 @@ class Game {
     // Maneja el evento de soltar para colocar la pieza en el tablero
     handleRelease(e) {
         if (!this.selectedPiece || !this.isDragging || this.gameOver) return;
-
+    
         const rect = this.canvas.getBoundingClientRect();
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
-
+    
         this.isDragging = false;
-
+    
         // Coloca la pieza en la columna correspondiente si está en la zona de drop
         if (mouseY <= this.dropZoneHeight) {
             const column = this.board.getColumnFromX(mouseX);
             if (column >= 0 && column < this.board.cols) {
                 const row = this.board.getLowestEmptyRow(column);
-
+    
                 if (row >= 0) {
                     const targetX = this.board.offsetX + (column * this.board.cellWidth) + (this.board.cellWidth / 2);
                     const targetY = this.board.offsetY + (row * this.board.cellHeight) + (this.board.cellHeight / 2);
-
+    
                     this.selectedPiece.x = targetX;
                     this.selectedPiece.originalX = targetX;
                     this.selectedPiece.isDropping = true;
-
-                    const dropInterval = setInterval(() => {
-                        if (this.selectedPiece && this.selectedPiece.drop(targetY)) {
-                            clearInterval(dropInterval);
-
-                            // Actualiza la posición y el tablero
-                            this.selectedPiece.x = targetX;
-                            this.selectedPiece.y = targetY;
-                            this.board.grid[row][column] = this.selectedPiece;
-
-                            // Remueve la pieza de las piezas disponibles del jugador
-                            const index = this.pieces[this.currentPlayer].indexOf(this.selectedPiece);
-                            if (index > -1) {
-                                this.pieces[this.currentPlayer].splice(index, 1);
-                            }
-
-                            // Verifica si hay un ganador
-                            if (this.board.checkWin(row, column, this.winCount)) {
-                                if(this.currentPlayer === 1) {
-                                    this.endGame(`¡Gana Argentina!`);
-                                } else {
-                                    this.endGame(`¡Gana Francia!`);
-                                }
-                                
-                            } else {
-                                this.changeTimer();
-                                this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
-                                this.updateTurnIndicator();
-                            }
-
-                            this.selectedPiece = null;
+    
+                    // Actualiza el tablero inmediatamente
+                    this.board.grid[row][column] = this.selectedPiece;
+    
+                    // Remueve la pieza de las piezas disponibles del jugador
+                    const index = this.pieces[this.currentPlayer].indexOf(this.selectedPiece);
+                    if (index > -1) {
+                        this.pieces[this.currentPlayer].splice(index, 1);
+                    }
+    
+                    // Verifica si hay un ganador
+                    if (this.board.checkWin(row, column, this.winCount)) {
+                        if (this.currentPlayer === 1) {
+                            this.endGame(`¡Gana Argentina!`);
+                        } else {
+                            this.endGame(`¡Gana Francia!`);
                         }
-                    }, 16);
-
+                    } else {
+                        // Cambia el turno inmediatamente
+                        this.changeTimer();
+                        this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+                        this.updateTurnIndicator();
+                    }
+    
+                    // Ejecuta el efecto de caída con rebote de forma asíncrona
+                    this.dropPieceWithBounce(this.selectedPiece, targetY);
+    
+                    this.selectedPiece = null;
                     this.highlightedColumn = -1;
                     return;
                 }
             }
         }
-
+    
         // Si la pieza no se coloca, vuelve a su posición original
         this.selectedPiece.reset();
         this.selectedPiece.stopDragging();
         this.selectedPiece = null;
         this.highlightedColumn = -1;
+    }
+    
+    dropPieceWithBounce(piece, targetY) {
+        const dropInterval = setInterval(() => {
+            if (piece.drop(targetY)) {
+                clearInterval(dropInterval);
+            }
+        }, 16);  // Ejecuta el efecto de rebote cada 16ms (aproximadamente 60 FPS)
     }
 
     // Termina el juego y muestra el mensaje de victoria
