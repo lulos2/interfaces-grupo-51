@@ -1,0 +1,90 @@
+.parallax-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1px;
+}
+
+.parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.section-1 .background-hills {
+    background-image: url('../assets/images/background/firstSection/colinas.png');
+    z-index: 1;
+    width: 1280px;
+    height: 959.31px;
+    left: -0.18px;
+    top: -0.33px;
+}
+
+.section-1 .tree-left {
+    background-image: url('../assets/images/background/firstSection/tree1.png');
+    width: 560.1px;
+    height: 867.75px;
+    z-index: 2;
+    left: -153px;
+    top: -1px;
+}
+
+.section-1 .tree-right-1 {
+    background-image: url('../assets/images/background/firstSection/tree2.png');
+    width: 434.21px;
+    height: 675.52px;
+    z-index: 2;
+    top: 106.71px;
+    left: 881.03px;
+}
+
+.section-1 .tree-right-2 {
+    background-image: url('../assets/images/background/firstSection/tree3.png');
+    position: absolute;
+    width: 278.03px;
+    height: 430.85px;
+    z-index: 1;
+    top: 278.38px;
+    left: 1080.97px;
+}
+
+.section-1 .stone-left {
+    background-image: url('../assets/images/background/firstSection/stone1.png');
+    width: 145.41px;
+    height: 78.09px;
+    z-index: 3;
+    top: 793.37px;
+    left: 129.07px;
+}
+
+.section-1 .stone-right-1 {
+    background-image: url('../assets/images/background/firstSection/stone2.png');
+    width: 66.65px;
+    height: 56.55px;
+    z-index: 3;
+    top: 737.5px;
+    left: 1035.84px;
+}
+
+.section-1 .stone-right-2 {
+    background-image: url('../assets/images/background/firstSection/stone3.png');
+    width: 113.77px;
+    height: 74.05px;
+    z-index: 4;
+    top: 737.5px;
+    left: 1072.22px;
+}
+
+.section-1 .stone-right-3 {
+    background-image: url('../assets/images/background/firstSection/stone4.png');
+    width: 59.24px;
+    height: 35.01px;
+    z-index: 5;
+    top: 786.64px;
+    left: 1042.84px;
+}
