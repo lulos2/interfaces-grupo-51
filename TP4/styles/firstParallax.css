@@ -38,7 +38,7 @@
     background-image: url('../assets/images/background/firstSection/tree2.png');
     width: 434.21px;
     height: 675.52px;
-    z-index: 2;
+    z-index: 3;
     top: 106.71px;
     left: 881.03px;
 }
@@ -48,7 +48,7 @@
     position: absolute;
     width: 278.03px;
     height: 430.85px;
-    z-index: 1;
+    z-index: 2;
     top: 278.38px;
     left: 1080.97px;
 }
@@ -66,7 +66,7 @@
     background-image: url('../assets/images/background/firstSection/stone2.png');
     width: 66.65px;
     height: 56.55px;
-    z-index: 3;
+    z-index: 4;
     top: 737.5px;
     left: 1035.84px;
 }
@@ -75,7 +75,7 @@
     background-image: url('../assets/images/background/firstSection/stone3.png');
     width: 113.77px;
     height: 74.05px;
-    z-index: 4;
+    z-index: 5;
     top: 737.5px;
     left: 1072.22px;
 }
@@ -84,7 +84,103 @@
     background-image: url('../assets/images/background/firstSection/stone4.png');
     width: 59.24px;
     height: 35.01px;
-    z-index: 5;
+    z-index: 6;
     top: 786.64px;
     left: 1042.84px;
+}
+
+.section-1 .bush-left-1 {
+    background-image: url('../assets/images/background/firstSection/bush1.png');
+    width: 249.76px;
+    height: 114.44px;
+    z-index: 1;
+    top: 717.97px;
+    left: 161.38px;
+}
+
+.section-1 .bush-left-2 {
+    background-image: url('../assets/images/background/firstSection/bush2.png');
+    width: 155.51px;
+    height: 102.33px;
+    z-index: 4;
+    top: 821.65px;
+    left: 197.06px;
+}
+
+.section-1 .bush-right-1 {
+    background-image: url('../assets/images/background/firstSection/bush3.png');
+    width: 191.19px;
+    height: 63.28px;
+    z-index: 1;
+    top: 630.46px;
+    left: 1028.46px;
+}
+
+.section-1 .bush-right-2 {
+    background-image: url('../assets/images/background/firstSection/bush4.png');
+    width: 244.37px;
+    height: 107.71px;
+    z-index: 2;
+    top: 662.1px;
+    left: 1080.97px;
+}
+
+.section-1 .figure-1 {
+    background-image: url('../assets/images/background/firstSection/figure1.png');
+    width: 259.4px;
+    height: 330.48px;
+    z-index: 5;
+    top: 498.28px;
+    left: 423px;
+}
+
+.section-1 .figure-2 {
+    background-image: url('../assets/images/background/firstSection/figure2.png');
+    width: 207px;
+    height: 280px;
+    z-index: 4;
+    top: 403.04px;
+    left: 548px;
+}
+
+.section-1 .figure-3 {
+    background-image: url('../assets/images/background/firstSection/figure3.png');
+    width: 187px;
+    height: 397px;
+    z-index: 3;
+    top: 342px;
+    left: 718.25px;
+}
+
+.shade-1 ,.shade-2, .shade-3 {
+    background-image: url('../assets/images/background/firstSection/shade1.png');
+    width: 140px;
+    height: 33px;
+}
+
+.section-1 .shade-1 {
+    top: 762px;
+    left: 494px;
+    z-index: 2;
+}
+
+.section-1 .shade-2 {
+    top: 727px;
+    left: 608px;
+    z-index: 2;
+}
+
+.section-1 .shade-3 {
+    top: 697px;
+    left: 724px;
+    z-index: 2;
+}
+
+.section-1 .logo {
+    background-image: url('../assets/images/logo.png');
+    width: 560px;
+    height: 320px;
+    z-index: 6;
+    top: 55px;
+    left: 360px;
 }
