@@ -175,12 +175,3 @@
     left: 724px;
     z-index: 2;
 }
-
-.section-1 .logo {
-    background-image: url('../assets/images/logo.png');
-    width: 560px;
-    height: 320px;
-    z-index: 6;
-    top: 55px;
-    left: 360px;
-}
