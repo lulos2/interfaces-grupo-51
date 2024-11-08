@@ -5,7 +5,6 @@ function handleScroll() {
     const scrollPosition = window.scrollY;
 
     if (scrollPosition > 70) {
-        console.log(heroLogo);
         navbar.classList.add('scrolled');
         navLogo.classList.add('visible');
         heroLogo.classList.add('scrolled');

@@ -1,7 +1,15 @@
 .parallax-section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    perspective: 1px;
+}
+
+.section-1 {
+    position: relative;
+    width: 100%;
+    height: 2806px;
     overflow: hidden;
     perspective: 1px;
 }
@@ -175,3 +183,13 @@
     left: 724px;
     z-index: 2;
 }
+
+.section-1 .background-gradient {
+    background-image: url("../assets/images/background/firstSection/gradient.png");
+    width: 100%;
+    height: 894px;
+    z-index: 0;
+    left: 0;
+    top: 954.31px;
+}
+
