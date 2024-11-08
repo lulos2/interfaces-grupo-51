@@ -234,3 +234,54 @@
     box-shadow: inset 0px 0px 0px 29px var(--borderColorBlue);
     border-radius: 73px;
 }
+
+.card-image-1 {
+    background-image: url("../assets/images/galery/img.png");
+    top: 2174px;
+    left: 100px;
+    width: 332.96px;
+    height: 302.69px;
+}
+
+.card-image-2 {
+    width: 332.96px;
+    height: 302.69px;
+    box-shadow: inset 9px var(--borderImagesColorBlue);
+    background-image: url("../assets/images/galery/img_1.png");
+    top: 2174px;
+    left: 473.52px;
+}
+
+.card-image-3 {
+    background-image: url("../assets/images/galery/img_2.png");
+    top: 2174px;
+    left: 847.04px;
+    width: 332.96px;
+    height: 302.69px;
+}
+
+.card-text-1 {
+    position: absolute;
+    top: 2500px;
+    width: 333px;
+    height: 218px;
+    z-index: 1000;
+}
+
+.card-text-2 {
+    position: absolute;
+    top: 2500px;
+    left: 373.52px;
+    width: 333px;
+    height: 218px;
+    z-index: 1000;
+}
+
+.card-text-3 {
+    position: absolute;
+    top: 2500px;
+    left: 747.04px;
+    width: 333px;
+    height: 218px;
+    z-index: 1000;
+}
