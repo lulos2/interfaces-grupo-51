@@ -59,6 +59,8 @@ h1 {
 
 h2 {
     font-size: 47px;
+    margin: 0;
+    line-height: 1;
 }
 
 h3 {
@@ -67,6 +69,7 @@ h3 {
 
 h4 {
     font-size: 20px;
+    margin: 0;
 }
 
 body {
@@ -80,9 +83,11 @@ body {
 }
 
 .content {
-    width: 1280px;
-    padding-left: 100px;
-    padding-right: 100px;
+    width: 1080px;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    z-index: 10;
 }
 main {
     width: 1280px;
