@@ -37,3 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
         loadImage(currentIndex);
     }, interval);
 });
+
+document.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+
+    //document.querySelector('.background-hills').style.transform = `translateY(${scrollTop * 0.05}px)`;
+    document.querySelector('.tree-left').style.transform = `translateY(${scrollTop * -0.05}px)`;
+    document.querySelector('.tree-right-1').style.transform = `translateY(${scrollTop * -0.05}px)`;
+    document.querySelector('.tree-right-2').style.transform = `translateY(${scrollTop * -0.05}px)`;
+    document.querySelector('.stone-left').style.transform = `translateY(${scrollTop * -0.07}px)`;
+    document.querySelector('.stone-right-1').style.transform = `translateY(${scrollTop * -0.05}px)`;
+    document.querySelector('.stone-right-2').style.transform = `translateY(${scrollTop * -0.09}px)`;
+    document.querySelector('.stone-right-3').style.transform = `translateY(${scrollTop * -0.1}px)`;
+    document.querySelector('.bush-left-1').style.transform = `translateY(${scrollTop * -0.04}px)`;
+    document.querySelector('.bush-left-2').style.transform = `translateY(${scrollTop * -0.13}px)`;
+    document.querySelector('.bush-right-1').style.transform = `translateY(${scrollTop * -0.05}px)`;
+    document.querySelector('.bush-right-2').style.transform = `translateY(${scrollTop * -0.1}px)`;
+    document.querySelector('.figure-1').style.transform = `translateY(${scrollTop * -0.09}px)`;
+    document.querySelector('.figure-2').style.transform = `translateY(${scrollTop * -0.12}px)`;
+    document.querySelector('.figure-3').style.transform = `translateY(${scrollTop * -0.1}px)`;
+});
+
