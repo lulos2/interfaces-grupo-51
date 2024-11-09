@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('firstParallax.css');
+@import url('firstSection.css');
 @import url('navBar.css');
+@import url('middleSection.css');
+
 :root {
     --fontColorBlue: #1B428F;
     --fontColorWhite: #FFFFFF;
@@ -35,6 +37,12 @@
     font-family: "Lato", serif;
     font-weight: 900;
     font-style: normal;
+}
+
+.lato-bold-italic {
+    font-family: "Lato", serif;
+    font-weight: 550;
+    font-style: italic;
 }
 
 .text-red {
