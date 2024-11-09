@@ -25,6 +25,11 @@
     height: 153px;
 }
 
+.descubre-las-mats h1 {
+    text-align: center;
+    margin: 0;
+}
+
 .content .buy-button button{
     position: absolute;
     top: 3220px;
