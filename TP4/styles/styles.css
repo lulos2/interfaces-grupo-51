@@ -2,6 +2,7 @@
 @import url('firstSection.css');
 @import url('navBar.css');
 @import url('middleSection.css');
+@import url('fakeScrollSection.css');
 
 :root {
     --fontColorBlue: #1B428F;
