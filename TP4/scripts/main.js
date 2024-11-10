@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.querySelector('.carousel');
     const images = [
         '../TP4/assets/images/carousel/default.png',
-        '../TP4/assets/images/carousel/img.png',
-        '../TP4/assets/images/carousel/img_1.png',
-        '../TP4/assets/images/carousel/img_2.png'
+        '../TP4/assets/images/carousel/carrousel_img.png',
+        '../TP4/assets/images/carousel/carrousel_img_1.png',
+        '../TP4/assets/images/carousel/carrousel_img_2.png'
     ];
     let currentIndex = 0;
-    const interval = 3000; // Cambiar cada 3 segundos
+    const interval = 3000;
 
     function loadImage(index) {
         carouselContainer.style.backgroundImage = `url('${images[index]}')`;
