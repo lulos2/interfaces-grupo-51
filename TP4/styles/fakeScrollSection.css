@@ -15,11 +15,23 @@
     background: white;
 }
 
+.left-side {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -120px;
+}
+
+.fixed-container h1 {
+    margin-bottom: 140px;
+    margin-right: 300px;
+}
+
 .image-container {
     position: relative;
     width: 291px;
     height: 436px;
-    left: 140px;
+    left: 142px;
     top: -80px;
 }
 
@@ -28,7 +40,7 @@
     height: 167px;
     position:absolute;
     left:  715px;
-    top: 320px;
+    top: 332px;
 }
 
 .scroll-item {
@@ -52,7 +64,7 @@
 }
 
 .scroll-image {
-    height: 500px;
+    height: 436px;
     object-fit: contain;
 }
 
