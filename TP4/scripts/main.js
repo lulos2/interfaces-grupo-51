@@ -40,26 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new StickyScrollSection();
 });
 
-document.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-
-    //document.querySelector('.background-hills').style.transform = `translateY(${scrollTop * 0.05}px)`;
-    document.querySelector('.tree-left').style.transform = `translateY(${scrollTop * -0.05}px)`;
-    document.querySelector('.tree-right-1').style.transform = `translateY(${scrollTop * -0.05}px)`;
-    document.querySelector('.tree-right-2').style.transform = `translateY(${scrollTop * -0.05}px)`;
-    document.querySelector('.stone-left').style.transform = `translateY(${scrollTop * -0.07}px)`;
-    document.querySelector('.stone-right-1').style.transform = `translateY(${scrollTop * -0.05}px)`;
-    document.querySelector('.stone-right-2').style.transform = `translateY(${scrollTop * -0.09}px)`;
-    document.querySelector('.stone-right-3').style.transform = `translateY(${scrollTop * -0.1}px)`;
-    document.querySelector('.bush-left-1').style.transform = `translateY(${scrollTop * -0.04}px)`;
-    document.querySelector('.bush-left-2').style.transform = `translateY(${scrollTop * -0.13}px)`;
-    document.querySelector('.bush-right-1').style.transform = `translateY(${scrollTop * -0.05}px)`;
-    document.querySelector('.bush-right-2').style.transform = `translateY(${scrollTop * -0.1}px)`;
-    document.querySelector('.figure-1').style.transform = `translateY(${scrollTop * -0.09}px)`;
-    document.querySelector('.figure-2').style.transform = `translateY(${scrollTop * -0.12}px)`;
-    document.querySelector('.figure-3').style.transform = `translateY(${scrollTop * -0.1}px)`;
-});
-
 class StickyScrollSection {
     constructor() {
         this.items = document.querySelectorAll('.scroll-item');
@@ -107,3 +87,70 @@ class StickyScrollSection {
         }
     }
 }
+
+
+class ObserverParallax {
+    constructor(element, parallaxFactor) {
+        this.element = element;
+        this.parallaxFactor = parallaxFactor;
+        this.isVisible = false;
+        this.scrollStart = null;
+
+
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.isVisible = true;
+                    this.scrollStart = window.scrollY;
+                } else {
+                    this.isVisible = false;
+                }
+            });
+        });
+
+        this.observer.observe(this.element);
+    }
+
+    applyParallaxEffect(scrollTop) {
+        if (this.isVisible && this.scrollStart !== null) {
+            const scrollDiff = scrollTop - this.scrollStart;
+            this.element.style.transform = `translateY(${scrollDiff * this.parallaxFactor}px)`;
+        }
+    }
+}
+
+let observerTreeLeft = new ObserverParallax(document.querySelector('.tree-left'), -0.05);
+let observerTreeRight1 = new ObserverParallax(document.querySelector('.tree-right-1'), -0.05);
+let observerTreeRight2 = new ObserverParallax(document.querySelector('.tree-right-2'), -0.05);
+let observerStoneLeft = new ObserverParallax(document.querySelector('.stone-left'), -0.07);
+let observerStoneRight1 = new ObserverParallax(document.querySelector('.stone-right-1'), -0.05);
+let observerStoneRight2 = new ObserverParallax(document.querySelector('.stone-right-2'), -0.09);
+let observerStoneRight3 = new ObserverParallax(document.querySelector('.stone-right-3'), -0.1);
+let observerBushLeft1 = new ObserverParallax(document.querySelector('.bush-left-1'), -0.04);
+let observerBushLeft2 = new ObserverParallax(document.querySelector('.bush-left-2'), -0.13);
+let observerBushRight1 = new ObserverParallax(document.querySelector('.bush-right-1'), -0.05);
+let observerBushRight2 = new ObserverParallax(document.querySelector('.bush-right-2'), -0.1);
+let observerFigure1 = new ObserverParallax(document.querySelector('.figure-1'), -0.09);
+let observerFigure2 = new ObserverParallax(document.querySelector('.figure-2'), -0.12);
+let observerFigure3 = new ObserverParallax(document.querySelector('.figure-3'), -0.1);
+let observerSection2Figure3 = new ObserverParallax(document.querySelector('.section-2 .figure-3'), -0.1);
+
+
+document.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    observerTreeLeft.applyParallaxEffect(scrollTop);
+    observerTreeRight2.applyParallaxEffect(scrollTop);
+    observerTreeRight1.applyParallaxEffect(scrollTop);
+    observerBushRight2.applyParallaxEffect(scrollTop);
+    observerBushRight1.applyParallaxEffect(scrollTop);
+    observerBushLeft2.applyParallaxEffect(scrollTop);
+    observerBushLeft1.applyParallaxEffect(scrollTop);
+    observerStoneRight3.applyParallaxEffect(scrollTop);
+    observerStoneRight2.applyParallaxEffect(scrollTop);
+    observerStoneRight1.applyParallaxEffect(scrollTop);
+    observerStoneLeft.applyParallaxEffect(scrollTop);
+    observerFigure1.applyParallaxEffect(scrollTop);
+    observerFigure2.applyParallaxEffect(scrollTop);
+    observerFigure3.applyParallaxEffect(scrollTop);
+    observerSection2Figure3.applyParallaxEffect(scrollTop);
+});
