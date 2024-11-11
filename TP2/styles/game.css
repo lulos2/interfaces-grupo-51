@@ -1,0 +1,177 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url(../media/icons/MPKLogo.webp);
+    background-size: contain;
+}
+
+.game-title h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--highLight);
+}
+
+.canvas-conteiner {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px;
+    height: fit-content;
+}
+
+.canvas-game {
+    display: flex;
+    align-items: end;
+}
+
+.canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primaryColorDark1);
+    width: 950px;
+    height: 625px;
+    padding: 10px;
+    border-radius: 10px
+}
+
+.share {
+    background-color: transparent;
+    width: fit-content;
+    align-items: end;
+    left: 0px;
+    display: block;
+}
+
+.canvas-information {
+    height: fit-content;
+    margin: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.variated {
+    background-color: rgba(33, 04, 72, 0.60);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    border-inline: 1px solid var(--secondaryColor);
+}
+
+.description p, .variated li{
+    font-size: 15px;
+}
+
+.variated-cont {
+    width: 40%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 30px;
+    margin-top: 0px;
+}
+
+.variated-imgs{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.variated-imgs img{
+    width: 190px;
+    margin: 10px;
+}
+
+.imgs-variated{
+    padding-left: 30px;
+}
+
+.imgs-variated img{
+    width: 225px;
+    margin-top: 10px;
+}
+
+.gameplays {
+    display: block;
+    background-color: rgba(33, 04, 72, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gameplays img{
+    width: 150px;
+    height: 130px;
+    border-radius: 5px;
+}
+
+.info-img {
+    padding-bottom: 20px;
+    padding-top: 22px;
+}
+
+.coments {
+    background-color: rgba(25, 25, 25, 0.75);
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;  
+    border-inline: 1px solid var(--primaryColor);
+}
+
+.coment {
+    display: flex;
+    justify-content: left;
+    align-items:center;
+    text-align: left;
+    padding: 10px;
+    padding-left: 25px;
+}
+
+.coment p{
+    font-size: 15px;
+}
+
+.coment-user {
+    margin-left: 10px;
+    align-items: start;
+}
+
+.add-coment {
+    display: flex;
+    padding-left: 10px;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+}
+
+.add {
+    border-bottom: 1px solid var(--secondaryColorLight1);
+    margin: 10px;
+    width: 100%;
+}
+
+.coment-time {
+    align-items: start;
+    padding-bottom: 30px;
+}
+
+.coment-time h5 {
+    color: var(--secondaryColorLight1)
+}
+
+.coment-buttons {
+    display: flex;
+    padding-right: 20px;
+}
+
+.coment-buttons button{
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+

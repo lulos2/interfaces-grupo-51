@@ -1,0 +1,287 @@
+.parallax-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    perspective: 1px;
+}
+
+.section-1 {
+    position: relative;
+    width: 100%;
+    height: 3987px;
+    overflow: hidden;
+    perspective: 1px;
+}
+
+.parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.section-1 .background-hills {
+    background-image: url('../assets/images/background/firstSection/colinas.png');
+    z-index: 1;
+    width: 1280px;
+    height: 959.31px;
+    left: -0.18px;
+    top: -0.33px;
+}
+
+.section-1 .tree-left {
+    background-image: url('../assets/images/background/firstSection/tree1.png');
+    width: 560.1px;
+    height: 867.75px;
+    z-index: 2;
+    left: -153px;
+    top: -1px;
+}
+
+.section-1 .tree-right-1 {
+    background-image: url('../assets/images/background/firstSection/tree2.png');
+    width: 434.21px;
+    height: 675.52px;
+    z-index: 3;
+    top: 106.71px;
+    left: 881.03px;
+}
+
+.section-1 .tree-right-2 {
+    background-image: url('../assets/images/background/firstSection/tree3.png');
+    position: absolute;
+    width: 278.03px;
+    height: 430.85px;
+    z-index: 2;
+    top: 278.38px;
+    left: 1080.97px;
+}
+
+.section-1 .stone-left {
+    background-image: url('../assets/images/background/firstSection/stone1.png');
+    width: 145.41px;
+    height: 78.09px;
+    z-index: 3;
+    top: 793.37px;
+    left: 129.07px;
+}
+
+.section-1 .stone-right-1 {
+    background-image: url('../assets/images/background/firstSection/stone2.png');
+    width: 66.65px;
+    height: 56.55px;
+    z-index: 4;
+    top: 737.5px;
+    left: 1035.84px;
+}
+
+.section-1 .stone-right-2 {
+    background-image: url('../assets/images/background/firstSection/stone3.png');
+    width: 113.77px;
+    height: 74.05px;
+    z-index: 5;
+    top: 737.5px;
+    left: 1072.22px;
+}
+
+.section-1 .stone-right-3 {
+    background-image: url('../assets/images/background/firstSection/stone4.png');
+    width: 59.24px;
+    height: 35.01px;
+    z-index: 6;
+    top: 786.64px;
+    left: 1042.84px;
+}
+
+.section-1 .bush-left-1 {
+    background-image: url('../assets/images/background/firstSection/bush1.png');
+    width: 249.76px;
+    height: 114.44px;
+    z-index: 1;
+    top: 717.97px;
+    left: 161.38px;
+}
+
+.section-1 .bush-left-2 {
+    background-image: url('../assets/images/background/firstSection/bush2.png');
+    width: 155.51px;
+    height: 102.33px;
+    z-index: 4;
+    top: 821.65px;
+    left: 197.06px;
+}
+
+.section-1 .bush-right-1 {
+    background-image: url('../assets/images/background/firstSection/bush3.png');
+    width: 191.19px;
+    height: 63.28px;
+    z-index: 1;
+    top: 630.46px;
+    left: 1028.46px;
+}
+
+.section-1 .bush-right-2 {
+    background-image: url('../assets/images/background/firstSection/bush4.png');
+    width: 244.37px;
+    height: 107.71px;
+    z-index: 2;
+    top: 662.1px;
+    left: 1080.97px;
+}
+
+.section-1 .figure-1 {
+    background-image: url('../assets/images/background/firstSection/figure1.png');
+    width: 259.4px;
+    height: 330.48px;
+    z-index: 5;
+    top: 498.28px;
+    left: 423px;
+}
+
+.section-1 .figure-2 {
+    background-image: url('../assets/images/background/firstSection/figure2.png');
+    width: 207px;
+    height: 280px;
+    z-index: 4;
+    top: 403.04px;
+    left: 548px;
+}
+
+.section-1 .figure-3 {
+    background-image: url('../assets/images/background/firstSection/figure3.png');
+    width: 187px;
+    height: 397px;
+    z-index: 3;
+    top: 342px;
+    left: 718.25px;
+}
+
+.shade-1 ,.shade-2, .shade-3 {
+    background-image: url('../assets/images/background/firstSection/shade1.png');
+    width: 140px;
+    height: 33px;
+}
+
+.section-1 .shade-1 {
+    top: 762px;
+    left: 494px;
+    z-index: 2;
+}
+
+.section-1 .shade-2 {
+    top: 727px;
+    left: 608px;
+    z-index: 2;
+}
+
+.section-1 .shade-3 {
+    top: 697px;
+    left: 724px;
+    z-index: 2;
+}
+
+.section-1 .background-gradient {
+    background-image: url("../assets/images/background/firstSection/gradient.png");
+    width: 100%;
+    height: 894px;
+    z-index: 0;
+    left: 0;
+    top: 954.31px;
+}
+
+.la-app-mas-divertida {
+    position: relative;
+    top: 1014px;
+    width: 508px;
+    height: 132px;
+}
+
+.la-app-mas-divertida-desc {
+    position: relative;
+    width: 704px;
+    top: 1042px;
+}
+
+.section-1 .figure-4 {
+    background-image: url("../assets/images/background/firstSection/figura4.png");
+    width: 597px;
+    height: 564px;
+    z-index: 4;
+    left: 48px;
+    top: 1548px;
+}
+
+.section-1 .figure-5 {
+    background-image: url("../assets/images/background/firstSection/figura5.png");
+    width: 494px;
+    height: 1259px;
+    z-index: 4;
+    left: 787px;
+    top: 867px;
+}
+
+.section-1 .carousel {
+    background-image: url("../assets/images/carousel/default.png");
+    left: 236px;
+    top: 1290px;
+    width: 576.38px;
+    height: 324.35px;
+    z-index: 3;
+    box-shadow: inset 0px 0px 0px 29px var(--borderColorBlue);
+    border-radius: 73px;
+}
+
+.card-image-1 {
+    background-image: url("../assets/images/galery/img.png");
+    top: 2174px;
+    left: 100px;
+    width: 332.96px;
+    height: 302.69px;
+}
+
+.card-image-2 {
+    width: 332.96px;
+    height: 302.69px;
+    box-shadow: inset 9px var(--borderImagesColorBlue);
+    background-image: url("../assets/images/galery/img_1.png");
+    top: 2174px;
+    left: 473.52px;
+}
+
+.card-image-3 {
+    background-image: url("../assets/images/galery/img_2.png");
+    top: 2174px;
+    left: 847.04px;
+    width: 332.96px;
+    height: 302.69px;
+}
+
+.card-text-1 {
+    position: absolute;
+    top: 2500px;
+    width: 333px;
+    height: 218px;
+    z-index: 1000;
+}
+
+.card-text-2 {
+    position: absolute;
+    top: 2500px;
+    left: 373.52px;
+    width: 333px;
+    height: 218px;
+    z-index: 1000;
+}
+
+.card-text-3 {
+    position: absolute;
+    top: 2500px;
+    left: 747.04px;
+    width: 333px;
+    height: 218px;
+    z-index: 1000;
+}

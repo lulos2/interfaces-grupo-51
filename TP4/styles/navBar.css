@@ -1,0 +1,104 @@
+.navbar {
+    position: fixed;
+    width: 1280px;
+    padding-top: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    width: 1280px;
+    background: linear-gradient(to bottom, var(--nav-color),var(--nav-color), rgb(0 0 0 / 0%));
+    backdrop-filter: blur(1px);
+    padding: 0.5rem 0;
+}
+
+.navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-logo img {
+    height: 86px;
+    width: 150px;
+    opacity: 0;
+    transform: scale(3);
+    transition: all 0.3s ease;
+}
+
+.nav-logo.visible img {
+    top: -13px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.logo {
+    background-image: url('../assets/images/logo.png');
+    width: 560px;
+    height: 320px;
+    z-index: 6;
+    top: 55px;
+    left: 360px;
+    transition: all 1s ease;
+    will-change: transform, opacity;
+}
+
+.logo.scrolled {
+    position: fixed;
+    top: 20px;
+    transform: translate(-0%, -50%) scale(0.15);
+    opacity: 0;
+}
+
+.hamburger {
+    margin-left: 82px;
+    width: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 34px;
+    height: 4px;
+    background-color: var(--burgerButtonColorOrange);
+    border: var(--white) 4px solid;
+    border-radius: 25px;
+    box-shadow: 5px 5px var(--shadowColorBlue);
+}
+
+.buy-button button {
+    margin-right: 85px;
+    background-color: var(--buttonColorGreen);
+    color: var(--fontColorWhite);
+    width: 207px;
+    border: solid 8px var(--white);
+    padding: 14px 0;
+    border-radius: 9999px;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: "Lato", serif;
+    font-style: normal;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 4px 5px var(--shadowColorBlue);
+}
+
+.buy-button button:hover {
+    background-color: var(--burgerButtonColorOrange);
+}

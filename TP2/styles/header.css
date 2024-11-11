@@ -1,3 +1,18 @@
+header {
+    height: 55px;
+    background: transparent;
+}
+
+.option img{
+    width: 25px;
+    height: 25px;
+}
+
+.option {
+    align-items: center;
+    cursor: pointer;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -5,6 +20,23 @@
     background-color:var(--secondaryColor);
     color: var(--secondaryColor);
     padding: 10px 20px;
+    position: fixed;
+    width: 98%;
+    z-index: 5;
+}
+
+.navbar-logo {
+    cursor: pointer;
+}
+
+.navbar-logo img {
+    transform: scale(1.45);
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+
+.profile-button {
+    cursor: pointer;
 }
 
 .navbar .logo-container{
@@ -15,7 +47,8 @@
 .navbar-logo img{
     display: flex;
     align-items: center;
-    height: 30px;
+    height: 35px;
+    border-radius: 4px;
 }
 
 .navbar-logo a {
@@ -50,7 +83,7 @@
 
 .navbar-search input {
     all: unset;
-    padding: 0px 8px;
+    padding: 8px;
     width: 100%;
     word-wrap: break-word;
     font-size: 16px;
@@ -92,7 +125,7 @@
 }
 
 .hamburger-button:hover{
-    transform: matrix(1.05,tan(0),tan(3),1.05,0,0);
+    transform: matrix(1.05,tan(0),tan(0),1.05,0,0);
 }
 
 .dropdown {
@@ -101,7 +134,7 @@
 }
 
 .dropdown-content {
-    height: 700px;
+    height: 90vh;
     overflow: auto;
     width: 200px;
     display: none;
@@ -109,8 +142,13 @@
     background-color: var(--secondaryColorDark1);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
+    z-index: 4;
     border-radius: 4px;
+}
+
+.dropdown-prof {
+    height:fit-content;
+    right: 0;
 }
 
 .dropdown-content::-webkit-scrollbar {
@@ -142,6 +180,8 @@
 
 .show {display:block;}
 
+.show-profile {display: block;}
+
 .dropdown .menu-options-section {
     border-bottom: solid 1px var(--secondaryColor);
 }
@@ -150,16 +190,20 @@
     background-color: transparent;
     padding: 0 24px;
     display: inline-flex;
-    margin-top: 5px;
+    margin-top: 20px;
+    margin-left: 18px;
+    margin-bottom: 20px;
 }
 
 #breadcrumbs li {
     display: inline-flex;
+    margin-top: 50px;
     margin-right: 10px;
+    z-index: 3;
 }
 
 #breadcrumbs li::after{
-    color: #007bff;
+    color: var(--linkColor);
     margin-left: 10px;
     content: "/";
 }
@@ -170,17 +214,21 @@
 
 #breadcrumbs a {
     text-decoration: none;
-    color: #007bff;
+    color: var(--linkColor);
 }
 
 #breadcrumbs a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
     .navbar-search {
         display: none;
+    }
+    .navbar {
+        width: 100svw;
+        padding: 10px 0px;
     }
 
 }

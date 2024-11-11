@@ -1,0 +1,91 @@
+.super-carousel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--secondaryColorDark75);
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.super-carousel {
+    height: 400px;
+    display: flex;
+    overflow-x: visible;
+    width: max-content;
+    max-width: 1200px;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.super-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.super-carousel-container h3 {
+    color: var(--highLight);
+    position: absolute;
+    z-index: 3;
+    margin-top: 10px;
+}
+
+.super-carousel-card-container {
+    width: 1400px;
+    overflow: hidden;
+}
+
+.super-carousel-container .arrow-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 50px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.super-carousel-container .arrow-left :hover {
+    background: var(--secondaryColorDark75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 50px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.super-carousel-container .arrow-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 50px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.super-carousel-container .arrow-right :hover {
+    background: var(--secondaryColorDark75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 50px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .super-carousel-container .arrow-left,
+    .super-carousel-container .arrow-right {
+        display: none;
+    }
+
+    .super-carousel {
+        overflow-x: scroll;
+        width: fit-content;
+    }
+}

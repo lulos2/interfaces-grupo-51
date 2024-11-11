@@ -1,10 +1,6 @@
 .login-register {
     background-color: var(--black);
-    background-image:url("../media/icons/logo.svg");
-    background-repeat: no-repeat;
     background-position: center;
-    background-size:900px;
-    height: 900px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -12,8 +8,18 @@
     padding: 20px;
 }
 
-.login-register img {
+.backgroundImage {
+    display: flex;
+    background-size: 900px;
+    height: fit-content;
+    width: fit-content;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../media/icons/MPKLogo.webp);
+    border-radius: 50px;
     z-index: 2;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .d-flex{
@@ -31,11 +37,19 @@
     opacity: 0.9;
     z-index: 1;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 150px;
+}
+
+.campo{
+    margin-bottom: 10px;
 }
 
 #registerForm {
-    height: 800px;
+    height: fit-content;
+    margin: 50px;
+    margin-inline: 100px;
 }
 
 .userForm p {
@@ -74,15 +88,28 @@
 .login-button-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .network-login{
     width: 50%;
-    display: flex;
+    display: block;
     justify-content: space-evenly;
     height: fit-content;
     padding-top: 10px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.base-register{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
 
 .login-button-wrapper{
@@ -96,10 +123,15 @@
 }
 
 .register-wrapper{
-    height: 164px;
     align-items: center;
 }
+
 .captcha{
     margin-top: 20px;
     text-align: center;
+        border-radius: 100px;
+        width: 323px;
+        height: 50px;
+        overflow: hidden;
+        margin-bottom: 20px;
 }

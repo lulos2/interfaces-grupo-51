@@ -7,11 +7,11 @@ document.querySelectorAll("button").forEach(b => {b.addEventListener("click",fun
 });})
 
 loginButton.addEventListener("click",()=>{
-    changeRoute("home")
+    navigateTo(ROUTES.HOME);
 });
 
 registerButton.addEventListener("click",()=>{
-    changeRoute("home")
+    navigateTo(ROUTES.HOME);
 });
 
 document.getElementById("showRegisterForm").addEventListener("click", (e)=>{

@@ -5,13 +5,13 @@
     align-items: center;
     overflow: hidden;
     background: var(--secondaryColorDark75);
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
-.carousel h3 {
+.carousel-container h3 {
     color: var(--highLight);
-    top: 20px;
-    left: 50px;
-    margin: 0;
+    margin-top: 10px;
     position: absolute;
     z-index: 3;
 }
@@ -21,32 +21,80 @@
     overflow: hidden;
 }
 
-#arrow-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 530px;
-    width: 50px;
-}
-
-#arrow-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 530px;
-    width: 50px;
-    text-align: end;
-}
-
 .carousel {
-    height: 650px;
+    margin-top: 5px;
+    height: 380px;
     display: flex;
-    overflow-x: visible;
-    width: 100%;
-    max-width: 1200px;
+    width: max-content;
     align-items: center;
 }
 
-.carousel::-webkit-scrollbar{
-    display: none;
+.arrow-left,
+.arrow-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    width: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: color 0.3s ease;
 }
+
+.arrow-left {
+    margin-right: 10px;
+}
+
+.arrow-right {
+    margin-left: 10px;
+}
+
+.arrow-left::before,
+.arrow-right::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: var(--secondaryColorDark75);
+    transition: height 0.3s ease, top 0.3s ease;
+    z-index: -1;
+}
+
+.arrow-left:hover::before,
+.arrow-right:hover::before {
+    height: 100%;
+    top: 0;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+    color: var(--white);
+}
+
+.arrow-left img,
+.arrow-right img,
+.arrow-left i,
+.arrow-right i {
+    position: relative;
+    z-index: 1;
+}
+
+@media (width < 600px) {
+    .arrow-left,
+    .arrow-right {
+        display: none;
+    }
+
+    .carousel-card-container {
+        width: 100%;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+}
+

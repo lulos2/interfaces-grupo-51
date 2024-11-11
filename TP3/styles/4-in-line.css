@@ -1,0 +1,153 @@
+
+.controlsRight-container {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.controlsLeft-container {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+#timerPlayer1, #timerPlayer2 {
+    color: var(--highLight);
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+}
+
+#timerPlayer1:hover, #timerPlayer2:hover {
+    color: var(--primaryColor);
+}
+
+.menu-overlay {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.menu-overlay:not(.hidden) {
+    opacity: 1;
+}
+
+.menu-content {
+    width: 400px;
+    background-color: var(--secondaryColorDark75);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 0 20px var(--primaryColor);
+}
+
+@keyframes slideIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-title {
+    color: var(--highLight);
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+.menu-button {
+    background: linear-gradient(45deg, var(--secondaryColorDark2), var(--highLight));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin: 0.5rem;
+    width: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button:hover {
+    background-color: var(--linkColor);
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.game-options {
+    display: flex;
+    margin: 25px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.player-option {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-option label {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.player-option select {
+    width: 160px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    background: linear-gradient(45deg, var(--secondaryColor), var(--secondaryColorDark75));
+    color: var(--white);
+    border: 1px solid var(--secondaryColorDark1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.player-option select:hover {
+    background: var(--secondaryColorDark1);
+}
+
+.turn-indicator {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin: 10px 0;
+    text-align: center;
+    animation: blink 1s infinite;
+}

@@ -1,0 +1,207 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url(../media/icons/MPKLogo.webp);
+    background-size: contain;
+}
+
+.game-title h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--highLight);
+}
+
+.canvas-conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 40px;
+    margin-inline: 25px;
+    height: fit-content;
+}
+
+.canvas-game {
+    display: flex;
+    align-items: end;
+}
+
+.canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px
+}
+
+.share {
+    background-color: transparent;
+    width: fit-content;
+    align-items: end;
+    left: 0px;
+    display: block;
+}
+
+.canvas-information {
+    height: fit-content;
+    margin: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.variated {
+    background-color: rgba(33, 04, 72, 0.60);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    border-inline: 1px solid var(--secondaryColor);
+}
+
+.description p, .variated li{
+    font-size: 15px;
+}
+
+.variated-cont {
+    width: 40%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 30px;
+    margin-top: 0px;
+}
+
+.variated-imgs{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.variated-imgs img{
+    width: 190px;
+    margin: 10px;
+}
+
+.imgs-variated{
+    padding-left: 30px;
+}
+
+.imgs-variated img{
+    width: 225px;
+    margin-top: 10px;
+}
+
+.gameplays {
+    margin-left: auto;
+    display: block;
+    background-color: rgba(33, 04, 72, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+    height: 585px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gameplays img{
+    width: 150px;
+    height: 130px;
+    border-radius: 5px;
+}
+
+.info-img {
+    padding-bottom: 20px;
+    padding-top: 22px;
+}
+
+.container-flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-flex-row div {
+    border-radius: 10px;
+}
+
+.publicity {
+    width: 47vw;
+}
+
+.coments {
+    width: 47vw;
+    height: 390px;
+    background-color: rgba(25, 25, 25, 0.75);
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border-inline: 1px solid var(--primaryColor);
+    overflow: scroll;
+}
+
+.coment {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    gap: 10px;
+}
+
+.coment p {
+    font-size: 15px;
+    margin-top: -8px;
+}
+
+.coment-user {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.coment-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-coment {
+    display: flex;
+    padding-left: 10px;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+}
+
+.add {
+    border-bottom: 1px solid var(--secondaryColorLight1);
+    margin: 10px;
+    width: 100%;
+}
+
+.coment-time {
+    color: var(--secondaryColorLight1);
+}
+
+.coment-time h5 {
+    color: var(--secondaryColorLight1)
+}
+
+.coment-buttons {
+    display: flex;
+    padding-right: 20px;
+}
+
+.coment-buttons button{
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.game-container {
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondaryColorDark2);
+}
