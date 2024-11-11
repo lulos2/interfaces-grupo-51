@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadImage(currentIndex);
     }, interval);
 
-    new ScrollSection();
+    new StickyScrollSection();
 });
 
 document.addEventListener('scroll', () => {
@@ -60,7 +60,7 @@ document.addEventListener('scroll', () => {
     document.querySelector('.figure-3').style.transform = `translateY(${scrollTop * -0.1}px)`;
 });
 
-class ScrollSection {
+class StickyScrollSection {
     constructor() {
         this.items = document.querySelectorAll('.scroll-item');
         this.totalSections = 11; // Número total de secciones
