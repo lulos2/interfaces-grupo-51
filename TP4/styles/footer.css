@@ -1,0 +1,28 @@
+footer {
+    background-color: var(--footer);
+    width: 1280px;
+    height: 595px;
+    color: var(--fontColorWhite);
+}
+
+.brands {
+    background-color: var(--footerBrands);
+    height: 80px;
+    width: 1280px;
+    text-align: center;
+}
+
+.footerContent {
+    padding-left: 100px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.footerInfo {
+    width: 820px;
+    text-align: left;
+}
+
+.redes {
+    margin-top: 30px;
+}
