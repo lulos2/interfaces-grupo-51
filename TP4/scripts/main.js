@@ -153,3 +153,20 @@ document.addEventListener('scroll', () => {
     observerFigure3.applyParallaxEffect(scrollTop);*/
     observerSection2Figure3.applyParallaxEffect(scrollTop);
 });
+
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const menuItems = document.querySelectorAll('.nav-menu li');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  hamburger.classList.toggle('cross');
+  navMenu.classList.toggle('open');
+
+  
+  // Aplicar delay a los ítems del menú
+  menuItems.forEach((item, index) => {
+    item.style.setProperty('--i', index + 1);
+  });
+});
