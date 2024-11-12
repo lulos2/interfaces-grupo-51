@@ -28,7 +28,7 @@
 }
 
 .f1:hover {
-    box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 15px 10px rgba(255, 0, 0);
 }
 
 .figures-hover .f2 {
@@ -42,7 +42,7 @@
 }
 
 .f2:hover {
-    box-shadow: 0 0 15px 10px rgb(172, 105, 20);
+    box-shadow: 0 0 15px 10px rgb(255, 143, 20);
 }
 
 .figures-hover .f3 {
