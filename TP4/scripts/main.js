@@ -88,7 +88,6 @@ class StickyScrollSection {
     }
 }
 
-
 class ObserverParallax {
     constructor(element, parallaxFactor) {
         this.element = element;
@@ -138,7 +137,7 @@ let observerSection2Figure3 = new ObserverParallax(document.querySelector('.sect
 
 document.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
-    observerTreeLeft.applyParallaxEffect(scrollTop);
+    /*observerTreeLeft.applyParallaxEffect(scrollTop);
     observerTreeRight2.applyParallaxEffect(scrollTop);
     observerTreeRight1.applyParallaxEffect(scrollTop);
     observerBushRight2.applyParallaxEffect(scrollTop);
@@ -151,6 +150,6 @@ document.addEventListener('scroll', () => {
     observerStoneLeft.applyParallaxEffect(scrollTop);
     observerFigure1.applyParallaxEffect(scrollTop);
     observerFigure2.applyParallaxEffect(scrollTop);
-    observerFigure3.applyParallaxEffect(scrollTop);
+    observerFigure3.applyParallaxEffect(scrollTop);*/
     observerSection2Figure3.applyParallaxEffect(scrollTop);
 });
