@@ -88,3 +88,21 @@
     left: 756px;
     top: 613px;
 }
+
+.section-3 .content h1 {
+    position: absolute;
+    line-height: 94.5%;
+    width: 816px;
+    top: 155px;
+}
+
+.section-3 .content h4 {
+    position: absolute;
+    line-height: 94.5%;
+    width: 578px;
+    top: 544px;
+}
+
+.section-3 .content h4 span {
+    text-decoration: underline;
+}
