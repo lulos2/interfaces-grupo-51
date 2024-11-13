@@ -209,6 +209,17 @@ class ObserverParallax {
     }
 }
 
+class InitialParallax {
+    constructor(element, parallaxFactor) {
+        this.element = element;
+        this.parallaxFactor = parallaxFactor;
+    }
+
+    applyParallaxEffect(scrollTop) {
+        this.element.style.transform = `translateY(${scrollTop * this.parallaxFactor}px)`;
+    }
+}
+
 let observerTreeLeft = new ObserverParallax(document.querySelector('.tree-left'), -0.05);
 let observerTreeRight1 = new ObserverParallax(document.querySelector('.tree-right-1'), -0.05);
 let observerTreeRight2 = new ObserverParallax(document.querySelector('.tree-right-2'), -0.05);
@@ -246,6 +257,22 @@ document.addEventListener('scroll', () => {
 });
 
 
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const menuItems = document.querySelectorAll('.nav-menu li');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    hamburger.classList.toggle('cross');
+    navMenu.classList.toggle('open');
+
+
+    // Aplicar delay a los ítems del menú
+    menuItems.forEach((item, index) => {
+        item.style.setProperty('--i', index + 1);
+    });
+});
+
 //-------------------------------APARICION DE CARDS CON TEXTO----------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     // Agarramos elementos
@@ -275,3 +302,4 @@ document.addEventListener('DOMContentLoaded', () => {
     textElements.forEach((element, index) => observer.observe(element));
     imageElements.forEach((element, index) => observer.observe(element));
 });
+

@@ -1,0 +1,90 @@
+.section-3 {
+    width: 1280px;
+    height: 1570px;
+    color: var(--fontColorWhite);
+}
+
+.section-3 .content {
+    height: 100%;
+}
+
+.section-3 .background-gradient {
+    background-image: url("../assets/images/background/lastSection/backgroundGradient.png");
+    width: 1280px;
+    height: 1296px;
+    z-index: 0;
+    left: 0;
+    top: 274px;
+}
+
+.section-3 .background-hills {
+    background-image: url("../assets/images/background/lastSection/backgroundHilss.png");
+    width: 1280px;
+    height: 389px;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+}
+
+.section-3 .teenSeal {
+    background-image: url("../assets/images/background/lastSection/teenSeal.png");
+    width: 231px;
+    height: 145px;
+    z-index: 10;
+    left: 100px;
+    top: 649px;
+}
+
+.section-3 .cloud-left {
+    background-image: url("../assets/images/background/lastSection/cloud1.png");
+    width: 332px;
+    height: 181px;
+    z-index: 2;
+    left: -5px;
+    top: 819px;
+}
+
+.section-3 .cloud-right-1 {
+    background-image: url("../assets/images/background/lastSection/cloud2.png");
+    width: 265px;
+    height: 124px;
+    z-index: 2;
+    left: 794px;
+    top: 510px;
+}
+
+.section-3 .cloud-right-2 {
+    background-image: url("../assets/images/background/lastSection/cloud3.png");
+    width: 315px;
+    height: 181px;
+    z-index: 2;
+    left: 962px;
+    top: 560px;
+}
+
+.section-3 .figure-2 {
+    background-image: url("../assets/images/background/lastSection/figure2.png");
+    width: 480px;
+    height: 480px;
+    z-index: 4;
+    left: 65px;
+    top: 1048px;
+}
+
+.section-3 .figure-3 {
+    background-image: url("../assets/images/background/lastSection/figure3.png");
+    width: 509px;
+    height: 509px;
+    z-index: 4;
+    left: 407px;
+    top: 1019px;
+}
+
+.section-3 .figure-7 {
+    background-image: url("../assets/images/background/lastSection/figure7.png");
+    width: 520px;
+    height: 997px;
+    z-index: 4;
+    left: 756px;
+    top: 613px;
+}
