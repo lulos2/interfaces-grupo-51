@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Sincronizamos la entrada del texto y la de la imagen correspondiente
                     textElements[index].classList.add('visible');
                     imageElements[index].classList.add('visible');
-                }, index * 500); // Retraso entre cada subida de elementos
+                }, index * 300); // Retraso entre cada subida de elementos
             }
         });
     }, options);
