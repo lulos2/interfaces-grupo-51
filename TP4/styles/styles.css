@@ -4,6 +4,7 @@
 @import url('middleSection.css');
 @import url('fakeScrollSection.css');
 @import url('figuresHover.css');
+@import url('footer.css');
 
 :root {
     --fontColorBlue: #1B428F;
@@ -20,7 +21,8 @@
     --buttonColorGreen: #83C252;
     --black:#000000;
     --white:#F5F5F5;
-
+    --footerBrands: #242424;
+    --footer: #5e5e5d;
 }
 
 .lato-regular {

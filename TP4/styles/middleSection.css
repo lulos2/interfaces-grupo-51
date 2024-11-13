@@ -126,3 +126,11 @@
     width: 467px;
     line-height: 94.5%;
 }
+
+.figures-collage img {
+    width: 1280px; /* Ocupa el 100% del ancho de la ventana */
+    object-fit: cover; /* Ajusta la imagen para que siempre cubra */
+
+    top: 0;
+    left: 0;
+}
