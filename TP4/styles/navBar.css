@@ -70,6 +70,7 @@
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 .hamburger span {
@@ -80,6 +81,79 @@
     border: var(--white) 4px solid;
     border-radius: 25px;
     box-shadow: 5px 5px var(--shadowColorBlue);
+    transition: all 0.3s ease;
+}
+
+.hamburger.cross span {
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    position: absolute;
+    background-color: red;
+    top: 0;
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+    position: absolute;
+    background-color: red;
+    top: 0;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: -300px; /* Inicialmente fuera de la pantalla */
+    transition: left 0.5s ease;
+    opacity: 0;
+    background-color: #ffcc00; 
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0px;
+}
+
+.nav-menu li {
+    margin: 15px 0;
+    opacity: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-menu li a {
+    font-family: 'Comic Sans MS', sans-serif; 
+    font-size: 24px;
+    color: #333; 
+    text-decoration: none;
+    background-color: #00bfff; 
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    background-color: #ff6600; 
+}
+
+.nav-menu.open {
+    left: 20px;  /*Se despliega el menú */
+    z-index: 1000; 
+    opacity: 1;
+    
+}
+
+.nav-menu.open li {
+    animation: slide-in 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i)); /* Cada ítem aparece con un retraso */
 }
 
 .buy-button button {
@@ -102,3 +176,14 @@
 .buy-button button:hover {
     background-color: var(--burgerButtonColorOrange);
 }
+
+@keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
