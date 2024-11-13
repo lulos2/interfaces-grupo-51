@@ -223,7 +223,7 @@ let observerBushLeft1 = new ObserverParallax(document.querySelector('.bush-left-
 let observerBushLeft2 = new ObserverParallax(document.querySelector('.bush-left-2'), -0.13);
 let observerBushRight1 = new ObserverParallax(document.querySelector('.bush-right-1'), -0.05);
 let observerBushRight2 = new ObserverParallax(document.querySelector('.bush-right-2'), -0.1);
-let observerFigure1 = new ObserverParallax(document.querySelector('.figure-1'), -0.09);
+let observerFigure1 = new ObserverParallax(document.querySelector('.figure-1'), -0.9);
 let observerFigure2 = new ObserverParallax(document.querySelector('.figure-2'), -0.12);
 let observerFigure3 = new ObserverParallax(document.querySelector('.figure-3'), -0.1);
 let observerSection2Figure3 = new ObserverParallax(document.querySelector('.section-2 .figure-3'), -0.1);
@@ -249,4 +249,32 @@ document.addEventListener('scroll', () => {
 });
 
 
+//-------------------------------APARICION DE CARDS CON TEXTO----------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    // Agarramos elementos
+    const textElements = document.querySelectorAll('.card-text-1, .card-text-2, .card-text-3');
+    const imageElements = document.querySelectorAll('.card-image-1, .card-image-2, .card-image-3');
 
+    // Setteamos cantidad del elemento que debe ser visible
+    const options = {
+        threshold: 0.5 // El 50%
+    };
+
+    // Creamos un nuevo IntersectionObserver para que sea posible la animacion
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Al entrar en la vista, agregar la clase visible
+                setTimeout(() => {
+                    // Sincronizamos la entrada del texto y la de la imagen correspondiente
+                    textElements[index].classList.add('visible');
+                    imageElements[index].classList.add('visible');
+                }, index * 500); // Retraso entre cada subida de elementos
+            }
+        });
+    }, options);
+
+    // Para observar los elementos de texto e imagen juntos
+    textElements.forEach((element, index) => observer.observe(element));
+    imageElements.forEach((element, index) => observer.observe(element));
+});
