@@ -262,13 +262,43 @@ const navMenu = document.getElementById('nav-menu');
 const menuItems = document.querySelectorAll('.nav-menu li');
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  hamburger.classList.toggle('cross');
-  navMenu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    hamburger.classList.toggle('cross');
+    navMenu.classList.toggle('open');
 
-  
-  // Aplicar delay a los ítems del menú
-  menuItems.forEach((item, index) => {
-    item.style.setProperty('--i', index + 1);
-  });
+
+    // Aplicar delay a los ítems del menú
+    menuItems.forEach((item, index) => {
+        item.style.setProperty('--i', index + 1);
+    });
+});
+
+//-------------------------------APARICION DE CARDS CON TEXTO----------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    // Agarramos elementos
+    const textElements = document.querySelectorAll('.card-text-1, .card-text-2, .card-text-3');
+    const imageElements = document.querySelectorAll('.card-image-1, .card-image-2, .card-image-3');
+
+    // Setteamos cantidad del elemento que debe ser visible
+    const options = {
+        threshold: 0.5 // El 50%
+    };
+
+    // Creamos un nuevo IntersectionObserver para que sea posible la animacion
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Al entrar en la vista, agregar la clase visible
+                setTimeout(() => {
+                    // Sincronizamos la entrada del texto y la de la imagen correspondiente
+                    textElements[index].classList.add('visible');
+                    imageElements[index].classList.add('visible');
+                }, index * 300); // Retraso entre cada subida de elementos
+            }
+        });
+    }, options);
+
+    // Para observar los elementos de texto e imagen juntos
+    textElements.forEach((element, index) => observer.observe(element));
+    imageElements.forEach((element, index) => observer.observe(element));
 });
