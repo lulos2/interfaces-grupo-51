@@ -1,0 +1,158 @@
+
+.section-2 .background-figures {
+    background-image: url("../assets/images/background/middleSection/figures.png");
+    width: 1280px;
+    height: 729px;
+    z-index: 1;
+    left: 0;
+    top: 2475px;
+}
+
+.section-2 .figures-hover {
+    position: absolute;
+    top: 2475px;
+    left: 0;
+    width: 1280px;
+    height: 729px;
+    z-index: 2;
+}
+
+.figures-hover .f1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 375px;
+    background-color: rgba(255, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f1:hover {
+    box-shadow: 0 0 15px 10px rgba(255, 0, 0);
+}
+
+.figures-hover .f2 {
+    position: absolute;
+    top: 0;
+    left: 280px;
+    width: 234px;
+    height: 375px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f2:hover {
+    box-shadow: 0 0 15px 10px rgb(255, 143, 20);
+}
+
+.figures-hover .f3 {
+    position: absolute;
+    top: 0;
+    left: 543px;
+    width: 237px;
+    height: 375px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f3:hover {
+    box-shadow: 0 0 15px 10px rgb(255, 195, 3);
+}
+
+.figures-hover .f4 {
+    position: absolute;
+    top: 0;
+    left: 811px;
+    width: 226px;
+    height: 375px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f4:hover {
+    box-shadow: 0 0 15px 10px rgb(26, 255, 0);
+}
+
+.figures-hover .f5 {
+    position: absolute;
+    top: 0;
+    left: 1067px;
+    width: 212px;
+    height: 375px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f5:hover {
+    box-shadow: 0 0 15px 10px rgb(0, 157, 255);
+}
+
+.figures-hover .f6 {
+    position: absolute;
+    top: 405px;
+    left: 0;
+    width: 250px;
+    height: 323px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f6:hover {
+    box-shadow: 0 0 15px 10px rgba(87, 32, 161, 0.6);
+}
+
+.figures-hover .f7 {
+    position: absolute;
+    top: 403px;
+    left: 279px;
+    width: 236px;
+    height: 326px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f7:hover {
+    box-shadow: 0 0 15px 10px rgb(255, 255, 255);
+}
+
+.figures-hover .f8 {
+    position: absolute;
+    top: 405px;
+    left: 544px;
+    width: 237px;
+    height: 323px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f8:hover {
+    box-shadow: 0 0 15px 10px rgb(255, 0, 251);
+}
+
+.figures-hover .f9 {
+    position: absolute;
+    top: 405px;
+    left: 811px;
+    width: 226px;
+    height: 323px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f9:hover {
+    box-shadow: 0 0 15px 10px rgba(37, 37, 37, 0.75);
+}
+
+.figures-hover .f10 {
+    position: absolute;
+    top: 405px;
+    left: 1067px;
+    width: 212px;
+    height: 323px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.f10:hover {
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.75);
+}

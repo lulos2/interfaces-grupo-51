@@ -3,6 +3,7 @@
 @import url('navBar.css');
 @import url('middleSection.css');
 @import url('fakeScrollSection.css');
+@import url('figuresHover.css');
 @import url('footer.css');
 
 :root {
@@ -26,13 +27,8 @@
 
 .lato-regular {
     font-family: "Lato", sans-serif;
-    font-size: 20px;
     font-weight: 400;
-    line-height: 18.9px;
-    letter-spacing: 0.11em;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+    font-style: normal;
 }
 
 .lato-semiBold {
@@ -58,7 +54,7 @@
 }
 
 .text-white {
-    color: var(--fontColorWhite) !important;
+    color: var(--fontColorWhite);
 }
 
 .text-blue {

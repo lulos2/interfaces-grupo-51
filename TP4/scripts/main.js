@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
     //<----------------------------------CAIDA DE NÚMEROS-------------------------------------->
     // Diferentes colores que toman los números
     const colors = ['#FA0504', '#F4E806', '#4AEC02', '#FF9728', '#E62F9B', '#30E3F9', '#5528B7', '#DC4D83']
-    
+
     // Seleccion random de color
     function getRandomColor() {
         const randomIndex = Math.floor(Math.random() * colors.length);
@@ -40,7 +40,7 @@ window.addEventListener("load", function() {
     // Incremento del porcentaje hasta llegar a 100
     const progressInterval = setInterval(() => {
         if (progress < 100) {
-            progress += 1; 
+            progress += 1;
             progressText.textContent = `${progress}%`; // Muestra el porcentaje actualizado
         } else {
             clearInterval(progressInterval); // Al llegar a 100 detenemos la carga
@@ -49,20 +49,20 @@ window.addEventListener("load", function() {
     }, 50); // Incrementamos porcentaje cada 0.05 segundos
 
 
-    
+
 
     //--------------------------------CAIDA DE FIGURAS-----------------------------------------
     //Seleccionamos las imagenes a utilizar
     const images = [
-        'assets/images/figures/0.png', 
-        'assets/images/figures/1.png', 
-        'assets/images/figures/2.png', 
-        'assets/images/figures/3.png', 
+        'assets/images/figures/0.png',
+        'assets/images/figures/1.png',
+        'assets/images/figures/2.png',
+        'assets/images/figures/3.png',
         'assets/images/figures/4.png',
-        'assets/images/figures/5.png', 
-        'assets/images/figures/6.png', 
-        'assets/images/figures/7.png', 
-        'assets/images/figures/8.png', 
+        'assets/images/figures/5.png',
+        'assets/images/figures/6.png',
+        'assets/images/figures/7.png',
+        'assets/images/figures/8.png',
         'assets/images/figures/9.png'
     ];
 
@@ -82,15 +82,12 @@ window.addEventListener("load", function() {
         floatingImage.style.left = `${randomX}vw`;
 
         // Seleccionamos el delay entre imagen e imagen
-        floatingImage.style.animationDelay = `${i * 0.08}s`; 
+        floatingImage.style.animationDelay = `${i * 0.08}s`;
 
         // Aplicamos nuestro nuevo div floatingImage en nuestro div loader
         loader.appendChild(floatingImage);
     }
 });
-
-
-  
 
 function handleScroll() {
     const navbar = document.querySelector('.navbar');
@@ -230,8 +227,8 @@ let observerSection2Figure3 = new ObserverParallax(document.querySelector('.sect
 
 
 document.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    /*observerTreeLeft.applyParallaxEffect(scrollTop);
+    const scrollTop = window.pageYOffset;
+    observerTreeLeft.applyParallaxEffect(scrollTop);
     observerTreeRight2.applyParallaxEffect(scrollTop);
     observerTreeRight1.applyParallaxEffect(scrollTop);
     observerBushRight2.applyParallaxEffect(scrollTop);
@@ -244,7 +241,7 @@ document.addEventListener('scroll', () => {
     observerStoneLeft.applyParallaxEffect(scrollTop);
     observerFigure1.applyParallaxEffect(scrollTop);
     observerFigure2.applyParallaxEffect(scrollTop);
-    observerFigure3.applyParallaxEffect(scrollTop);*/
+    observerFigure3.applyParallaxEffect(scrollTop);
     observerSection2Figure3.applyParallaxEffect(scrollTop);
 });
 
