@@ -1,3 +1,94 @@
+//--------------------------------------------LOADER---------------------------------------------
+window.addEventListener("load", function() {
+
+    //<----------------------------------CAIDA DE NÚMEROS-------------------------------------->
+    // Diferentes colores que toman los números
+    const colors = ['#FA0504', '#F4E806', '#4AEC02', '#FF9728', '#E62F9B', '#30E3F9', '#5528B7', '#DC4D83']
+
+    // Seleccion random de color
+    function getRandomColor() {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        return colors[randomIndex];
+    }
+
+    // Traemos los números del HTML
+    const numbers = document.querySelectorAll(".number");
+
+    numbers.forEach((number, index) => {
+        // Asignamos una posición aleatoria para cada número
+        const randomX = Math.floor(Math.random() * window.innerWidth); // Posición en x
+        const delay = index * 70; // Tiempo de caida entre cada número
+
+        // Establecemos la posicion y el tiempo de caida
+        number.style.left = `${randomX}px`;
+        number.style.animationDelay = `${delay}ms`;
+
+        // Asignamos el color
+        number.style.color = getRandomColor();
+
+        // Agregamos la clase para la animación de caída
+        number.classList.add("falling-number");
+    });
+
+
+
+    //------------------------------------CÍRCULO DE CARGA--------------------------------------
+    // Progreso inicializado en 0%
+    let progress = 0;
+    const progressText = document.getElementById('loading-percentage');
+
+    // Incremento del porcentaje hasta llegar a 100
+    const progressInterval = setInterval(() => {
+        if (progress < 100) {
+            progress += 1;
+            progressText.textContent = `${progress}%`; // Muestra el porcentaje actualizado
+        } else {
+            clearInterval(progressInterval); // Al llegar a 100 detenemos la carga
+            document.body.classList.add("loaded");
+        }
+    }, 50); // Incrementamos porcentaje cada 0.05 segundos
+
+
+
+
+    //--------------------------------CAIDA DE FIGURAS-----------------------------------------
+    //Seleccionamos las imagenes a utilizar
+    const images = [
+        'assets/images/figures/0.png',
+        'assets/images/figures/1.png',
+        'assets/images/figures/2.png',
+        'assets/images/figures/3.png',
+        'assets/images/figures/4.png',
+        'assets/images/figures/5.png',
+        'assets/images/figures/6.png',
+        'assets/images/figures/7.png',
+        'assets/images/figures/8.png',
+        'assets/images/figures/9.png'
+    ];
+
+    // Traemos el div
+    const loader = document.getElementById('loader');
+    const totalImages = 1000; // Pactamos cantidad de imagenes a utilizar
+
+    // Hasta completar el total de imagenes
+    for (let i = 0; i < totalImages; i++) {
+        const randomImage = images[Math.floor(Math.random() * images.length)]; // Seleccionamos una aleatoria
+        const floatingImage = document.createElement('div');
+        floatingImage.classList.add('floating-image');
+        floatingImage.style.backgroundImage = `url(${randomImage})`; // Creamos un div y establecemos como fondo a la imagen ya seleccionada
+
+        // Asignamos una posicion aleatoria en la pantalla
+        const randomX = Math.floor(Math.random() * 100); // Posicion en x
+        floatingImage.style.left = `${randomX}vw`;
+
+        // Seleccionamos el delay entre imagen e imagen
+        floatingImage.style.animationDelay = `${i * 0.08}s`;
+
+        // Aplicamos nuestro nuevo div floatingImage en nuestro div loader
+        loader.appendChild(floatingImage);
+    }
+});
+
 function handleScroll() {
     const navbar = document.querySelector('.navbar');
     const navLogo = document.querySelector('.nav-logo');
