@@ -1,0 +1,42 @@
+Especificación de Conventional Commits
+Conventional Commits especifica que el mensaje de commit debe ser estructurado de la siguiente manera:
+<tipo>(ámbito opcional): <descripción>
+<LINEA_EN_BLANCO>
+[cuerpo opcional]
+<LINEA_EN_BLANCO>
+[nota(s) al pie opcional(es)]
+Hay ciertos elementos que serán utilizados para comunicar la intención del commit a terceros:
+
+Si el tipo es fix indica que el commit es un parche de un error y está relacionado con la versión PATCH del proyecto.
+Si el tipo es feat indica que el commit añade una nueva funcionalidad y se relaciona con la versión MINOR del proyecto.
+Añadir el texto BREAKING CHANGE en el footer de un commit, o el carácter ! después del tipo, indica que se rompe la compatibilidad de la versión actual y está relacionado con la versión MAJOR del proyecto.
+Espero que aún no hayas hecho 🤯 porque de verdad que es muy sencillo. Vamos a ver cada una de las zonas del commit en detalle.
+
+Tipo
+
+feat: cuando se añade una nueva funcionalidad.
+fix: cuando se arregla un error.
+chore: tareas rutinarias que no sean específicas de una feature o un error como por ejemplo añadir contenido al fichero .gitignore o instalar una dependencia.
+test: si añadimos o arreglamos tests.
+docs: cuando solo se modifica documentación.
+build: cuando el cambio afecta al compilado del proyecto.
+ci: el cambio afecta a ficheros de configuración y scripts relacionados con la integración continua.
+style: cambios de legibilidad o formateo de código que no afecta a funcionalidad.
+refactor: cambio de código que no corrige errores ni añade funcionalidad, pero mejora el código.
+perf: usado para mejoras de rendimiento.
+revert: si el commit revierte un commit anterior. Debería indicarse el hash del commit que se revierte.
+Ámbito
+El campo ámbito es opcional y sirve para dar información contextual como por ejemplo indicar el nombre de la feature a la que afecta el commit.
+
+Descripción
+Breve descripción del cambio cumpliendo lo siguiente:
+
+usa imperativos, en tiempo presente: “añade” mejor que “añadido” o “añadidos”
+la primera letra siempre irá en minúscula
+no escribir un punto al final
+Cuerpo
+Es opcional y debería añadir aportar más información que la descripción. Debería usar el mismo tono imperativo que esta.
+
+Nota al pie
+Es opcional. Siempre se utiliza para indicar cambios que rompan la compatibilidad de la versión actual (Breaking Changes) aunque también están permitidos otros formatos que sigan la convención de git trailer format.
+

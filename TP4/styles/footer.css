@@ -1,28 +1,48 @@
 footer {
+    position: relative;
     background-color: var(--footer);
     width: 1280px;
     height: 595px;
     color: var(--fontColorWhite);
 }
 
-.brands {
+.sponsors-container {
     background-color: var(--footerBrands);
-    height: 80px;
     width: 1280px;
+    height: 80px;
     text-align: center;
+    z-index: 2;
 }
 
-.footerContent {
-    padding-left: 100px;
-    padding-top: 35px;
-    padding-bottom: 35px;
+.sponsors {
+    background-image: url("../assets/images/background/lastSection/footerSponsor.png");
+    z-index: 3;
+    width: 1080px;
+    height: 75px;
+    left: 100px;
+    margin-top: 5px;
 }
 
 .footerInfo {
+    position: absolute;
     width: 820px;
-    text-align: left;
+    top: 115px;
+    left: 100px;
+}
+
+.footerInfo h4 {
+    line-height: 94.5%;
+    letter-spacing: 0.11em;
+}
+
+.footerInfo span {
+    text-decoration: underline;
+    vertical-align: top;
 }
 
 .redes {
-    margin-top: 30px;
+    background-image: url('../assets/images/background/lastSection/networks.png');
+    height: 41px;
+    width: 212px;
+    top: 390px;
 }
