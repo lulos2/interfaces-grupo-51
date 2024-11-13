@@ -220,20 +220,20 @@ class InitialParallax {
     }
 }
 
-let observerTreeLeft = new InitialParallax(document.querySelector('.tree-left'), -0.05);
-let observerTreeRight1 = new InitialParallax(document.querySelector('.tree-right-1'), -0.05);
-let observerTreeRight2 = new InitialParallax(document.querySelector('.tree-right-2'), -0.05);
-let observerStoneLeft = new InitialParallax(document.querySelector('.stone-left'), -0.07);
-let observerStoneRight1 = new InitialParallax(document.querySelector('.stone-right-1'), -0.05);
-let observerStoneRight2 = new InitialParallax(document.querySelector('.stone-right-2'), -0.09);
-let observerStoneRight3 = new InitialParallax(document.querySelector('.stone-right-3'), -0.1);
-let observerBushLeft1 = new InitialParallax(document.querySelector('.bush-left-1'), -0.04);
-let observerBushLeft2 = new InitialParallax(document.querySelector('.bush-left-2'), -0.13);
-let observerBushRight1 = new InitialParallax(document.querySelector('.bush-right-1'), -0.05);
-let observerBushRight2 = new InitialParallax(document.querySelector('.bush-right-2'), -0.1);
-let observerFigure1 = new InitialParallax(document.querySelector('.figure-1'), -0.09);
-let observerFigure2 = new InitialParallax(document.querySelector('.figure-2'), -0.12);
-let observerFigure3 = new InitialParallax(document.querySelector('.figure-3'), -0.1);
+let observerTreeLeft = new ObserverParallax(document.querySelector('.tree-left'), -0.05);
+let observerTreeRight1 = new ObserverParallax(document.querySelector('.tree-right-1'), -0.05);
+let observerTreeRight2 = new ObserverParallax(document.querySelector('.tree-right-2'), -0.05);
+let observerStoneLeft = new ObserverParallax(document.querySelector('.stone-left'), -0.07);
+let observerStoneRight1 = new ObserverParallax(document.querySelector('.stone-right-1'), -0.05);
+let observerStoneRight2 = new ObserverParallax(document.querySelector('.stone-right-2'), -0.09);
+let observerStoneRight3 = new ObserverParallax(document.querySelector('.stone-right-3'), -0.1);
+let observerBushLeft1 = new ObserverParallax(document.querySelector('.bush-left-1'), -0.04);
+let observerBushLeft2 = new ObserverParallax(document.querySelector('.bush-left-2'), -0.13);
+let observerBushRight1 = new ObserverParallax(document.querySelector('.bush-right-1'), -0.05);
+let observerBushRight2 = new ObserverParallax(document.querySelector('.bush-right-2'), -0.1);
+let observerFigure1 = new ObserverParallax(document.querySelector('.figure-1'), -0.9);
+let observerFigure2 = new ObserverParallax(document.querySelector('.figure-2'), -0.12);
+let observerFigure3 = new ObserverParallax(document.querySelector('.figure-3'), -0.1);
 let observerSection2Figure3 = new ObserverParallax(document.querySelector('.section-2 .figure-3'), -0.1);
 
 
@@ -302,3 +302,4 @@ document.addEventListener('DOMContentLoaded', () => {
     textElements.forEach((element, index) => observer.observe(element));
     imageElements.forEach((element, index) => observer.observe(element));
 });
+
