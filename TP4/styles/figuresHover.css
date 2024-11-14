@@ -25,10 +25,22 @@
     height: 375px;
     background-color: rgba(255, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f1 img {
+    width: 250px;
+    margin-top: 162px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f1 img:hover {
+    transform: scale(1.1);
 }
 
 .f1:hover {
     box-shadow: 0 0 15px 10px rgba(255, 0, 0);
+    background-color: 0 0 15px 10px rgba(255, 0, 0, 0.5);
 }
 
 .figures-hover .f2 {
@@ -39,9 +51,21 @@
     height: 375px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f2 img {
+    width: 230px;
+    margin-top: 125px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f2 img:hover {
+    transform: scale(1.1);
 }
 
 .f2:hover {
+    background-color: rgb(255, 143, 20, 0.5);
     box-shadow: 0 0 15px 10px rgb(255, 143, 20);
 }
 
@@ -53,10 +77,23 @@
     height: 375px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f3 img {
+    width: 215px;
+    margin-top: 70px;
+    margin-left: 2px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f3 img:hover {
+    transform: scale(1.1);
 }
 
 .f3:hover {
     box-shadow: 0 0 15px 10px rgb(255, 195, 3);
+    background-color: rgba(255, 195, 3, 0.5);
 }
 
 .figures-hover .f4 {
@@ -67,10 +104,23 @@
     height: 375px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f4 img {
+    width: 222px;
+    margin-top: 148px;
+    margin-left: 2px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f4 img:hover {
+    transform: scale(1.1);
 }
 
 .f4:hover {
     box-shadow: 0 0 15px 10px rgb(26, 255, 0);
+    background-color: rgb(26, 255, 0, 0.5);
 }
 
 .figures-hover .f5 {
@@ -81,10 +131,22 @@
     height: 375px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f5 img {
+    width: 215px;
+    margin-top: 59px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f5 img:hover {
+    transform: scale(1.1);
 }
 
 .f5:hover {
     box-shadow: 0 0 15px 10px rgb(0, 157, 255);
+    background-color: rgb(0, 157, 255, 0.5);
 }
 
 .figures-hover .f6 {
@@ -95,10 +157,22 @@
     height: 323px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f6 img {
+    width: 250px;
+    margin-top: 59px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f6 img:hover {
+    transform: scale(1.1);
 }
 
 .f6:hover {
-    box-shadow: 0 0 15px 10px rgba(87, 32, 161, 0.6);
+    box-shadow: 0 0 15px 10px rgba(87, 32, 161);
+    background-color: rgba(87, 32, 161, 0.5);
 }
 
 .figures-hover .f7 {
@@ -109,10 +183,23 @@
     height: 326px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f7 img {
+    width: 143px;
+    margin-top: 56px;
+    margin-left: 35px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f7 img:hover {
+    transform: scale(1.1);
 }
 
 .f7:hover {
     box-shadow: 0 0 15px 10px rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255, 0.5);
 }
 
 .figures-hover .f8 {
@@ -123,10 +210,23 @@
     height: 323px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f8 img {
+    width: 238px;
+    margin-top: 52px;
+    margin-left: -0px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f8 img:hover {
+    transform: scale(1.1);
 }
 
 .f8:hover {
     box-shadow: 0 0 15px 10px rgb(255, 0, 251);
+    background-color: rgb(255, 0, 251, 0.5);
 }
 
 .figures-hover .f9 {
@@ -137,10 +237,23 @@
     height: 323px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f9 img {
+    width: 225px;
+    margin-top: 65px;
+    margin-left: -0px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f9 img:hover {
+    transform: scale(1.1);
 }
 
 .f9:hover {
-    box-shadow: 0 0 15px 10px rgba(37, 37, 37, 0.75);
+    box-shadow: 0 0 15px 10px rgba(37, 37, 37);
+    background-color: rgba(37, 37, 37, 0.5)
 }
 
 .figures-hover .f10 {
@@ -151,8 +264,21 @@
     height: 323px;
     background-color: rgba(0, 0, 0, 0);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.figures-hover .f10 img {
+    width: 215px;
+    margin-top: 50px;
+    margin-left: -0px;
+    transition: transform 0.5s ease;
+}
+
+.figures-hover .f10 img:hover {
+    transform: scale(1.1);
 }
 
 .f10:hover {
-    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
 }
