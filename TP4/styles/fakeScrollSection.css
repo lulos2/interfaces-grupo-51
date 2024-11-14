@@ -54,7 +54,8 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 1.5s ease-in-out;
+    transition: all .7s ease-in-out;
+    transition-delay: 500ms;
 }
 
 .image-container img {
@@ -86,7 +87,7 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 1s ease-in-out;
+    transition: all 1.2s ease-in-out;
 }
 
 .scroll-text.after {
