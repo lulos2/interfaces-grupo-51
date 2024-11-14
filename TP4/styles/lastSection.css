@@ -32,7 +32,7 @@
     height: 145px;
     z-index: 10;
     left: 100px;
-    top: 649px;
+    top: 687px;
 }
 
 .section-3 .cloud-left {
@@ -41,7 +41,10 @@
     height: 181px;
     z-index: 2;
     left: -5px;
-    top: 819px;
+    top: 865px;
+    animation: scroll-clouds-left 30s linear infinite;
+    position: absolute;
+    animation-duration: 15s;
 }
 
 .section-3 .cloud-right-1 {
@@ -49,8 +52,11 @@
     width: 265px;
     height: 124px;
     z-index: 2;
-    left: 794px;
-    top: 510px;
+    left: 844px;
+    top: 555px;
+    animation: scroll-clouds-left 30s linear infinite;
+    position: absolute;
+    animation-duration: 20s;
 }
 
 .section-3 .cloud-right-2 {
@@ -58,12 +64,14 @@
     width: 315px;
     height: 181px;
     z-index: 2;
-    left: 962px;
-    top: 560px;
+    left: 1012px;
+    top: 598px;
+    animation: scroll-clouds-right 30s linear infinite;
+    position: absolute;
+    animation-duration: 12s;
 }
 
 .section-3 .figure-2 {
-    background-image: url("../assets/images/background/lastSection/figure2.png");
     width: 480px;
     height: 480px;
     z-index: 4;
@@ -72,37 +80,124 @@
 }
 
 .section-3 .figure-3 {
-    background-image: url("../assets/images/background/lastSection/figure3.png");
     width: 509px;
     height: 509px;
     z-index: 4;
     left: 407px;
-    top: 1019px;
+    top: 1040px;
 }
 
 .section-3 .figure-7 {
-    background-image: url("../assets/images/background/lastSection/figure7.png");
-    width: 520px;
+    width: 620px;
     height: 997px;
     z-index: 4;
-    left: 756px;
-    top: 613px;
+    left: 766px;
+    top: 670px;
 }
 
-.section-3 .content h1 {
-    position: absolute;
-    line-height: 94.5%;
+.section-3 .figure-7 img{
+    width: 520px;
+    height: auto;
+}
+
+@keyframes scroll-clouds-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-clouds-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+}
+
+.form-title {
     width: 816px;
-    top: 155px;
+    height: 171px;
+    margin-top: 190px;
+    margin-bottom: 76px;
 }
 
-.section-3 .content h4 {
-    position: absolute;
-    line-height: 94.5%;
+.form {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    box-shadow: 4px 5px var(--shadowColorBlue);
+    border-radius: 9999px;
+}
+
+.form input {
+    width: 562px;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px 40px;
+    border-radius: 50px 0 0 50px;
+    border: 9px solid var(--fontColorWhite);
+    border-right: none;
+    color: rgba(0, 0, 0, 0.39);
+    background-color: #ECECEC;
+    font-family: "Lato";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.form button {
+    width: 218px;
+    height: 100px;
+    background-color: var(--buttonColorGreen);
+    color: var(--fontColorWhite);
+    border: none;
+    padding: 10px 20px;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: "Lato", serif;
+    font-style: normal;
+    border: 9px solid var(--fontColorWhite);
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form button:hover {
+    background-color: var(--burgerButtonColorOrange);
+}
+
+.teenSealInfo {
     width: 578px;
-    top: 544px;
+    height: 95px;
+    margin-top: 46px;
+    font-family: "Lato";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.9px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }
 
-.section-3 .content h4 span {
+.underline {
     text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 3px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

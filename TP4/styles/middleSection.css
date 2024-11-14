@@ -103,11 +103,10 @@
 }
 
 .section-2 .figure-1 {
-    background-image: url("../assets/images/background/middleSection/figura1.png");
-    width: 667px;
-    height: 973px;
+    width: 500px;
+    height: 800px;
     z-index: 5;
-    left: 606px;
+    left: 700px;
     top: 1447px;
 }
 

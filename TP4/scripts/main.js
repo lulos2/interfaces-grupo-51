@@ -174,3 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
     textElements.forEach((element, index) => observer.observe(element));
     imageElements.forEach((element, index) => observer.observe(element));
 });
+
+//------------------------------------ELEMENTO 3D------------------------------------------
+const modelViewer = document.querySelector('#reveal');
+
+    document.addEventListener('mousemove', (event) => {
+        const x = event.clientX / window.innerWidth;
+        const y = event.clientY / window.innerHeight;
+        modelViewer.cameraOrbit = `${x * 360}deg ${y * 180}deg 0.5m`;
+    });

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Number Blocks</title>
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="stylesheet" href="styles/styles.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.1.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <div id="loader">
@@ -298,19 +299,32 @@
         <div class="parallax-section section-2">
             <div class="parallax-layer background-yellow"></div>
             <div class="parallax-layer figure-3"></div>
-            <div class="parallax-layer figure-1"></div>
+            <div class="parallax-layer figure-1">
+                <model-viewer
+                        id="reveal"
+                        loading="eager"
+                        camera-controls
+                        auto-rotate
+                        poster="assets/images/background/middleSection/figura1"
+                        tone-mapping="aces"
+                        src="assets/3d/one.glb"
+                        shadow-intensity="1"
+                        alt="A 3D model"
+                        style="width: 100%; height: 100%;">
+                    </model-viewer>
+            </div>
             <div class="parallax-layer background-figures"></div>
             <div class="figures-hover">
-                <div class="f1"></div>
-                <div class="f2"></div>
-                <div class="f3"></div>
-                <div class="f4"></div>
-                <div class="f5"></div>
-                <div class="f6"></div>
-                <div class="f7"></div>
-                <div class="f8"></div>
-                <div class="f9"></div>
-                <div class="f10"></div>
+                <div class="f1"><img src="assets/images/figurespng/image (1).png"></div>
+                <div class="f2"><img src="assets/images/figurespng/image (2).png"></div>
+                <div class="f3"><img src="assets/images/figurespng/image (3).png"></div>
+                <div class="f4"><img src="assets/images/figurespng/image (4).png"></div>
+                <div class="f5"><img src="assets/images/figurespng/image (6).png"></div>
+                <div class="f6"><img src="assets/images/figurespng/image (7).png"></div>
+                <div class="f7"><img src="assets/images/figurespng/image (5).png"></div>
+                <div class="f8"><img src="assets/images/figurespng/image (8).png"></div>
+                <div class="f9"><img src="assets/images/figurespng/image (9).png"></div>
+                <div class="f10"><img src="assets/images/figurespng/image.png"></div>
             </div>
             <div class="content">
                 <div class="video-title">
@@ -337,11 +351,33 @@
             <div class="parallax-layer figure-3"></div>
             <div class="parallax-layer figure-2"></div>
 
+            <div class="parallax-layer figure-7">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzR6dmxuNnhvdGoxaGo1b3MzOGR4dnhnZWR0aXo1eXd6eDNqanFmNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fuTByMqFxstXjmDSYm/giphy.gif" alt="Figura 2">
+            </div>
+
+            <div class="parallax-layer figure-3">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmU5aWZ4OXZ6dWh1dnk2cHFwdWlwOWxnbHEyZzE0MjhidTNhemcxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/HuocoB7MEUeLMifGFN/giphy.gif" alt="Figura 3">
+            </div>
+
+            <div class="parallax-layer figure-2">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDczczF3Z3ZxNjZhZTFibXpvOWNldHdmbWtlbDR3ZDhiam5ydDVncSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5ddqGqO8x5rrJ7v5tf/giphy.gif" alt="Figura 7">
+            </div>
+
             <div class="content">
-                <h1 class="lato-semiBold text-black">¿Quieres ser el primero en enterarse de todas las novedades?</h1>
+                <div class="form-title">
+                    <h1 class="lato-semiBold text-black">¿Quieres ser el primero en enterarse de todas las novedades?</h1>
+                </div>
 
+                <div class="mini-form">
+                    <div class="form">
+                        <input class="lato-regular" type="email" placeholder="Ingresa aquí tu correo" required>
+                        <button class="lato-900" type="submit">SUSCRIBIRSE</button>
+                    </div>
+                </div>
 
-                <h4 class="lato-regular text-black">Al inscribirse en nuestra lista de correo, nos autoriza a ponernos en contacto con usted para enviarle ofertas y actualizaciones de marketing por correo electrónico, y también acepta nuestra <span> Política de privacidad</span> y las <span> Condiciones del servicio.</span> </h4>
+                <div class="teenSealInfo">
+                    <h4 class="lato-regular text-black">Al inscribirse en nuestra lista de correo, nos autoriza a ponernos en contacto con usted para enviarle ofertas y actualizaciones de marketing por correo electrónico, y también acepta nuestra <span class="underline">Política de privacidad</span> y las <span class="underline">Condiciones del servicio</span>.</h4>
+                </div>
             </div>
         </div>
     </main>
@@ -370,7 +406,7 @@
                     and/or other countries.The ESRB rating icons are registered trademarks of
                     the Entertainment Software Association.<br>
                     <br>
-                    <span>COOKIE POLICY PRIVACY POLICY</span>
+                    <span class="underline"><a href="https://privacy.sega.com/en/sega-cookie-policy" target="_blank">COOKIE POLICY</a></span> <span class="underline"><a href="https://privacy.sega.com/en/our-games" target="_blank">PRIVACY POLICY</a></span>
                 </h4>
                 <div class="parallax-layer redes"></div>
             </div>
