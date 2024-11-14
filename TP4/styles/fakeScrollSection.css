@@ -1,6 +1,6 @@
 .scroll-section {
     width: 1280px;
-    height: 550vh;
+    height: 7700px;
     position: relative;
 }
 
@@ -19,12 +19,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 50px
-}
-
-.fixed-container h1 {
-    margin-bottom: 140px;
-    margin-right: 300px;
+    top: 23px
 }
 
 .image-container {
@@ -37,38 +32,78 @@
 
 .text-container {
     width: 467px;
-    height: 167px;
-    position:absolute;
-    left:  715px;
-    top: 332px;
-}
-
-.scroll-item {
+    height: 700px;
     position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    left: 715px;
+    top: 229px;
+    overflow: hidden;
 }
 
-.scroll-text h3{
-    width: 467px;
-    line-height: 94.5%;
-    margin-bottom: 15px;
+.text-container h3 {
+    margin-bottom: 10px;
+    margin-top: 157px;
 }
 
-.scroll-text h4  {
+.text-container h4 {
     line-height: 94.5%;
-    margin: 0;
 }
 
 .scroll-image {
-    height: 436px;
-    object-fit: contain;
+    position: absolute;
+    top: 87px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.5s ease-in-out;
 }
 
-.scroll-item.active {
+.image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-image.after {
+    left: 65%;
+    opacity: 0;
+    visibility: visible;
+}
+
+.scroll-image.active {
+    left: 0;
     opacity: 1;
+    visibility: visible;
+    transform: translate(0,0);
+}
+
+.scroll-image.before {
+    left: -150%;
+    opacity: 0;
+    visibility: visible;
+}
+
+.scroll-text {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.scroll-text.after {
+    top: -150%;
+    opacity: 0;
+    visibility: visible;
+}
+
+.scroll-text.active {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0,0);
+}
+
+.scroll-text.before {
+    top: 150%;
+    opacity: 0;
     visibility: visible;
 }
