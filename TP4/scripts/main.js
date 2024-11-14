@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
 
     //------------------------------------CÍRCULO DE CARGA--------------------------------------
     // Progreso inicializado en 0%
-    let progress = 0;
+    let progress = 0  ;
     const progressText = document.getElementById('loading-percentage');
 
     // Incremento del porcentaje hasta llegar a 100
