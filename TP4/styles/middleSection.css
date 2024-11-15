@@ -13,11 +13,11 @@
 
 .section-1 .figures-123459 {
     background-image: url("../assets/images/background/middleSection/123459.png");
-    width: 1280px;
-    height: 767px;
+    width: 1400px;
+    height: 855px;
     z-index: 2;
-    left: 0;
-    top: 3220px;
+    left: -28px;
+    top: 3144px;
 }
 
 .section-1 .descubre-las-mats {
@@ -29,6 +29,7 @@
 }
 
 .descubre-las-mats h1 {
+    line-height: 110%;
     text-align: center;
     margin: 0;
 }
@@ -36,8 +37,9 @@
 .content .buy-button button{
     position: absolute;
     top: 3220px;
-    left: 270px;
-    width: 540px;
+    left: 259px;
+    width: 556px;
+    height: 82px;
     font-weight: 900;
     font-size: 31.14px;
     font-family: "Lato", serif;
