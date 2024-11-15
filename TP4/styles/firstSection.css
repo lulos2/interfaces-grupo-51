@@ -206,13 +206,22 @@
     top: 1042px;
 }
 
+.section-1 .number-4 {
+    background-image: url("../assets/images/background/firstSection/number4.png");
+    width: 136px;
+    height: 124px;
+    z-index: 4;
+    left: 113px;
+    top: 1507px;
+}
+
 .section-1 .figure-4 {
     background-image: url("../assets/images/background/firstSection/figura4.png");
-    width: 597px;
-    height: 564px;
+    width: 588px;
+    height: 545px;
     z-index: 4;
-    left: 48px;
-    top: 1548px;
+    left: 54px;
+    top: 1552px;
 }
 
 .section-1 .figure-5 {
