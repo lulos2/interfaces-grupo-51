@@ -37,8 +37,8 @@
 
 .section-3 .cloud-left {
     background-image: url("../assets/images/background/lastSection/cloud1.png");
-    width: 332px;
-    height: 181px;
+    width: 384px;
+    height: 179px;
     z-index: 2;
     left: -5px;
     top: 865px;
@@ -61,8 +61,8 @@
 
 .section-3 .cloud-right-2 {
     background-image: url("../assets/images/background/lastSection/cloud1.png");
-    width: 315px;
-    height: 181px;
+    width: 384px;
+    height: 179px;
     z-index: 2;
     left: 1012px;
     top: 598px;
