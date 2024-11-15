@@ -42,9 +42,9 @@
     z-index: 2;
     left: -55px;
     top: 819px;
-    animation: scroll-clouds-left 30s linear infinite;
+    animation: scroll-clouds-left 15s linear infinite;
     position: absolute;
-    animation-duration: 15s;
+    animation-duration: 20s;
 }
 
 .section-3 .cloud-right-1 {
@@ -56,7 +56,7 @@
     top: 517px;
     animation: scroll-clouds-left 30s linear infinite;
     position: absolute;
-    animation-duration: 20s;
+    animation-duration: 30s;
     }
 
 .section-3 .cloud-right-2 {
@@ -68,7 +68,7 @@
     top: 560px;
     animation: scroll-clouds-right 30s linear infinite;
     position: absolute;
-    animation-duration: 12s;
+    animation-duration: 15s;
 }
 
 .section-3 .figure-2 {
@@ -102,19 +102,19 @@
 
 @keyframes scroll-clouds-left {
     0% {
-      transform: translateX(0);
+      transform: translateX(-1300px);
     }
-    100% {
-      transform: translateX(-100%);
+    100%{
+      transform: translateX(1300px);
     }
 }
 
 @keyframes scroll-clouds-right {
     0% {
-      transform: translateX(0);
+      transform: translateX(-1300px);
     }
     100% {
-      transform: translateX(100%);
+      transform: translateX(1300px);
     }
 }
 
