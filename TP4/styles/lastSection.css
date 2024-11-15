@@ -201,3 +201,63 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+
+.footer-sprites {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.footer-sprites2 {
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+.sprite {
+    width: 200px; 
+    height: 200px; 
+    background-size: 800%; /* Dependiendo de cuántos fotogramas tengas */
+    animation: animate-sprite 1s steps(8) infinite; /* Cambia steps(10) según tus fotogramas */
+}
+
+#sprite1 {
+    background-image: url('../assets/images/sprite/sun-spritesheet-small.13d0509.png');
+}
+
+#sprite2 {
+    background-image: url('../assets/images/sprite/birds.png');
+    width: 100px; 
+    height: 100px;
+    background-size: 500%;
+    animation: animate-sprite2 1s steps(5) infinite;
+}
+
+#sprite3 {
+    background-image: url(../assets/images/sprite/estrella-5-frames-Photoroom.png);
+    width: 100px; 
+    height: 100px;
+    animation: animate-sprite2 1s steps(5) infinite;
+}
+
+
+
+@keyframes animate-sprite {
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position: -800%;
+    }
+}
+
+@keyframes animate-sprite2 {
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position: -500%;
+    }
+}
+
