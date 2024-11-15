@@ -44,21 +44,21 @@
 
 .section-1 .tree-right-1 {
     background-image: url('../assets/images/background/firstSection/tree2.png');
-    width: 434.21px;
-    height: 675.52px;
+    width: 386.21px;
+    height: 673.52px;
     z-index: 3;
     top: 106.71px;
-    left: 881.03px;
+    left: 905.03px;
 }
 
 .section-1 .tree-right-2 {
     background-image: url('../assets/images/background/firstSection/tree3.png');
     position: absolute;
     width: 278.03px;
-    height: 430.85px;
+    height: 431.85px;
     z-index: 2;
     top: 278.38px;
-    left: 1080.97px;
+    left: 1081.47px;
 }
 
 .section-1 .stone-left {
@@ -76,7 +76,7 @@
     height: 56.55px;
     z-index: 4;
     top: 737.5px;
-    left: 1035.84px;
+    left: 1034.84px;
 }
 
 .section-1 .stone-right-2 {
@@ -135,29 +135,29 @@
 
 .section-1 .figure-1 {
     background-image: url('../assets/images/background/firstSection/figure1.png');
-    width: 259.4px;
-    height: 330.48px;
+    width: 270.4px;
+    height: 339.48px;
     z-index: 5;
-    top: 498.28px;
-    left: 423px;
+    top: 500.28px;
+    left: 413px;
 }
 
 .section-1 .figure-2 {
     background-image: url('../assets/images/background/firstSection/figure2.png');
-    width: 207px;
+    width: 227px;
     height: 280px;
     z-index: 4;
-    top: 403.04px;
-    left: 548px;
+    top: 409.04px;
+    left: 536px;
 }
 
 .section-1 .figure-3 {
     background-image: url('../assets/images/background/firstSection/figure3.png');
-    width: 187px;
+    width: 230px;
     height: 397px;
     z-index: 3;
     top: 342px;
-    left: 718.25px;
+    left: 694.25px;
 }
 
 .shade-1 ,.shade-2, .shade-3 {
