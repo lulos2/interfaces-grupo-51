@@ -115,7 +115,7 @@
     left: -300px; /* Inicialmente fuera de la pantalla */
     transition: left 0.5s ease;
     opacity: 0;
-    background-color: #ffcc00; 
+    background-color: var(--burgerButtonColorOrange); 
     border-radius: 25px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -141,7 +141,7 @@
 }
 
 .nav-menu li a:hover {
-    background-color: #ff6600; 
+    background-color: var(--buttonColorGreen); 
 }
 
 .nav-menu.open {
