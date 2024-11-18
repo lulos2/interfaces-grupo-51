@@ -170,7 +170,9 @@
 }
 
 .form button:hover {
-background-color: var(--burgerButtonColorOrange);
+    animation: hover-effect 0.5s ease-in-out;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .teenSealInfo {
