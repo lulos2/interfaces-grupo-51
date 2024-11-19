@@ -39,7 +39,7 @@ class ElementParallax {
     applyParallaxEfectMouse(mousePositionX, mousePositionY) {
         if (this.isVisible) {
             if (this.isMouseOver) {
-                this.element.style.transform = `translate(${(mousePositionX * this.parallaxFactor) -70}px,${mousePositionY * this.parallaxFactor}px)`;
+                this.element.style.transform = `translate(${(mousePositionX * this.parallaxFactor) +31}px,${(mousePositionY * this.parallaxFactor)+70}px)`;
                 this.element.style.transition = 'transform 0.1s';
             }
         }
@@ -61,7 +61,7 @@ let observerBushRight2 = new ElementParallax(document.querySelector('.bush-right
 let observerSection1Figure1 = new ElementParallax(document.querySelector('.figure-1'), -0.17);
 let observerSection1Figure2 = new ElementParallax(document.querySelector('.figure-2'), -0.22);
 let observerSection1Figure3 = new ElementParallax(document.querySelector('.figure-3'), -0.2);
-let observerSection1Figures = new ElementParallax(document.querySelector('.section-1 .figures-123459'), 0.1);
+let observerSection1Figures = new ElementParallax(document.querySelector('.section-1 .figures-123459'), -0.1);
 
 let laAppMasDivertidaH1 = new ElementParallax(document.querySelector('.la-app-mas-divertida'), -0.1);
 let laAppMasDivertidaDesc = new ElementParallax(document.querySelector('.la-app-mas-divertida-desc'), -0.1);
