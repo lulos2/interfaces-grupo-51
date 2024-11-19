@@ -227,15 +227,6 @@ color: inherit;
     animation: animate-sprite2 1s steps(5) infinite;
 }
 
-#sprite3 {
-    background-image: url(../assets/images/sprite/estrella-5-frames-Photoroom.png);
-    width: 100px;
-    height: 100px;
-    animation: animate-sprite2 1s steps(5) infinite;
-}
-
-
-
 @keyframes animate-sprite {
     from{
         background-position: 0;

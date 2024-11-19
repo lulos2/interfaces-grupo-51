@@ -36,7 +36,7 @@ class ElementParallax {
         this.element.style.transform = `translateY(${(scrollTop - pxCorrection) * this.parallaxFactor}px)`;
     }
 
-    applyParallaxEfectMouse(mousePositionX, mousePositionY) {
+    applyParallaxEffectMouse(mousePositionX, mousePositionY) {
         if (this.isVisible) {
             if (this.isMouseOver) {
                 this.element.style.transform = `translate(${(mousePositionX * this.parallaxFactor) +31}px,${(mousePositionY * this.parallaxFactor)+70}px)`;
@@ -75,7 +75,7 @@ let observerSection2Figure3 = new ElementParallax(document.querySelector('.secti
 document.addEventListener('mousemove', (e) => {
     let mousePositionX = e.clientX ;
     let mousePositionY = e.clientY ;
-    observerSection1Figures.applyParallaxEfectMouse(mousePositionX, mousePositionY);
+    observerSection1Figures.applyParallaxEffectMouse(mousePositionX, mousePositionY);
 });
 
 document.addEventListener('scroll', () => {
