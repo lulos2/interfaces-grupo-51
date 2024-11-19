@@ -6,6 +6,7 @@
 @import url('figuresHover.css');
 @import url('footer.css');
 @import url('lastSection.css');
+@import url('loader.css');
 
 :root {
     --fontColorBlue: #1B428F;
