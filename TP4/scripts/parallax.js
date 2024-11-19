@@ -61,6 +61,9 @@ let observerBushRight2 = new ElementParallax(document.querySelector('.bush-right
 let observerSection1Figure1 = new ElementParallax(document.querySelector('.figure-1'), -0.17);
 let observerSection1Figure2 = new ElementParallax(document.querySelector('.figure-2'), -0.22);
 let observerSection1Figure3 = new ElementParallax(document.querySelector('.figure-3'), -0.2);
+let section1Shade1 = new ElementParallax(document.querySelector('.section-1 .shade-1'), 0.06);
+let section1Shade2 = new ElementParallax(document.querySelector('.section-1 .shade-2'), 0.04);
+let section1Shade3 = new ElementParallax(document.querySelector('.section-1 .shade-3'), 0.02);
 let observerSection1Figures = new ElementParallax(document.querySelector('.section-1 .figures-123459'), -0.1);
 
 let laAppMasDivertidaH1 = new ElementParallax(document.querySelector('.la-app-mas-divertida'), -0.1);
@@ -94,6 +97,9 @@ document.addEventListener('scroll', () => {
     observerSection1Figure1.applyParallaxWithCorrection(scrollTop,0);
     observerSection1Figure2.applyParallaxWithCorrection(scrollTop,0);
     observerSection1Figure3.applyParallaxWithCorrection(scrollTop,0);
+    section1Shade1.applyParallaxWithCorrection(scrollTop, 0);
+    section1Shade2.applyParallaxWithCorrection(scrollTop, 0);
+    section1Shade3.applyParallaxWithCorrection(scrollTop, 0);
 
     laAppMasDivertidaH1.applyParallaxWithCorrection(scrollTop, 500);
     laAppMasDivertidaDesc.applyParallaxWithCorrection(scrollTop, 530);
