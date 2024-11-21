@@ -203,8 +203,9 @@ color: inherit;
 
 .footer-sprites2 {
     display: flex;
-    justify-content: flex-start;
-    
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 .sprite {
@@ -227,10 +228,13 @@ color: inherit;
 }
 
 #sprite3 {
-    background-image: url(../assets/images/sprite/estrella-5-frames-Photoroom.png);
-    width: 100px; 
-    height: 100px;
-    animation: animate-sprite2 1s steps(5) infinite;
+    background-image: url(../assets/images/sprite/pajarorojo-Photoroom-Photoroom.png);
+    width: 119px; 
+    height: 147px;
+    background-size: 837px 147px;
+    animation: animate-sprite3 1s steps(7) infinite;
+    position: absolute;
+    left: 50%;
 }
 
 
@@ -253,3 +257,11 @@ color: inherit;
     }
 }
 
+@keyframes animate-sprite3 {
+    from {
+        background-position: 0 ;
+    }
+    to {
+        background-position: -700%; 
+    }
+}
