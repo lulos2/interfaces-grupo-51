@@ -5,11 +5,6 @@ class ElementParallax {
         this.parallaxFactor = parallaxFactor;
         this.isVisible = false;
         this.isMouseOver = false;
-        this.scrollStart = null;
-        this.initialPosition = {
-            x: element.offsetLeft,
-            y: element.offsetTop
-        };
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -36,10 +31,10 @@ class ElementParallax {
         this.element.style.transform = `translateY(${(scrollTop - pxCorrection) * this.parallaxFactor}px)`;
     }
 
-    applyParallaxEfectMouse(mousePositionX, mousePositionY) {
+    applyParallaxEffectMouse(mousePositionX, mousePositionY) {
         if (this.isVisible) {
             if (this.isMouseOver) {
-                this.element.style.transform = `translate(${(mousePositionX * this.parallaxFactor) -70}px,${mousePositionY * this.parallaxFactor}px)`;
+                this.element.style.transform = `translate(${(mousePositionX * this.parallaxFactor) +31}px,${(mousePositionY * this.parallaxFactor)+70}px)`;
                 this.element.style.transition = 'transform 0.1s';
             }
         }
@@ -47,59 +42,61 @@ class ElementParallax {
 
 }
 
-let observerTreeLeft = new ElementParallax(document.querySelector('.tree-left'), -0.05);
-let observerTreeRight1 = new ElementParallax(document.querySelector('.tree-right-1'), -0.05);
-let observerTreeRight2 = new ElementParallax(document.querySelector('.tree-right-2'), -0.05);
-let observerStoneLeft = new ElementParallax(document.querySelector('.stone-left'), -0.07);
-let observerStoneRight1 = new ElementParallax(document.querySelector('.stone-right-1'), -0.05);
-let observerStoneRight2 = new ElementParallax(document.querySelector('.stone-right-2'), -0.09);
-let observerStoneRight3 = new ElementParallax(document.querySelector('.stone-right-3'), -0.1);
-let observerBushLeft1 = new ElementParallax(document.querySelector('.bush-left-1'), -0.04);
-let observerBushLeft2 = new ElementParallax(document.querySelector('.bush-left-2'), -0.13);
-let observerBushRight1 = new ElementParallax(document.querySelector('.bush-right-1'), -0.05);
-let observerBushRight2 = new ElementParallax(document.querySelector('.bush-right-2'), -0.1);
-let observerSection1Figure1 = new ElementParallax(document.querySelector('.figure-1'), -0.17);
-let observerSection1Figure2 = new ElementParallax(document.querySelector('.figure-2'), -0.22);
-let observerSection1Figure3 = new ElementParallax(document.querySelector('.figure-3'), -0.2);
-let observerSection1Figures = new ElementParallax(document.querySelector('.section-1 .figures-123459'), 0.1);
+const parallaxConfig = [
+    { selector: '.tree-left', multiplier: -0.05, offset: 0 },
+    { selector: '.tree-right-1', multiplier: -0.05, offset: 0 },
+    { selector: '.tree-right-2', multiplier: -0.05, offset: 0 },
+    { selector: '.stone-left', multiplier: -0.07, offset: 0 },
+    { selector: '.stone-right-1', multiplier: -0.05, offset: 0 },
+    { selector: '.stone-right-2', multiplier: -0.09, offset: 0 },
+    { selector: '.stone-right-3', multiplier: -0.1, offset: 0 },
+    { selector: '.bush-left-1', multiplier: -0.04, offset: 0 },
+    { selector: '.bush-left-2', multiplier: -0.13, offset: 0 },
+    { selector: '.bush-right-1', multiplier: -0.05, offset: 0 },
+    { selector: '.bush-right-2', multiplier: -0.1, offset: 0 },
+    { selector: '.figure-1', multiplier: -0.24, offset: 0 },
+    { selector: '.figure-2', multiplier: -0.28, offset: 0 },
+    { selector: '.figure-3', multiplier: -0.26, offset: 0 },
+    { selector: '.section-1 .shade-1', multiplier: 0.06, offset: 0 },
+    { selector: '.section-1 .shade-2', multiplier: 0.04, offset: 0 },
+    { selector: '.section-1 .shade-3', multiplier: 0.02, offset: 0 },
+    { selector: '.section-1 .figures-123459', multiplier: -0.1, isMouseSensitive: true },
+    { selector: '.la-app-mas-divertida', multiplier: -0.1, offset: 500 },
+    { selector: '.la-app-mas-divertida-desc', multiplier: -0.1, offset: 530 },
+    { selector: '.section-1 .figure-5', multiplier: 0.05, offset: 800 },
+    { selector: '.section-1 .figure-4', multiplier: -0.01, offset: 700 },
+    { selector: '.section-1 .carousel', multiplier: 0.02, offset: 1000 },
+    { selector: '.section-2 .figure-3', multiplier: -0.6, offset: 12000 }
+];
 
-let laAppMasDivertidaH1 = new ElementParallax(document.querySelector('.la-app-mas-divertida'), -0.1);
-let laAppMasDivertidaDesc = new ElementParallax(document.querySelector('.la-app-mas-divertida-desc'), -0.1);
-let section1Figure5 = new ElementParallax(document.querySelector('.section-1 .figure-5'), 0.05);
-let section1Figure4 = new ElementParallax(document.querySelector('.section-1 .figure-4'), -0.01);
-let section1Carousel = new ElementParallax(document.querySelector('.section-1 .carousel'), 0.02);
+const parallaxElements = [];
 
-let observerSection2Figure3 = new ElementParallax(document.querySelector('.section-2 .figure-3'), -0.6);
-
+document.addEventListener('DOMContentLoaded', () => {
+    parallaxConfig.forEach(({ selector, multiplier, offset, isMouseSensitive }) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            const instance = new ElementParallax(element, multiplier);
+            parallaxElements.push({ instance, offset, isMouseSensitive });
+        } else {
+            console.warn(`Elemento no encontrado para el selector: ${selector}`);
+        }
+    });
+});
 
 document.addEventListener('mousemove', (e) => {
-    let mousePositionX = e.clientX ;
-    let mousePositionY = e.clientY ;
-    observerSection1Figures.applyParallaxEfectMouse(mousePositionX, mousePositionY);
+    const { clientX: mouseX, clientY: mouseY } = e;
+    parallaxElements.forEach(({ instance, isMouseSensitive }) => {
+        if (isMouseSensitive) {
+            instance.applyParallaxEffectMouse(mouseX, mouseY);
+        }
+    });
 });
 
 document.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset;
-    observerTreeLeft.applyParallaxWithCorrection(scrollTop,0);
-    observerTreeRight2.applyParallaxWithCorrection(scrollTop,0);
-    observerTreeRight1.applyParallaxWithCorrection(scrollTop,0);
-    observerBushRight2.applyParallaxWithCorrection(scrollTop,0);
-    observerBushRight1.applyParallaxWithCorrection(scrollTop,0);
-    observerBushLeft2.applyParallaxWithCorrection(scrollTop,0);
-    observerBushLeft1.applyParallaxWithCorrection(scrollTop,0);
-    observerStoneRight3.applyParallaxWithCorrection(scrollTop,0);
-    observerStoneRight2.applyParallaxWithCorrection(scrollTop,0);
-    observerStoneRight1.applyParallaxWithCorrection(scrollTop,0);
-    observerStoneLeft.applyParallaxWithCorrection(scrollTop,0);
-    observerSection1Figure1.applyParallaxWithCorrection(scrollTop,0);
-    observerSection1Figure2.applyParallaxWithCorrection(scrollTop,0);
-    observerSection1Figure3.applyParallaxWithCorrection(scrollTop,0);
-
-    laAppMasDivertidaH1.applyParallaxWithCorrection(scrollTop, 500);
-    laAppMasDivertidaDesc.applyParallaxWithCorrection(scrollTop, 530);
-    section1Figure4.applyParallaxWithCorrection(scrollTop, 700);
-    section1Figure5.applyParallaxWithCorrection(scrollTop, 800);
-    section1Carousel.applyParallaxWithCorrection(scrollTop, 1000);
-
-    observerSection2Figure3.applyParallaxWithCorrection(scrollTop,12000);
+    parallaxElements.forEach(({ instance, offset, isMouseSensitive }) => {
+        if (!isMouseSensitive) {
+            instance.applyParallaxWithCorrection(scrollTop, offset || 0);
+        }
+    });
 });

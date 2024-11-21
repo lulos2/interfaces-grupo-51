@@ -109,7 +109,7 @@
     height: 800px;
     z-index: 5;
     left: 700px;
-    top: 1447px;
+    top: 1590px;
 }
 
 .section-2 .text-box {
@@ -131,7 +131,6 @@
 .figures-collage img {
     width: 1280px; /* Ocupa el 100% del ancho de la ventana */
     object-fit: cover; /* Ajusta la imagen para que siempre cubra */
-
     top: 0;
     left: 0;
 }
