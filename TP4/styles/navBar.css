@@ -115,7 +115,7 @@
     left: -300px; /* Inicialmente fuera de la pantalla */
     transition: left 0.5s ease;
     opacity: 0;
-    background-color: #ffcc00; 
+    background-color: var(--burgerButtonColorOrange); 
     border-radius: 25px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -141,7 +141,7 @@
 }
 
 .nav-menu li a:hover {
-    background-color: #ff6600; 
+    background-color: var(--buttonColorGreen); 
 }
 
 .nav-menu.open {
@@ -171,12 +171,35 @@
     font-family: "Lato", serif;
     font-style: normal;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 4px 5px var(--shadowColorBlue);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .buy-button button:hover {
-    background-color: var(--burgerButtonColorOrange);
+    animation: hover-effect 0.5s ease-in-out;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    
+    
+@keyframes hover-effect {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        background-color: var(--buttonColorGreen);
+    }
+    50% {
+        transform: scale(1.15);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        background-color: #A3D97C; 
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        background-color: var(--buttonColorGreen);
+    }
 }
 
 @keyframes slide-in {
