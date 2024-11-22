@@ -33,8 +33,6 @@ class StickyScrollSection {
             const sectionStart = itemIndex * this.sectionHeight;
             const sectionEnd = sectionStart + this.sectionHeight;
 
-            console.log(`Item ${itemIndex}:`, { sectionStart, sectionEnd, current: relativePosition }); // Debug log
-
             if (relativePosition < sectionStart) {
                 this.setItemState(item, 'before');
             } else if (relativePosition >= sectionStart && relativePosition < sectionEnd) {
