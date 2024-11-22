@@ -140,6 +140,12 @@
     z-index: 5;
     top: 500.28px;
     left: 413px;
+    position: absolute;
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: slide-in-left;
 }
 
 .section-1 .figure-2 {
@@ -149,6 +155,13 @@
     z-index: 4;
     top: 409.04px;
     left: 536px;
+    position: absolute;
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: slide-in-right;
+    animation-delay: 0.5s;
 }
 
 .section-1 .figure-3 {
@@ -158,6 +171,35 @@
     z-index: 3;
     top: 342px;
     left: 694.25px;
+    position: absolute;
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;  
+    animation-name: slide-in-left;
+    animation-delay: 1s;  
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .shade-1 ,.shade-2, .shade-3 {
